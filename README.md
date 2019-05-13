@@ -6,7 +6,7 @@ Repository for XD Fiesta 2019
 2. Git clone dulu
 
 ```sh
-$ git clone https://github.com/akhmadrizki/XDFiesta2019.git
+$ git clone https://github.com/{username-anda}/XDFiesta2019.git
 ```
 
 3. Tambahkan upstream pada hasil clone tersebut
