@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('client.pages.index', [
+    	'navActive' => 'home'
+    ]);
+});
+
+Route::get('/xd-events', function () {
+	return view('client.pages.xd-events', [
+		'navActive' => 'xd-events'
+	]);
 });

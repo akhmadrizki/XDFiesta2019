@@ -1,0 +1,26 @@
+.navbar {
+	padding: 15px 0;
+	/*border-bottom: 1px solid #ddd;*/
+	box-shadow: 0 2px 6px #bbb;
+}
+.navbar .container .navbar-left h1 {
+	font: 22px 'Sarabun';
+	font-weight: bold;
+}
+.navbar .container .navbar-right .navbar-menu .navbar-link {
+	color: #333;
+	margin: 0 10px;
+	font: 1em 'Sarabun';
+	box-sizing: border-box;
+	text-decoration: none;
+	padding: 16px 0;
+	transition: 0.2s;
+}
+.navbar .container .navbar-right .navbar-menu .navbar-link:hover {
+	color: #70a6dc
+}
+.navbar .container .navbar-right .navbar-menu .navbar-link.active {
+	font-weight: bold;
+	color: #70a6dc;
+	border-bottom: 3px solid #70a6dc;
+}
