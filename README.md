@@ -1,5 +1,5 @@
 # XD Fiesta 2019
-Repository for Alihgae
+Repository for XD Fiesta 2019
 
 ### Kalau Mau Kerja, Ikuti Langkah Ini!
 1. Fork Repositori Ini
