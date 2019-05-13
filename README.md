@@ -6,13 +6,13 @@ Repository for Alihgae
 2. Git clone dulu
 
 ```sh
-$ git clone https://github.com/{username-anda}/alihgae.git
+$ git clone https://github.com/akhmadrizki/XDFiesta2019.git
 ```
 
 3. Tambahkan upstream pada hasil clone tersebut
 
 ```sh
-$ git remote add upstream https://github.com/akhmadrizki/alihgae.git
+$ git remote add upstream https://github.com/akhmadrizki/XDFiesta2019.git
 ```
 
 4. Copy file .env.example menjadi .env
@@ -27,7 +27,7 @@ $ composer install
 
 ```sh
 ...
-DB_DATABASE=db_alihgae
+DB_DATABASE=db_xd
 DB_USERNAME=root
 DB_PASSWORD=
 ...
@@ -76,6 +76,3 @@ $ git push origin {nama-branch}
 ```
 6. Jika sudah siap untuk dibawa ke repository utama. Lakukanlah Pull Request dari branch anda ke branch `master`. Sebelum pull request pastikan branch sudah bersih. Jika ada conflict silahkan perbaiki conflict tersebut. Pastikan buat judul dan deskripsi yang baik agar mudah dipahami!
 7. Semangat!!!
-
-### Sedikit Panduan
-[Panduan untuk development Front-End](https://github.com/akhmadrizki/alihgae/blob/master/resources/README.md)
