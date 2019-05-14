@@ -19,6 +19,13 @@ Route::get('/', function () {
 
 Route::get('/xd-events', function () {
 	return view('client.pages.xd-events', [
-		'navActive' => 'xd-events'
+		'navActive' => 'events'
+	]);
+});
+
+Route::get('/xd-events/{events}', function ($events) {
+	return view('client.pages.xd-events.' . $events, [
+		'navActive' => 'events',
+		'subnavActive' => $events
 	]);
 });

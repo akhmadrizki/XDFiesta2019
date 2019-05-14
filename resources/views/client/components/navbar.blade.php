@@ -1,16 +1,18 @@
-<nav class="navbar">
-	<div class="container">
-		<div class="d-flex align-items-center justify-content-between">
-			<div class="navbar-left">
-				<h1 style="margin:0;">XD Fiesta</h1>
-			</div>
-			<div class="navbar-right">
-				<div class="navbar-menu">
-					<a href="#" class="navbar-link {{ $navActive == 'xd-profile' ? 'active' : NULL }}">XD PROFILE</a>
-					<a href="/xd-events" class="navbar-link {{ $navActive == 'xd-events' ? 'active' : NULL }}">XD EVENTS</a>
-					<a href="#" class="navbar-link {{ $navActive == 'xd-gallery' ? 'active' : NULL }}">XD GALLERY</a>
+<nav>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-6 column">
+					<h1 style="margin:0;">XD FIESTA</h1>
+				</div>
+				<div class="col-12 col-md-6 column" style="text-align:right;">
+					<div class="nav-item">
+						<a href="/xd-profile" class="nav-link">xd profile</a>
+						<a href="/xd-events" class="nav-link active">xd events</a>
+						<a href="/xd-gallery" class="nav-link">xd gallery</a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </nav>

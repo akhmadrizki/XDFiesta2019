@@ -1,5 +1,5 @@
 @extends('layouts.main')
 
 @section('content')
-	<h1>Coding here...</h1>
+	<h1>Arya coding here...</h1>
 @endsection

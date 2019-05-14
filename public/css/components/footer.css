@@ -1,0 +1,13 @@
+footer {
+	border: 1px solid #ddd;
+}
+footer .container .row {
+	padding: 13px 0;
+}
+.social-medias {
+	text-align: right;
+}
+.social-medias .social-media-item {
+	margin: 0 7px;
+	text-decoration: none;
+}
