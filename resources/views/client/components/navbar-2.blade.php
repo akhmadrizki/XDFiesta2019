@@ -15,4 +15,17 @@
 			</div>
 		</div>
 	</section>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col column">
+					<div class="subnav-item">
+						<a href="/xd-events/pubg" class="subnav-link {{ $subnavActive == 'pubg' ? 'active' : NULL }}">PUBG</a>
+						<a href="/xd-events/mobile-legends" class="subnav-link {{ $subnavActive == 'mobile-legends' ? 'active' : NULL }}">Mobile Legends</a>
+						<a href="/xd-events/futsal" class="subnav-link {{ $subnavActive == 'futsal' ? 'active' : NULL }}">Futsal</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </nav>

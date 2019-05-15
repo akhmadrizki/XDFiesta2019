@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 </head>
 <body>
-	@include('client.components.navbar')
+	@include('client.components.navbar-2')
   @yield('content')
 	@include('client.components.footer')
 </body>
