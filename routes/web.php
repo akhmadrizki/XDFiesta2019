@@ -41,3 +41,9 @@ Route::get('/xd-gallery', function () {
 		'navActive' => 'gallery'
 	]);
 });
+
+// Admin Routes
+Route::get('/dashboard', 'Dashboard\DashboardController@index')->name('admin');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
