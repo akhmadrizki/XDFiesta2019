@@ -15,14 +15,14 @@ class CreateLombaTable extends Migration
     {
         Schema::create('lomba', function (Blueprint $table) {
             $table->bigIncrements('id_lomba');
-            $table->string('judul');
-            $table->mediumText('deskripsi');
-            $table->date('tanggal');
-            $table->string('lokasi');
-            $table->string('penyelenggara');
-            $table->double('hadiah',8,2);
-            $table->string('waktu');
-            $table->string('pic');
+            $table->string('judul')->unique();;
+            $table->mediumText('deskripsi')->nullable();
+            $table->date('tanggal')->nullable();
+            $table->string('lokasi')->nullable();
+            $table->string('penyelenggara')->nullable();
+            $table->double('hadiah',8,2)->nullable();
+            $table->string('waktu'->nullable());
+            $table->string('pic')->nullable();
             $table->timestamps();
         });
     }

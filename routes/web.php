@@ -16,4 +16,6 @@ Route::get('/input-lomba', function () {
     return view('pages.lomba');
 });
 Route::resource('lomba','LombaController');
-Route::resource('lomba.syarat','SyaratController');
+Route::resource('syarat','SyaratController');
+Route::post('lomba/update','LombaController@update');
+Route::post('syarat/update','SyaratController@update');
