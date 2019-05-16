@@ -20,9 +20,9 @@
 					<a href="/xd-events/pubg" class="subnav-link {{ $subnavActive == 'pubg' ? 'active' : NULL }}">PUBG</a>
 					<a href="/xd-events/mobile-legends" class="subnav-link {{ $subnavActive == 'mobile-legends' ? 'active' : NULL }}">Mobile Legends</a>
 					<a href="/xd-events/futsal" class="subnav-link {{ $subnavActive == 'futsal' ? 'active' : NULL }}">Futsal</a>
-					<a href="/xd-events/futsal" class="subnav-link {{ $subnavActive == 'futsal' ? 'active' : NULL }}">Acoustic</a>
-					<a href="/xd-events/futsal" class="subnav-link {{ $subnavActive == 'futsal' ? 'active' : NULL }}">Coffee Barista</a>
-					<a href="/xd-events/futsal" class="subnav-link {{ $subnavActive == 'futsal' ? 'active' : NULL }}">Coloring</a>
+					<a href="/xd-events/acoustic" class="subnav-link {{ $subnavActive == 'acoustic' ? 'active' : NULL }}">Acoustic</a>
+					<a href="/xd-events/coffee-barista" class="subnav-link {{ $subnavActive == 'coffee-barista' ? 'active' : NULL }}">Coffee Barista</a>
+					<a href="/xd-events/coloring" class="subnav-link {{ $subnavActive == 'coloring' ? 'active' : NULL }}">Coloring</a>
 				</div>
 			</div>
 		</div>
