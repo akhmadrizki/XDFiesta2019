@@ -1,0 +1,82 @@
+.xd-event-imageBanner{
+    background-color: lightgrey;
+    width: 100%;
+    height: 440px;
+    margin-bottom: 50px;
+}
+
+.border-box{
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 30px;
+} 
+
+.xd-event-description p:nth-child(1){
+    font-size: 18px;
+    font-family: Roboto;
+    margin-bottom: 15px;
+}
+
+.xd-event-description p:nth-child(2){
+    font-size: 24px;
+    font-family: Sarabun;
+    margin-bottom: 20px;
+}
+
+.xd-event-description p:nth-child(3){
+    font-size: 16px;
+    font-family: Roboto;
+    margin-bottom: 0em;
+}
+
+.xd-event-information p:nth-child(1){
+    font-size: 24px;
+    font-family: Sarabun;
+    margin-bottom: 15px;
+}
+
+.xd-event-information table tr td:first-child{
+    padding: 0 10px 6px 0;
+    font-family: Sarabun;
+}
+
+.xd-event-information table tr:last-child td{
+    padding: 0 10px 0 0;
+}
+
+.xd-event-term p:first-child{
+    font-family: Sarabun;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.xd-event-term ol li{
+    font-family: Roboto;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.xd-event-register form .row:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.xd-event-register form .input-text {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.xd-event-register p{
+    font-size: 24px;
+    font-family: Sarabun;
+    margin-bottom: 20px;
+}
+
+
+
+
