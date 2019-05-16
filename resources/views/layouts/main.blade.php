@@ -12,5 +12,7 @@
 	@include('client.components.navbar')
   @yield('content')
 	@include('client.components.footer')
+
+	<script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

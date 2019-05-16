@@ -1,4 +1,4 @@
-<nav>
+<nav id="navbar">
 	<section>
 		<div class="row">
 			<div class="col-12 col-md-6 column">
@@ -14,3 +14,4 @@
 		</div>
 	</section>
 </nav>
+<div id="navbar-gap"></div>
