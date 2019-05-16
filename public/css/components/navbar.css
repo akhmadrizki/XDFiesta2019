@@ -2,30 +2,49 @@ nav {
 	box-shadow: 0 2px 6px #ddd;
 }
 nav section {
-	padding: 12px 0;
+	padding: 12px 30px;
+}
+nav section:not(:last-child) {
 	border-bottom: 1px solid #ddd;
 }
-nav section .container {}
-nav section .container .row {}
-nav section .container .row .column {}
-nav section .container .row .column h1 {
-	font: 1em 'Sarabun';
+nav section .row {
+	align-items: center;
+}
+nav section .row .column {}
+nav section .row .column h1 {
+	font: 20px 'Sarabun';
 	font-weight: bold;
 }
-nav section .container .row .column .nav-item {}
-nav section .container .row .column .nav-item .nav-link,
-nav section .container .row .column .subnav-item .subnav-link {
-	color: #888;
-	font: 1em 'Sarabun';
-	padding: 12px 15px;
-	box-sizing: border-box;
-	text-decoration: none;
-	text-transform: uppercase;
+nav section .row .column .nav-item {}
+nav section .row .column .subnav-item {
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
 }
-nav section .container .row .column .nav-item .nav-link:hover,
-nav section .container .row .column .subnav-item .subnav-link:hover,
-nav section .container .row .column .nav-item .nav-link.active,
-nav section .container .row .column .subnav-item .subnav-link.active {
+nav section .row .column .subnav-item::-webkit-scrollbar {
+	height: 2px;
+}
+nav section .row .column .subnav-item::-webkit-scrollbar-track {
+	background: #f5f5f5;
+}
+nav section .row .column .subnav-item::-webkit-scrollbar-thumb {
+	border-radius: 50%;
+	background-color: #aaa;
+}
+nav section .row .column .nav-item .nav-link,
+nav section .row .column .subnav-item .subnav-link {
+	color: #aaa;
+	font: 1em 'Sarabun';
+	margin-right: 20px;
+	text-decoration: none;
+}
+nav section .row .column .nav-item .nav-link:last-child {
+	margin-right: 0;
+}
+nav section .row .column .nav-item .nav-link:hover,
+nav section .row .column .subnav-item .subnav-link:hover,
+nav section .row .column .nav-item .nav-link.active,
+nav section .row .column .subnav-item .subnav-link.active {
 	color: #70a6dc;
-	border-bottom: 2px solid #70a6dc;
+	font-weight: bold;
 }
