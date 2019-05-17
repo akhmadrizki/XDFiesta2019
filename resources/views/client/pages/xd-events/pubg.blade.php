@@ -102,11 +102,17 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col">
-									<button>
+								<div class="offset-7"></div>
+								<div class="col-5">
+
+									<button class="reset-button">
+										<span>RESET</span>
+									</button>
+									<button class="submit-button">
 										<span>SUBMIT</span>
 									</button>
 								</div>
+								
 							</div>
 						</form>
 					</div>
