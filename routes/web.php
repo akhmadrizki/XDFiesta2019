@@ -11,11 +11,43 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
-Route::get('/input-lomba', function () {
-    return view('pages.lomba');
-});
 Route::resource('lomba','LombaController');
 Route::resource('syarat','SyaratController');
 Route::post('lomba/update','LombaController@update');
 Route::post('syarat/update','SyaratController@update');
+Route::get('/', function () {
+    return view('client.pages.index', [
+    	'navActive' => 'home'
+    ]);
+});
+
+Route::get('/xd-profile', function () {
+	return view('client.pages.xd-profile', [
+		'navActive' => 'profile'
+	]);
+});
+
+Route::get('/xd-events', function () {
+	return view('client.pages.xd-events', [
+		'navActive' => 'events'
+	]);
+});
+
+Route::get('/xd-events/{events}', function ($events) {
+	return view('client.pages.xd-events.' . $events, [
+		'navActive' => 'events',
+		'subnavActive' => $events
+	]);
+});
+
+Route::get('/xd-gallery', function () {
+	return view('client.pages.xd-gallery', [
+		'navActive' => 'gallery'
+	]);
+});
+
+// Admin Routes
+Route::get('/dashboard', 'Dashboard\DashboardController@index')->name('admin');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
