@@ -77,6 +77,29 @@
     margin-bottom: 20px;
 }
 
+.xd-event-register .col-4 button:last-child{
+    margin-right: 0px;
+}
+
+.submit-button{
+    border-radius:6px;
+    background-color: #70A6DC;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px 5px 10px;
+}
+
+.reset-button{
+    border-radius:6px;
+    border:1px solid #70A6DC;
+    color: #70A6DC;
+    padding: 5px 10px 5px 10px;
+    background-color: #ffffff;
+    margin-left: 30px;
+}
+
+
+
 
 
 
