@@ -2,12 +2,12 @@
 @section('content')
 
 <div class="section-header">
-            <h1>Daftar Konten</h1>
+            <h1>List Konten</h1>
 </div>
 
 <div class="section-body">
 	<p>
-		<a href="{{route('lomba.create')}}">Lomba</a>
+		<a href="{{route('lomba.index')}}">Lomba</a>
 	</p>
 	<p>
 		<a href="/blank.html">Event</a>

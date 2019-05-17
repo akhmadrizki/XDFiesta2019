@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Content;
 
 use Illuminate\Http\Request;
 use App\Lomba;
 use App\Syarat;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
@@ -56,11 +57,7 @@ class LombaController extends Controller
         $lomba->save();
         $inilomba=DB::select('SELECT * FROM lomba ORDER BY id_lomba DESC LIMIT 1');
         $id_lomba=$inilomba[0]->id_lomba;
-        
-        // return view('admin.syarat.create',compact($id_lomba));
-        return view('admin.syarat.create')->with('inilomba',$inilomba);
-        // return view('admin.syarat.create')->with('id_lomba',$id_lomba);
-        // ,['id_lomba' => $inilomba[0]->id_lomba]
+        return redirect()->action('Content\SyaratController@create');
     }
 
     /**
@@ -144,6 +141,6 @@ class LombaController extends Controller
     {
         $lomba = Lomba::where('id_lomba',$id);
         $lomba->delete();
-        return redirect('/lomba')->with('success', 'Lomba berhasil dihapus');
+        return redirect('/dashboard/lomba')->with('success', 'Lomba berhasil dihapus');
     }
 }

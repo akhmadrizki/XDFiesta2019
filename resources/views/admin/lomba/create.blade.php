@@ -1,24 +1,31 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 @section('content')
-    <h1>Buat Lomba</h1><br>
-    <form method="post" action="{{ action('LombaController@store') }}" enctype="multipart/form-data">
+
+<div class="section-header">
+            <h1>Input Lomba</h1>
+</div>
+
+<div class="section-body">
+    <h3>Buat Lomba</h3>
+    <form method="post" action="{{ action('Content\LombaController@store') }}" enctype="multipart/form-data">
     @csrf
-    <h3>Judul Lomba</h3>
+    <h4>Judul Lomba</h4>
     <input type="text" name="judul">
-    <h3>Deskripsi</h3>
+    <h4>Deskripsi</h4>
     <textarea name="deskripsi" cols="50" rows="10"></textarea>
-    <h3>Tangal</h3>
+    <h4>Tangal</h4>
     <input type="date" name="tanggal">
-    <h3>Lokasi</h3>
+    <h4>Lokasi</h4>
     <input type="text" name="lokasi">
-    <h3>Pengelenggara</h3>
+    <h4>Pengelenggara</h4>
     <input type="text" name="penyelenggara">
-    <h3>Hadiah</h3>
+    <h4>Hadiah</h4>
     <input type="number" name="hadiah">
-    <h3>Waktu</h3>
+    <h4>Waktu</h4>
     <input type="text" name="waktu">
-    <h3>Header Pic</h3>
+    <h4>Header Pic</h4>
     <input type="file" name="pic"><br>
     <input type="submit" name="Submit">
     </form>
+</div>
 @endsection

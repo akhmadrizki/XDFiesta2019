@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Content;
 
 use Illuminate\Http\Request;
 use App\Lomba;
 use App\Syarat;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
 class SyaratController extends Controller
@@ -26,7 +27,8 @@ class SyaratController extends Controller
      */
     public function create()
     {
-
+        $inilomba=DB::select('SELECT * FROM lomba ORDER BY id_lomba DESC LIMIT 1');
+        return view('admin.syarat.create')->with('inilomba',$inilomba);
     }
 
     /**
@@ -38,7 +40,6 @@ class SyaratController extends Controller
     public function store(Request $request)
     {
         $syarat=new Syarat;
-        $id_lomba=$request->id_lomba;
         $syarat->id_lomba = $request->get('id_lomba');
         $syarat->deskripsi = $request->get('deskripsi');
         $syarat->save();
@@ -55,8 +56,6 @@ class SyaratController extends Controller
     public function show($id)
     {
         $inilomba=Lomba::where('id_lomba',$id)->get();
-        // return $lomba;
-        // $inilomba=$lomba[0];
         return view('admin.syarat.create')->with('inilomba',$inilomba);
     }
 
@@ -108,6 +107,6 @@ class SyaratController extends Controller
         $dsyarat = Syarat::where('id_syarat',$id);
         $dsyarat->delete();
         // $syarat = Syarat::where('id_lomba',$id_lomba)->get();
-        return redirect()->action('LombaController@show',['id' => $idlomba]);
+        return redirect()->action('Content\LombaController@show',['id' => $idlomba]);
     }
 }

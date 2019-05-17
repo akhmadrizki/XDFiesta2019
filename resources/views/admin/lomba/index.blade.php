@@ -1,9 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 @section('content')
+
+<div class="section-header">
+            <h1>List Lomba</h1>
+</div>
+
+<div class="section-body">
     <div>
     {{session()->get('success')}}  
     </div>
-    <h1>Daftar Lomba</h1><br>
     @if(count($lomba)>0)
         @foreach($lomba as $lword)
             <div style="display:flex">

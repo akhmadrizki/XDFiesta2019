@@ -1,8 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 @section('content')
+
+<div class="section-header">
+            <h1>Input Lomba</h1>
+</div>
+
+<div class="section-body">
     @foreach ($lomba as $lword)
     <h1>Buat Lomba</h1><br>
-    <form method="post" action="{{ action('LombaController@update') }}" enctype="multipart/form-data">
+    <form method="post" action="{{ action('Content\LombaController@update') }}" enctype="multipart/form-data">
     @csrf
     <input type="hidden" name="id_lomba" value="{{$lword->id_lomba}}">
     <h3>Judul Lomba</h3>
@@ -24,4 +30,5 @@
     <input type="submit" name="Submit">
     </form>
     @endforeach
+</div>
 @endsection

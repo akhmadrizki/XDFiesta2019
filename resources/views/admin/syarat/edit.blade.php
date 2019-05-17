@@ -1,7 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 @section('content')
+
+<div class="section-header">
+            <h1>Input Lomba</h1>
+</div>
+
+<div class="section-body">
     <h1>Buat Lomba</h1><br>
-    <form method="post" action="{{ action('SyaratController@update') }}">
+    <form method="post" action="{{ action('Content\SyaratController@update') }}">
     @csrf
     @foreach($inilomba as $lomba)
         <?php 
@@ -21,4 +27,5 @@
     <textarea name="deskripsi" cols="50" rows="10">{{$deskripsi}}</textarea>
     <input type="submit" name="Tambah">
     </form>
+</div>
 @endsection
