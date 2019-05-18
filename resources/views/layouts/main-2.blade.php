@@ -13,6 +13,8 @@
 	@include('client.components.navbar-2')
   @yield('content')
 	@include('client.components.footer')
+
+	<script src="{{ asset('js/main-2.js') }}"></script>
 </body>
 </html>
 
