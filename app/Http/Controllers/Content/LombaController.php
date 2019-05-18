@@ -40,12 +40,14 @@ class LombaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {  
         $pic=$request->file('pic');
-        $extension=$pic->getClientOriginalExtension();
-        $name = $request->judul;
-        Storage::disk('public')->put($name.'.'.$extension,  File::get($pic));
         $lomba = new Lomba;
+        $judul=$request->get('judul');
+        $count =count(Lomba::where('judul',$judul)->get());
+        if($count>0){
+            return view('admin.lomba.create')->with('sama','Terdapat lomba yang sama, silahkan coba lagi');
+        }
         $lomba->judul = $request->get('judul');
         $lomba->deskripsi = $request->get('deskripsi');
         $lomba->tanggal = $request->get('tanggal');
@@ -53,7 +55,12 @@ class LombaController extends Controller
         $lomba->penyelenggara = $request->get('penyelenggara');
         $lomba->hadiah = $request->get('hadiah');
         $lomba->waktu = $request->get('waktu');
+        if($pic!=null){
+        $extension=$pic->getClientOriginalExtension();
+        $name = $request->judul;
+        Storage::disk('public')->put($name.'.'.$extension,  File::get($pic));
         $lomba->pic = $name.'.'.$extension;
+        }
         $lomba->save();
         $inilomba=DB::select('SELECT * FROM lomba ORDER BY id_lomba DESC LIMIT 1');
         $id_lomba=$inilomba[0]->id_lomba;

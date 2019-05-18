@@ -22,7 +22,7 @@ class CreateLombaTable extends Migration
             $table->string('penyelenggara')->nullable();
             $table->double('hadiah',8,2)->nullable();
             $table->string('waktu'->nullable());
-            $table->string('pic')->nullable();
+            $table->string('pic');
             $table->timestamps();
         });
     }
