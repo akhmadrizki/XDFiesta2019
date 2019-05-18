@@ -12,13 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('client.pages.index', [
-    	'navActive' => 'home'
-    ]);
+    return redirect('/xd-events');
 });
 
 Route::get('/xd-profile', function () {
-	return view('client.pages.xd-profile', [
+	return view('info.under-construction', [
 		'navActive' => 'profile'
 	]);
 });
@@ -37,7 +35,7 @@ Route::get('/xd-events/{events}', function ($events) {
 });
 
 Route::get('/xd-gallery', function () {
-	return view('client.pages.xd-gallery', [
+	return view('info.under-construction', [
 		'navActive' => 'gallery'
 	]);
 });

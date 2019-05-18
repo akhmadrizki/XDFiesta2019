@@ -11,9 +11,10 @@
 </head>
 <body>
 	@include('client.components.navbar')
-  @yield('content')
-	@include('client.components.footer')
-
-	<script src="{{ asset('js/main.js') }}"></script>
+	<div class="under-construction" style="padding:50px;">
+		<div class="d-flex align-items-center justify-content-center">
+			<img src="{{ asset('svg/under-construction.svg') }}" alt="Under construction and we'll be back soon!" width="480">
+		</div>
+	</div>
 </body>
 </html>
