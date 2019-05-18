@@ -97,6 +97,20 @@
     background-color: #ffffff;
     margin-left: 30px;
 }
+.reset-button{
+    border-radius:6px;
+    border:1px solid #70A6DC;
+    color: #70A6DC;
+    padding: 5px 10px 5px 10px;
+    background-color: #ffffff;
+    
+}
+
+@media only screen and (max-width: 992px) {
+    .reset-button {
+        margin-left: 0px;
+    }
+}
 
 
 

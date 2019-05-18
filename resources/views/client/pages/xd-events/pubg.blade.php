@@ -8,7 +8,7 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-6">
+				<div class="col-lg-6 col-12">
 					<div class="xd-event-description border-box">
 						<p>COMPETITION</p>
 						<p>PUBG Mobile Competition</p>
@@ -56,7 +56,7 @@
 						</table>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-lg-6 col-12">
 					<div class="xd-event-term border-box">
 						<p>Syarat & Ketentuan</p>
 						<ol style="padding-left: 20px !important;">
@@ -102,8 +102,8 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="offset-7"></div>
-								<div class="col-5">
+								<div class="offset-lg-7"></div>
+								<div class="col-lg-5 col-12 justify-content-center">
 
 									<button class="reset-button">
 										<span>RESET</span>
