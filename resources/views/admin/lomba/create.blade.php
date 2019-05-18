@@ -11,7 +11,7 @@
     @csrf
     <h4>Judul Lomba</h4>
     <input type="text" name="judul">
-    {{$sama}}
+    {{session()->get('sama')}}
     <h4>Deskripsi</h4>
     <textarea name="deskripsi" cols="50" rows="10"></textarea>
     <h4>Tangal</h4>
