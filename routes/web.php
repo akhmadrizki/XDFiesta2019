@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('/xd-events');
+    return redirect('/xd-events-and-competitions');
 });
 
 Route::get('/xd-profile', function () {
@@ -21,13 +21,13 @@ Route::get('/xd-profile', function () {
 	]);
 });
 
-Route::get('/xd-events', function () {
-	return view('client.pages.xd-events', [
+Route::get('/xd-events-and-competitions', function () {
+	return view('client.pages.xd-events-and-competitions', [
 		'navActive' => 'events'
 	]);
 });
 
-Route::get('/xd-events/{events}', function ($events) {
+Route::get('/xd-events-and-competitions/{events}', function ($events) {
 	return view('client.pages.xd-events.' . $events, [
 		'navActive' => 'events',
 		'subnavActive' => $events
