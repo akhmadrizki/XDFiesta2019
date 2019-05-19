@@ -11,7 +11,13 @@
     width: 100%;
     margin-bottom: 20px;
     padding: 30px;
+    transition: all 0.3s ease-in-out;
 } 
+
+.border-box:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
 
 .xd-event-description p:nth-child(1){
     font-size: 18px;
@@ -69,6 +75,11 @@
     border-radius: 6px;
     border: 1px solid #ddd;
     outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.xd-event-register form .input-text:focus{
+    border-color: #70A6DC;
 }
 
 .xd-event-register p{
@@ -87,6 +98,7 @@
     color: #ffffff;
     border: none;
     padding: 5px 10px 5px 10px;
+    cursor: pointer;
 }
 
 .reset-button{
@@ -96,21 +108,16 @@
     padding: 5px 10px 5px 10px;
     background-color: #ffffff;
     margin-left: 30px;
+    cursor: pointer;
 }
-.reset-button{
-    border-radius:6px;
-    border:1px solid #70A6DC;
-    color: #70A6DC;
-    padding: 5px 10px 5px 10px;
-    background-color: #ffffff;
-    
-}
+
 
 @media only screen and (max-width: 992px) {
     .reset-button {
         margin-left: 0px;
     }
 }
+
 
 
 
