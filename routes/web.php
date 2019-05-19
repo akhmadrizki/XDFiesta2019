@@ -11,6 +11,10 @@
 |
 */
 
+// Route::resource('lomba','LombaController');
+// Route::resource('syarat','SyaratController');
+// Route::post('lomba/update','LombaController@update');
+// Route::post('syarat/update','SyaratController@update');
 Route::get('/', function () {
     return redirect('/xd-events-and-competitions');
 });
@@ -42,6 +46,12 @@ Route::get('/xd-gallery', function () {
 
 // Admin Routes
 Route::get('/dashboard', 'Dashboard\DashboardController@index')->name('admin');
+Route::get('/dashboard/list', 'Dashboard\DashboardController@list');
+Route::resource('/dashboard/lomba','Content\LombaController');
+Route::resource('/dashboard/syarat','Content\SyaratController');
+Route::post('/dashboard/lomba/update','Content\LombaController@update');
+Route::post('/dashboard/syarat/update','Content\SyaratController@update');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
