@@ -111,7 +111,6 @@
     cursor: pointer;
 }
 
-
 @media only screen and (max-width: 992px) {
     .reset-button {
         margin-left: 0px;

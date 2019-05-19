@@ -3,9 +3,12 @@
 @section('content')
 
 	<section class="xd-event">
+	<!-- Gambar lomba dimasukkan disini -->
 		<div class="xd-event-imageBanner">
 			<img src="" alt="">
 		</div>
+	
+		<!-- Deskripsi lomba ditulis disini -->
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-12">
@@ -20,6 +23,8 @@
 							quasi pariatur quas aspernatur!
 						</p>
 					</div>
+
+					<!-- Informasi tentang lomba ditulis disini -->
 					<div class="xd-event-information border-box">
 						<p>Information</p>
 						<table>
@@ -56,7 +61,9 @@
 						</table>
 					</div>
 				</div>
+
 				<div class="col-lg-6 col-12">
+					<!-- Syarat dan Ketentuan lomba ditulis disini -->
 					<div class="xd-event-term border-box">
 						<p>Syarat & Ketentuan</p>
 						<ol style="padding-left: 20px !important;">
@@ -77,6 +84,8 @@
 							</li>
 						</ol>
 					</div>
+
+					<!-- Form pendaftaran lomba ditulis disini -->
 					<div class="xd-event-register border-box">
 						<p>Form Pendaftaran</p>
 						<form action="">
@@ -104,7 +113,6 @@
 							<div class="row">
 								<div class="offset-lg-7"></div>
 								<div class="col-lg-5 col-12 justify-content-center">
-
 									<button class="reset-button">
 										<span>RESET</span>
 									</button>
@@ -112,18 +120,12 @@
 										<span>SUBMIT</span>
 									</button>
 								</div>
-								
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
-		</div>
-
-
-
-
-	
+		</div>	
 	</section>
 	
 @endsection
