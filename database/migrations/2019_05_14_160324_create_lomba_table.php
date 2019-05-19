@@ -20,8 +20,8 @@ class CreateLombaTable extends Migration
             $table->date('tanggal')->nullable();
             $table->string('lokasi')->nullable();
             $table->string('penyelenggara')->nullable();
-            $table->double('hadiah',8,2)->nullable();
-            $table->string('waktu'->nullable());
+            $table->double('hadiah', 8, 2)->nullable();
+            $table->string('waktu')->nullable();
             $table->string('pic');
             $table->timestamps();
         });
