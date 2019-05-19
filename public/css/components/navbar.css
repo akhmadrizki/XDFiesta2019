@@ -20,6 +20,10 @@ nav section .row .column {}
 nav section .row .column h1 {
 	font: 20px 'Sarabun';
 	font-weight: bold;
+	white-space: nowrap;
+}
+nav section .row .column #dropdown-trigger {
+	display: none;
 }
 nav section .row .column .nav-item {}
 nav section .row .column .subnav-item {

@@ -13,8 +13,10 @@
 	@include('client.components.navbar')
 	<div class="under-construction" style="padding:50px;">
 		<div class="d-flex align-items-center justify-content-center">
-			<img src="{{ asset('svg/under-construction.svg') }}" alt="Under construction and we'll be back soon!" width="480">
+			<img src="{{ asset('svg/under-construction.svg') }}" alt="Under construction and we'll be back soon!" width="300vw">
 		</div>
 	</div>
+
+	<script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

@@ -2,6 +2,9 @@
 @import './components/navbar.css';
 @import './components/footer.css';
 
+/*responsive*/
+@import './components/responsive.css';
+
 /* pages */
 @import './pages/xd-events.css';
 @import './pages/xd-events/index.css';

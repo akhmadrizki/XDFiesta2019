@@ -1,0 +1,38 @@
+@media (max-width: 830px) {
+	/*navbar*/
+	#navbar {}
+	#navbar section {}
+	#navbar section .row {}
+	#navbar section .row .column {}
+	#navbar section .row .column:nth-child(2) {
+		position: relative;
+	}
+	#navbar section .row .column #dropdown-trigger {
+		display: inline-block;
+		cursor: pointer;
+	}
+	#navbar section .row .column .nav-item {
+		display: none;
+		position: absolute;
+		right: 0;
+		padding: 5px 0;
+		background-color: white;
+		border: 1px solid #ddd;
+		border-radius: 6px;
+		box-shadow: 0 3px 5px #aaa;
+	}
+	#navbar section .row .column .nav-item.active {
+		display: block;
+	}
+	#navbar section .row .column .nav-item .nav-link {
+		text-align: left;
+		display: block;
+		width: 100%;
+		white-space: nowrap;
+		padding: 10px 15px;
+		transition: 0.1s linear;
+	}
+	#navbar section .row .column .nav-item .nav-link:hover {
+		background: #f5f5f5;
+	}
+}

@@ -36,7 +36,7 @@
 						<h2>XD Competitions</h2>
 						<div class="xd-competitions-event">
 							<div class="row">
-								<div class="col-12 col-sm-6 column">
+								<div class="col-12 col-lg-6 column">
 									<div class="card">
 										<div class="card-image">
 											<img src="" alt="">
@@ -49,7 +49,7 @@
 										<a href="/xd-events-and-competitions/pubg" class="card-action">See Details</a>
 									</div>
 								</div>
-								<div class="col-12 col-sm-6 column">
+								<div class="col-12 col-lg-6 column">
 									<div class="card">
 										<div class="card-image">
 											<img src="" alt="">
@@ -64,7 +64,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-12 col-sm-6 column">
+								<div class="col-12 col-lg-6 column">
 									<div class="card">
 										<div class="card-image">
 											<img src="" alt="">
@@ -77,7 +77,7 @@
 										<a href="/xd-events-and-competitions/futsal" class="card-action">See Details</a>
 									</div>
 								</div>
-								<div class="col-12 col-sm-6 column">
+								<div class="col-12 col-lg-6 column">
 									<div class="card">
 										<div class="card-image">
 											<img src="" alt="">
@@ -92,7 +92,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-12 col-sm-6 column">
+								<div class="col-12 col-lg-6 column">
 									<div class="card">
 										<div class="card-image">
 											<img src="" alt="">
@@ -105,7 +105,7 @@
 										<a href="/xd-events-and-competitions/coffee-barista" class="card-action">See Details</a>
 									</div>
 								</div>
-								<div class="col-12 col-sm-6 column">
+								<div class="col-12 col-lg-6 column">
 									<div class="card">
 										<div class="card-image">
 											<img src="" alt="">

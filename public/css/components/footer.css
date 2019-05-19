@@ -1,13 +1,33 @@
 footer {
-	border: 1px solid #ddd;
+	background-color: #f5f5f5;
 }
-footer .container .row {
-	padding: 13px 0;
+footer .container-fluid {}
+footer .container-fluid .row {
+	padding: 20px 0 10px;
 }
-.social-medias {
-	text-align: right;
+footer .container-fluid .row:not(:last-child) {
+	border-bottom: 1px solid #ddd;
 }
-.social-medias .social-media-item {
-	margin: 0 7px;
+footer .container-fluid .row .column {}
+footer .container-fluid .row .column .nav-link-list {}
+footer .container-fluid .row .column .nav-link-list li {
+	list-style: none;
+}
+footer .container-fluid .row .column .nav-link-list li:not(:last-child) {
+	margin-bottom: 10px;
+}
+footer .container-fluid .row .column .nav-link-list a {
+	color: #aaa;
 	text-decoration: none;
+}
+footer .container-fluid .row .column .nav-link-list a:hover {
+	color: #333;
+}
+footer .container-fluid .row .column .title {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+footer .container-fluid .row .column .social-medias {}
+footer .container-fluid .row .column .social-medias .social-media-item {
+	margin: 0 5px;
 }
