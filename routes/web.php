@@ -16,24 +16,22 @@
 // Route::post('lomba/update','LombaController@update');
 // Route::post('syarat/update','SyaratController@update');
 Route::get('/', function () {
-    return view('client.pages.index', [
-    	'navActive' => 'home'
-    ]);
+    return redirect('/xd-events-and-competitions');
 });
 
 Route::get('/xd-profile', function () {
-	return view('client.pages.xd-profile', [
+	return view('info.under-construction', [
 		'navActive' => 'profile'
 	]);
 });
 
-Route::get('/xd-events', function () {
-	return view('client.pages.xd-events', [
+Route::get('/xd-events-and-competitions', function () {
+	return view('client.pages.xd-events-and-competitions', [
 		'navActive' => 'events'
 	]);
 });
 
-Route::get('/xd-events/{events}', function ($events) {
+Route::get('/xd-events-and-competitions/{events}', function ($events) {
 	return view('client.pages.xd-events.' . $events, [
 		'navActive' => 'events',
 		'subnavActive' => $events
@@ -41,7 +39,7 @@ Route::get('/xd-events/{events}', function ($events) {
 });
 
 Route::get('/xd-gallery', function () {
-	return view('client.pages.xd-gallery', [
+	return view('info.under-construction', [
 		'navActive' => 'gallery'
 	]);
 });
