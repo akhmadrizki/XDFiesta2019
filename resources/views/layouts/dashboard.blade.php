@@ -11,6 +11,8 @@
 
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="{{ asset('adminDashboard/modules/bootstrap-daterangepicker/daterangepicker.css')}}">
+  <link rel="stylesheet" href="{{ asset('adminDashboard/modules/summernote/summernote-bs4.css')}}">
+  <link rel="stylesheet" href="{{ asset('adminDashboard/modules/jquery-selectric/selectric.css')}}">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{ asset('adminDashboard/css/style.css')}}">
@@ -159,15 +161,15 @@
 
   <!-- General JS Scripts -->
   <script src="{{ asset('adminDashboard/modules/jquery.min.js')}}"></script>
-  <!-- <script src="{{ asset('adminDashboard/modules/popper.js')}}"></script> -->
-  <!-- <script src="{{ asset('adminDashboard/modules/tooltip.js')}}"></script> -->
+  <script src="{{ asset('adminDashboard/modules/popper.js')}}"></script>
   <script src="{{ asset('adminDashboard/modules/bootstrap/js/bootstrap.min.js')}}"></script>
   <script src="{{ asset('adminDashboard/modules/nicescroll/jquery.nicescroll.min.js')}}"></script>
-  <!-- <script src="{{ asset('adminDashboard/modules/moment.min.js')}}"></script> -->
-  <!-- <script src="{{ asset('adminDashboard/js/stisla.js')}}"></script> -->
+  <script src="{{ asset('adminDashboard/modules/moment.min.js')}}"></script>
   
   <!-- JS Libraies -->
   <script src="{{ asset('adminDashboard/modules/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+  <script src="{{ asset('adminDashboard/modules/summernote/summernote-bs4.js')}}"></script>
+  <script src="{{ asset('adminDashboard/modules/jquery-selectric/jquery.selectric.min.js')}}"></script>
 
   <!-- Page Specific JS File -->
   
