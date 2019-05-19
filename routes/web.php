@@ -46,14 +46,31 @@ Route::get('/xd-gallery', function () {
 	]);
 });
 
+// Login
+Route::get('/masuk', 'Auth\LoginController@index')->name('masuk');
+
+// Authentification Routes
+Route::get('/login', function(){
+	return redirect()-> to('masuk');
+})->name('login');
+Route::post('/login', 'Auth\LoginController@login')-> name('login');
+Route::post('/logout', 'Auth\LoginController@logout')-> name('logout');
+
+// Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+Route::group(['middleware' => 'auth'],function(){
 // Admin Routes
-Route::get('/dashboard', 'Dashboard\DashboardController@index')->name('admin');
-Route::get('/dashboard/list', 'Dashboard\DashboardController@list');
-Route::resource('/dashboard/lomba','Content\LombaController');
-Route::resource('/dashboard/syarat','Content\SyaratController');
-Route::post('/dashboard/lomba/update','Content\LombaController@update');
-Route::post('/dashboard/syarat/update','Content\SyaratController@update');
-Auth::routes();
+	Route::get('/dashboard', 'Dashboard\DashboardController@index')->name('admin');
+	Route::get('/dashboard/list', 'Dashboard\DashboardController@list');
+	Route::resource('/dashboard/lomba','Content\LombaController');
+	Route::resource('/dashboard/syarat','Content\SyaratController');
+	Route::post('/dashboard/lomba/update','Content\LombaController@update');
+	Route::post('/dashboard/syarat/update','Content\SyaratController@update');
+	// Auth::routes();
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
-
