@@ -1,5 +1,6 @@
 @extends('layouts.main-2')
 
+@section('content')
 <section class="xd-event">
 	<!-- Gambar lomba dimasukkan disini -->
 		<div class="xd-event-imageBanner">
