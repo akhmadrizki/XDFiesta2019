@@ -15,7 +15,7 @@
                 <div style="padding:10px">
                     <a href="{{route('lomba.update', $lword->id_lomba)}}">
                     <img src="{{url('uploads/'.$lword->pic)}}" width="200px"/><br>
-                    {{$lword->judul}}</a>
+                    <h6 style="text-align:center">{{$lword->judul}}</h6></a>
                 </div>
             <div>
         @endforeach

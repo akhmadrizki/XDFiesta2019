@@ -2,11 +2,12 @@
 @section('content')
 
 <div class="section-header">
-            <h1>Input Lomba</h1>
+            <h1>Edit Syarat</h1>
 </div>
 
 <div class="section-body">
-    <h1>Buat Lomba</h1><br>
+    <div class="card">
+    <div class="card-body">
     <form method="post" action="{{ action('Content\SyaratController@update') }}">
     @csrf
     @foreach($inilomba as $lomba)
@@ -23,9 +24,11 @@
     @endforeach
     <input type="hidden" name="id_syarat" value="{{$id_syarat}}">
     <input type="hidden" name="id_lomba" value="{{$id_lomba}}">
-    <h3>Syarat dan Ketentuan {{$judul}} </h3>
-    <textarea name="deskripsi" cols="50" rows="10">{{$deskripsi}}</textarea>
-    <input type="submit" name="Tambah">
+    <h3>Syarat dan Ketentuan {{$judul}} </h3><br/>
+    <textarea name="deskripsi" class="summernote-simple" style="display: none;" >{{$deskripsi}}</textarea>
+    <input type="submit" name="Tambah" class="btn btn-success">
     </form>
+    </div>
+    </div>
 </div>
 @endsection

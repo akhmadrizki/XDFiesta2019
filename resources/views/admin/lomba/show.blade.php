@@ -7,34 +7,46 @@
 </div>
 
 <div class="section-body">
-    <div>
-    <img src="{{url('uploads/'.$lword->pic)}}" width="400px"/><br/>
-    {{-- <a href="{{ route('lomba.edit', 2)}}">Edit</a> --}}
-    <a href="{{action('Content\LombaController@edit',$lword->id_lomba)}}">Edit</a>
+    <div class="card">
+    <div class="card-body">
+    <img src="{{url('uploads/'.$lword->pic)}}" width="400px"/><br/><br/>
     <form action="{{ route('lomba.destroy', $lword->id_lomba)}}" method="post">
+    <a href="{{action('Content\LombaController@edit',$lword->id_lomba)}}" class="btn btn-sm btn-warning">
+    Edit</a>
         @csrf
         @method('DELETE')
-        <button type="submit">Delete</button>
+        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
     </form>
-    <p>{{$lword->deskripsi}}</p>
+    <p>{!!$lword->deskripsi!!}</p>
     <p>{{$lword->tanggal}}</p>
     <p>{{$lword->lokasi}}</p>
     <p>{{$lword->penyelenggara}}</p>
-    <p>{{$lword->hadiah}}</p>
+    <p>Rp. {{$lword->hadiah}}</p>
     <p>{{$lword->waktu}}</p>
     </div>
-    <h2>Syarat dan Ketentuan </h2>
-    <a href="{{action('Content\SyaratController@show',$lword->id_lomba)}}">Tambah</a>
+    </div>
+
+    <div class="card">
+    <div class="card-header" style="display:block"><h6>Syarat dan Ketentuan</h6>
+    <a href="{{action('Content\SyaratController@show',$lword->id_lomba)}}" class="btn btn-success">Tambah</a>
+    </div>
+    <ul class="list-group list-group-flush">
     @foreach ($syarat as $sword)
+    <li class="list-group-item">
         <div>
-        <p>{{$sword->deskripsi}}</p>
-        <a href="{{action('Content\SyaratController@edit',$sword->id_syarat)}}">Edit</a>
+        {!!$sword->deskripsi!!}
         <form action="{{ route('syarat.destroy',$sword->id_syarat)}}" method="post">
-        @csrf
-        @method('DELETE')
-        <button type="submit">Delete</button>
-        </div>
-    </form>
+        <a href="{{action('Content\SyaratController@edit',$sword->id_syarat)}}"  class="btn btn-sm btn-warning">
+            Edit
+        </a>
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+            </div>
+        </form>
+    </li>
     @endforeach
+    </ul>
+    </div>
     @endforeach
 @endsection
