@@ -1,5 +1,9 @@
 @extends('layouts.main-2')
 
+@section('title')
+	<title>Coloring - XD Events & Competitions - XD Fiesta 2019</title>
+@endsection
+
 @section('content')
 <section class="xd-event">
 	<!-- Gambar lomba dimasukkan disini -->
