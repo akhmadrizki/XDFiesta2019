@@ -1,0 +1,80 @@
+body{
+    width: 35vw;
+    margin: 0 auto;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    body {
+        width: 70vw;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    body {
+        width: 50vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        width: 65vw;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    body {
+        width: 95vw;
+    }
+}
+
+.review-page-title{
+    font-family: Sarabun;
+    font-size: 22px;
+    text-align: center;
+    color: #333;
+    margin: 30px;
+}
+
+.review-page-nav a p{
+    color: #aaa;
+    font-family: Sarabun;
+    font-size: 16px;
+}
+
+.review-page-nav a p:hover{
+    color: #70A6DC;
+}
+
+.review-page-box{
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.review-page-box:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.box-title{
+    font-family: Sarabun;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.review-page-box table{
+    margin: 20px 30px 30px;
+}
+
+p.review-page-btn{
+    color: #70A6DC;
+    font-size: 16px;
+    text-align: right;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    
+}
+
