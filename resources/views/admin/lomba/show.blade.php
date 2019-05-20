@@ -17,12 +17,12 @@
         @method('DELETE')
         <button type="submit" class="btn btn-sm btn-danger">Delete</button>
     </form>
-    <p>{!!$lword->deskripsi!!}</p>
-    <p>{{$lword->tanggal}}</p>
-    <p>{{$lword->lokasi}}</p>
-    <p>{{$lword->penyelenggara}}</p>
-    <p>Rp. {{$lword->hadiah}}</p>
-    <p>{{$lword->waktu}}</p>
+    <p>Deskripsi : {!!$lword->deskripsi!!}</p>
+    <p>Tanggal : {{$lword->tanggal}}</p>
+    <p>Lokasi : {{$lword->lokasi}}</p>
+    <p>Penyelenggara : {{$lword->penyelenggara}}</p>
+    <p>Hadiah : Rp. {{$lword->hadiah}}</p>
+    <p>Waktu : {{$lword->waktu}}</p>
     </div>
     </div>
 
