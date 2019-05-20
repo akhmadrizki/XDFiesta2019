@@ -9,6 +9,8 @@
     <div>
     {{session()->get('success')}}  
     </div>
+    <div class="card">
+    <div class="card-body">
     @if(count($lomba)>0)
         @foreach($lomba as $lword)
             <div style="display:flex">
@@ -22,4 +24,6 @@
     @else
     <p>Lomba tidak tersedia</p>
     @endif
+    </div>
+    </div>
 @endsection
