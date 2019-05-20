@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('title')
+	<title>XD Profile - XD Fiesta 2019</title>
+@endsection
+
 @section('content')
 	<div class="xd-profile">
 		<div class="container">

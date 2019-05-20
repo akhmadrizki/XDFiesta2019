@@ -15,6 +15,8 @@
 // Route::resource('syarat','SyaratController');
 // Route::post('lomba/update','LombaController@update');
 // Route::post('syarat/update','SyaratController@update');
+
+// Front end routes
 Route::get('/', function () {
     return redirect('/xd-events-and-competitions');
 });
@@ -36,6 +38,10 @@ Route::get('/xd-events-and-competitions/{events}', function ($events) {
 		'navActive' => 'events',
 		'subnavActive' => $events
 	]);
+});
+
+Route::get('/response/review', function() {
+	return view('info.review');
 });
 
 Route::get('/xd-gallery', function () {

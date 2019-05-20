@@ -8,13 +8,17 @@
 		position: relative;
 	}
 	#navbar section .row .column #dropdown-trigger {
-		display: inline-block;
+		display: block;
 		cursor: pointer;
+	}
+	#navbar section .row .column #dropdown-trigger i {
+		float: right;
 	}
 	#navbar section .row .column .nav-item {
 		display: none;
 		position: absolute;
 		z-index: 99;
+		top: 30px;
 		right: 0;
 		padding: 5px 0;
 		background-color: white;

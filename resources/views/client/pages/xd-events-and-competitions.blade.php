@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('title')
+	<title>XD Events & Competitions - XD Fiesta 2019</title>
+@endsection
+
 @section('content')
 	<main class="xd-events-main">
 		<div class="xd-events-banner">

@@ -8,3 +8,5 @@
 /* pages */
 @import './pages/xd-events.css';
 @import './pages/xd-events/index.css';
+
+@import './pages/review.css';
