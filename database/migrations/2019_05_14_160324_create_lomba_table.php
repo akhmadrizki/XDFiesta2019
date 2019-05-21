@@ -15,7 +15,7 @@ class CreateLombaTable extends Migration
     {
         Schema::create('lomba', function (Blueprint $table) {
             $table->bigIncrements('id_lomba');
-            $table->string('judul')->unique();;
+            $table->string('judul')->unique();
             $table->mediumText('deskripsi')->nullable();
             $table->date('tanggal')->nullable();
             $table->string('lokasi')->nullable();
