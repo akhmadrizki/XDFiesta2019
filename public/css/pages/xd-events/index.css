@@ -11,7 +11,13 @@
     width: 100%;
     margin-bottom: 20px;
     padding: 30px;
+    transition: all 0.3s ease-in-out;
 } 
+
+.border-box:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
 
 .xd-event-description p:nth-child(1){
     font-size: 18px;
@@ -46,6 +52,22 @@
     padding: 0 10px 0 0;
 }
 
+.xd-event-information-download-btn{
+    border-radius:6px;
+    background-color: #70A6DC;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 5px;
+    
+}
+
+.xd-event-information-text{
+    margin-top: 40px;
+    text-align: center;
+}
+
 .xd-event-term p:first-child{
     font-family: Sarabun;
     font-size: 24px;
@@ -69,12 +91,24 @@
     border-radius: 6px;
     border: 1px solid #ddd;
     outline: none;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 15px;
 }
 
-.xd-event-register p{
+.xd-event-register form .input-text:focus{
+    border-color: #70A6DC;
+}
+
+.xd-event-register-mainTitle{
     font-size: 24px;
     font-family: Sarabun;
     margin-bottom: 20px;
+}
+
+.xd-event-register-subTitle{
+    font-size: 15px;
+    font-family: Roboto;
+    margin-bottom: 5px;
 }
 
 .xd-event-register .col-4 button:last-child{
@@ -87,6 +121,7 @@
     color: #ffffff;
     border: none;
     padding: 5px 10px 5px 10px;
+    cursor: pointer;
 }
 
 .reset-button{
@@ -96,14 +131,7 @@
     padding: 5px 10px 5px 10px;
     background-color: #ffffff;
     margin-left: 30px;
-}
-.reset-button{
-    border-radius:6px;
-    border:1px solid #70A6DC;
-    color: #70A6DC;
-    padding: 5px 10px 5px 10px;
-    background-color: #ffffff;
-    
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 992px) {
@@ -111,6 +139,7 @@
         margin-left: 0px;
     }
 }
+
 
 
 
