@@ -18,49 +18,56 @@
 				<div class="col-lg-6 col-12">
 					<div class="xd-event-description border-box">
 						<p>COMPETITION</p>
-						<p>PUBG Mobile Competition</p>
+						<p>PUBG Mobile Tournament Online</p>
 						<p>
-							Lorem ipsum, dolor sit amet 
-							consectetur adipisicing elit. 
-							Ipsam dignissimos voluptas, 
-							explicabo sunt alias inventore doloremque 
-							quasi pariatur quas aspernatur!
+							Tunjukan strategi teammu dalam bermain game mobile, dan 
+							menangkan hadiahnya!
 						</p>
 					</div>
 
 					<!-- Informasi tentang lomba ditulis disini -->
 					<div class="xd-event-information border-box">
-						<p>Information</p>
+						<p>Information :</p>
 						<table>
 							<tr>
-								<td>Tanggal acara</td>
+								<td>Waktu acara</td>
 								<td>:</td>
-								<td>23 November 2019</td>
+								<td>Selasa, 9 Juli s/d Minggu, 14 Juli 2019</td>
 							</tr>
 							<tr>
 								<td>Lokasi acara</td>
 								<td>:</td>
-								<td>Kertalangu, Denpasar</td>
+								<td>Dilaksanakan Online</td>
 							</tr>
 							<tr>
-								<td>Penyelenggara</td>
+								<td>Tecnical Meeting</td>
 								<td>:</td>
-								<td>STMIK Primakara</td>
+								<td>Minggu, 30 Juni 2019</td>
 							</tr>
 							<tr>
 								<td>Contact</td>
 								<td>:</td>
-								<td>Wahyu Surya (082144676545)</td>
+								<td>Devi (085 960 500 944)</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>Yurina (0831 1969 4259)</td>
 							</tr>
 							<tr>
 								<td>Hadiah</td>
 								<td>:</td>
-								<td>Uang tunai + Trofi</td>
+								<td>Juara I (Sertifikat + Rp7000k)</td>
 							</tr>
 							<tr>
-								<td>Waktu acara</td>
-								<td>:</td>
-								<td>17.00PM - 22.00PM </td>
+								<td></td>
+								<td></td>
+								<td>Juara II (Sertifikat + Rp5000k)</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>Juara III (Sertifikat + Rp3000k)</td>
 							</tr>
 						</table>
 					</div>
@@ -69,52 +76,51 @@
 				<div class="col-lg-6 col-12">
 					<!-- Syarat dan Ketentuan lomba ditulis disini -->
 					<div class="xd-event-term border-box">
-						<p>Syarat & Ketentuan</p>
+						<p>Persyaratan Pendaftaran :</p>
 						<ol style="padding-left: 20px !important;">
 							<li>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-								Consectetur, quam aliquid odit mollitia consequatur 
-								explicabo pariatur expedita doloremque sequi.
+								Peserta merupakan pemain PUBG di 
+								kalangan umum yang berkomitmen mengikuti lomba.
 							</li>
 							<li>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-								Consectetur, quam aliquid odit mollitia consequatur 
-								explicabo pariatur expedita doloremque sequi.
+								Pendaftar wajib mendaftarkan tidak lebih dan kurang dari 4 Orang 
+								untuk bertanding dan 1 orang sebagai cadangan  dalam 1 Squad/Team.
 							</li>
 							<li>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-								Consectetur, quam aliquid odit mollitia consequatur 
-								explicabo pariatur expedita doloremque sequi.
+								Setiap leader wajib memiliki akun discord dengan profil 
+								((namapanggilan)_(nama tim)).
 							</li>
+							<li>
+								Leader wajib memberikan data diri tim
+								(Nickname PUBG) untuk menghindari akun palsu.
+							</li>
+							<li>
+								Peserta yang sudah terdaftar akan diundang ke dalam grup WA.
+							</li>
+							<p class="xd-event-information-text"><b>Download Ketentuan & Kriterian Penilaian:</b></p>
+							<div style="text-align: center;">
+								<button class="xd-event-information-download-btn">
+									<span>DOWNLOAD</span>
+								</button>
+							</div>
 						</ol>
 					</div>
 
 					<!-- Form pendaftaran lomba ditulis disini -->
 					<div class="xd-event-register border-box">
-						<p>Form Pendaftaran</p>
+						<p class="xd-event-register-mainTitle">Form Pendaftaran :</p>
 						<form action="">
 							<div class="row">
-								<div class="col-6">
-									<input type="text" name="" placeholder="Data Satu" class="input-text">
-								</div>
-								<div class="col-6">
-										<input type="text" name="" placeholder="Data Dua" class="input-text">
-								</div>
-							</div>
-							<div class="row">
 								<div class="col-12">
-									<input type="text" name="" placeholder="Data Tiga" class="input-text">
+									<p class="xd-event-register-subTitle">&nbspAlamat Email : </p>
+									<input type="text" name="" placeholder="example@email.com" class="input-text">
+									<p class="xd-event-register-subTitle">&nbspNama Team : </p>
+									<input type="text" name="" placeholder="ex: RRQ" class="input-text">
+									<p class="xd-event-register-subTitle">&nbspNama Ketua : </p>
+									<input type="text" name="" placeholder="ex: Steven “Marsha” Kurniawan" class="input-text">
+									<p class="xd-event-register-subTitle">&nbspNo Whatsapp : </p>
+									<input type="text" name="" placeholder="08212345678" class="input-text">
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-6">
-									<input type="text" name="" placeholder="Data Empat" class="input-text">
-								</div>
-								<div class="col-6">
-										<input type="text" name="" placeholder="Data Lima" class="input-text">
-								</div>
-							</div>
-							<div class="row">
 								<div class="offset-lg-7"></div>
 								<div class="col-lg-5 col-12 justify-content-center">
 									<button class="reset-button">
@@ -127,6 +133,7 @@
 							</div>
 						</form>
 					</div>
+
 				</div>
 			</div>
 		</div>	

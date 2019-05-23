@@ -52,6 +52,22 @@
     padding: 0 10px 0 0;
 }
 
+.xd-event-information-download-btn{
+    border-radius:6px;
+    background-color: #70A6DC;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 5px;
+    
+}
+
+.xd-event-information-text{
+    margin-top: 40px;
+    text-align: center;
+}
+
 .xd-event-term p:first-child{
     font-family: Sarabun;
     font-size: 24px;
@@ -76,16 +92,23 @@
     border: 1px solid #ddd;
     outline: none;
     transition: all 0.3s ease-in-out;
+    margin-bottom: 15px;
 }
 
 .xd-event-register form .input-text:focus{
     border-color: #70A6DC;
 }
 
-.xd-event-register p{
+.xd-event-register-mainTitle{
     font-size: 24px;
     font-family: Sarabun;
     margin-bottom: 20px;
+}
+
+.xd-event-register-subTitle{
+    font-size: 15px;
+    font-family: Roboto;
+    margin-bottom: 5px;
 }
 
 .xd-event-register .col-4 button:last-child{
