@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Content;
 
 use Illuminate\Http\Request;
 use App\Lomba;
-use App\Syarat;
-use App\Http\Controllers\Controller;
+use App\Hadiah;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
-class SyaratController extends Controller
+class HadiahController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class SyaratController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -27,10 +27,10 @@ class SyaratController extends Controller
      */
     public function create()
     {
-        $lomba=DB::select('SELECT * FROM lomba ORDER BY id_lomba DESC LIMIT 1');
-        $inisyarat=Syarat::where('id_lomba',$lomba[0]->id_lomba)->get();
-        return view('admin.syarat.create')->with('lomba',$lomba[0])->with('inisyarat',$inisyarat)
-        ->with('next','next');
+        $inilomba=DB::select('SELECT * FROM lomba ORDER BY id_lomba DESC LIMIT 1');
+        $inihadiah=Hadiah::where('id_lomba',$inilomba[0]->id_lomba)->get();
+        return view('admin.hadiah.create')->with('lomba',$inilomba[0])
+        ->with('inihadiah',$inihadiah);
     }
 
     /**
@@ -41,14 +41,13 @@ class SyaratController extends Controller
      */
     public function store(Request $request)
     {
-        $syarat=new Syarat;
-        $syarat->id_lomba = $request->get('id_lomba');
-        $syarat->deskripsi = $request->get('deskripsi');
-        $syarat->save();
-        if($request->get('next')=="next")
-        return redirect()->action('Content\SyaratController@create');
-        elseif($request->get('next')=="show")
-        return redirect()->action('Content\SyaratController@show',$request->get('id_lomba'));
+        $hadiah=new Hadiah;
+        $hadiah->id_lomba = $request->get('id_lomba');
+        $hadiah->deskripsi = $request->get('deskripsi');
+        $hadiah->save();
+        if($request->get('next')=="show")
+        return redirect()->action('Content\HadiahController@show',$request->get('id_lomba'));
+        return redirect()->action('Content\HadiahController@create');
     }
 
     /**
@@ -60,8 +59,8 @@ class SyaratController extends Controller
     public function show($id)
     {
         $lomba=Lomba::where('id_lomba',$id)->get();
-        $syarat=Syarat::where('id_lomba',$id)->get();
-        return view('admin.syarat.create')->with('lomba',$lomba[0])->with('inisyarat',$syarat)
+        $hadiah=Hadiah::where('id_lomba',$id)->get();
+        return view('admin.hadiah.create')->with('lomba',$lomba[0])->with('inihadiah',$hadiah)
         ->with('next','show');
     }
 
@@ -73,10 +72,10 @@ class SyaratController extends Controller
      */
     public function edit($id)
     {
-        $syarat = Syarat::where('id_syarat',$id)->get();
-        $idlomba = $syarat[0]->id_lomba;
+        $hadiah = Hadiah::where('id_hadiah',$id)->get();
+        $idlomba = $hadiah[0]->id_lomba;
         $lomba = Lomba::where('id_lomba',$idlomba)->get();
-        return view('admin.syarat.edit')->with('lomba',$lomba[0])->with('syarat',$syarat[0]);
+        return view('admin.hadiah.edit')->with('lomba',$lomba[0])->with('hadiah',$hadiah[0]);
     }
 
     /**
@@ -89,8 +88,8 @@ class SyaratController extends Controller
     public function update(Request $request)
     {
         $id_lomba=$request->get('id_lomba');
-        $id_syarat=$request->get('id_syarat');
-        Syarat::where('id_syarat',$id_syarat)->update(
+        $id_hadiah=$request->get('id_hadiah');
+        Hadiah::where('id_hadiah',$id_hadiah)->update(
             [
                 'deskripsi'=>$request->get('deskripsi')
             ]
@@ -106,10 +105,10 @@ class SyaratController extends Controller
      */
     public function destroy($id)
     {
-        $syarat = Syarat::where('id_syarat',$id)->get();
-        $idlomba=$syarat[0]->id_lomba;
-        $dsyarat = Syarat::where('id_syarat',$id);
-        $dsyarat->delete();
+        $hadiah = Hadiah::where('id_hadiah',$id)->get();
+        $idlomba=$hadiah[0]->id_lomba;
+        $dhadiah = Hadiah::where('id_hadiah',$id);
+        $dhadiah->delete();
         return redirect()->action('Content\LombaController@show',$idlomba);
     }
 }

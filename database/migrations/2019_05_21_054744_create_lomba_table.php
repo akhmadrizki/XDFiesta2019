@@ -17,12 +17,7 @@ class CreateLombaTable extends Migration
             $table->bigIncrements('id_lomba');
             $table->string('judul')->unique();
             $table->mediumText('deskripsi')->nullable();
-            $table->date('tanggal')->nullable();
-            $table->string('lokasi')->nullable();
-            $table->string('penyelenggara')->nullable();
-            $table->double('hadiah', 8, 2)->nullable();
-            $table->string('waktu')->nullable();
-            $table->string('pic');
+            $table->string('pic')->nullable();
             $table->timestamps();
         });
     }

@@ -7,7 +7,6 @@
 
 <div class="section-body">
     <div>
-    {{session()->get('success')}}  
     </div>
     <div class="card">
     <div class="card-body">
@@ -15,7 +14,7 @@
         @foreach($lomba as $lword)
             <div style="display:flex">
                 <div style="padding:10px">
-                    <a href="{{route('lomba.update', $lword->id_lomba)}}">
+                    <a href="{{action('Content\LombaController@show',$lword->id_lomba)}}">
                     <img src="{{url('uploads/'.$lword->pic)}}" width="200px"/><br>
                     <h6 style="text-align:center">{{$lword->judul}}</h6></a>
                 </div>

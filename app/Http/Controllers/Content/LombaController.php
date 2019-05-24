@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Content;
 use Illuminate\Http\Request;
 use App\Lomba;
 use App\Syarat;
+use App\KetentuanPeserta;
+use App\Penilaian;
+use App\WaktuTempat;
+use App\Hadiah;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -43,18 +47,8 @@ class LombaController extends Controller
     {  
         $pic=$request->file('pic');
         $lomba = new Lomba;
-        $judul=$request->get('judul');
-        $count =count(Lomba::where('judul',$judul)->get());
-        if($count>0){
-            return view('admin.lomba.create')->with('sama','Terdapat lomba yang sama, silahkan coba lagi');
-        }
         $lomba->judul = $request->get('judul');
         $lomba->deskripsi = $request->get('deskripsi');
-        $lomba->tanggal = $request->get('tanggal');
-        $lomba->lokasi = $request->get('lokasi');
-        $lomba->penyelenggara = $request->get('penyelenggara');
-        $lomba->hadiah = $request->get('hadiah');
-        $lomba->waktu = $request->get('waktu');
         if($pic!=null){
         $extension=$pic->getClientOriginalExtension();
         $name = $request->judul;
@@ -62,8 +56,6 @@ class LombaController extends Controller
         $lomba->pic = $name.'.'.$extension;
         }
         $lomba->save();
-        $inilomba=DB::select('SELECT * FROM lomba ORDER BY id_lomba DESC LIMIT 1');
-        $id_lomba=$inilomba[0]->id_lomba;
         return redirect()->action('Content\SyaratController@create');
     }
 
@@ -77,7 +69,13 @@ class LombaController extends Controller
     {
         $lomba = Lomba::where('id_lomba',$id)->get();
         $syarat = Syarat::where('id_lomba',$id)->get();
-        return view('admin.lomba.show')->with('lomba',$lomba)->with('syarat',$syarat);
+        $ketentuan = KetentuanPeserta::where('id_lomba',$id)->get();
+        $penilaian = Penilaian::where('id_lomba',$id)->get();
+        $waktu = WaktuTempat::where('id_lomba',$id)->get();
+        $hadiah = Hadiah::where('id_lomba',$id)->get();
+        return view('admin.lomba.show')->with('lomba',$lomba[0])->with('syarat',$syarat)
+        ->with('ketentuan',$ketentuan)->with('penilaian',$penilaian)->with('waktu',$waktu[0])
+        ->with('hadiah',$hadiah);
     }
 
     /**
@@ -89,7 +87,7 @@ class LombaController extends Controller
     public function edit($id)
     {
         $lomba = Lomba::where('id_lomba',$id)->get();
-        return view('admin.lomba.edit')->with('lomba',$lomba);
+        return view('admin.lomba.edit')->with('lomba',$lomba[0]);
     }
 
     /**
@@ -111,11 +109,6 @@ class LombaController extends Controller
             [
                 'judul'=>$request->get('judul'),
                 'deskripsi'=>$request->get('deskripsi'),
-                'tanggal'=>$request->get('tanggal'),
-                'lokasi'=>$request->get('lokasi'),
-                'penyelenggara'=>$request->get('penyelenggara'),
-                'hadiah'=>$request->get('hadiah'),
-                'waktu'=>$request->get('waktu'),
                 'pic'=>$name.'.'.$extension
             ]
         );
@@ -124,18 +117,11 @@ class LombaController extends Controller
         Lomba::where('id_lomba',$id)->update(
             [
                 'judul'=>$request->get('judul'),
-                'deskripsi'=>$request->get('deskripsi'),
-                'tanggal'=>$request->get('tanggal'),
-                'lokasi'=>$request->get('lokasi'),
-                'penyelenggara'=>$request->get('penyelenggara'),
-                'hadiah'=>$request->get('hadiah'),
-                'waktu'=>$request->get('waktu')
+                'deskripsi'=>$request->get('deskripsi')
             ]
         );
         }
-        $lomba = Lomba::where('id_lomba',$id)->get();
-        $syarat = Syarat::where('id_lomba',$id)->get();
-        return view('admin.lomba.show')->with('lomba',$lomba)->with('syarat',$syarat);
+        return redirect()->action('Content\LombaController@show',$id);
     }
 
     /**

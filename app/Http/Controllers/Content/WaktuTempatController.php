@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Content;
 
 use Illuminate\Http\Request;
 use App\Lomba;
-use App\Syarat;
-use App\Http\Controllers\Controller;
+use App\WaktuTempat;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
-class SyaratController extends Controller
+class WaktuTempatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,10 +27,10 @@ class SyaratController extends Controller
      */
     public function create()
     {
-        $lomba=DB::select('SELECT * FROM lomba ORDER BY id_lomba DESC LIMIT 1');
-        $inisyarat=Syarat::where('id_lomba',$lomba[0]->id_lomba)->get();
-        return view('admin.syarat.create')->with('lomba',$lomba[0])->with('inisyarat',$inisyarat)
-        ->with('next','next');
+        $inilomba=DB::select('SELECT * FROM lomba ORDER BY id_lomba DESC LIMIT 1');
+        $iniwaktu=WaktuTempat::where('id_lomba',$inilomba[0]->id_lomba)->get();
+        return view('admin.waktu_tempat.create')->with('lomba',$inilomba[0])
+        ->with('iniwaktu',$iniwaktu)->with('next','next');
     }
 
     /**
@@ -41,14 +41,14 @@ class SyaratController extends Controller
      */
     public function store(Request $request)
     {
-        $syarat=new Syarat;
-        $syarat->id_lomba = $request->get('id_lomba');
-        $syarat->deskripsi = $request->get('deskripsi');
-        $syarat->save();
-        if($request->get('next')=="next")
-        return redirect()->action('Content\SyaratController@create');
-        elseif($request->get('next')=="show")
-        return redirect()->action('Content\SyaratController@show',$request->get('id_lomba'));
+        $waktu=new WaktuTempat;
+        $waktu->id_lomba = $request->get('id_lomba');
+        $waktu->tm = $request->get('tm');
+        $waktu->tempat_tm = $request->get('tempat_tm');
+        $waktu->tempat = $request->get('tempat');
+        $waktu->waktu = $request->get('waktu');
+        $waktu->save();
+        return redirect()->action('Content\HadiahController@create');
     }
 
     /**
@@ -60,8 +60,8 @@ class SyaratController extends Controller
     public function show($id)
     {
         $lomba=Lomba::where('id_lomba',$id)->get();
-        $syarat=Syarat::where('id_lomba',$id)->get();
-        return view('admin.syarat.create')->with('lomba',$lomba[0])->with('inisyarat',$syarat)
+        $waktu=WaktuTempat::where('id_lomba',$id)->get();
+        return view('admin.waktu_tempat.create')->with('lomba',$lomba[0])->with('iniwaktu',$waktu)
         ->with('next','show');
     }
 
@@ -73,10 +73,10 @@ class SyaratController extends Controller
      */
     public function edit($id)
     {
-        $syarat = Syarat::where('id_syarat',$id)->get();
-        $idlomba = $syarat[0]->id_lomba;
+        $waktu = WaktuTempat::where('id_waktu_tempat',$id)->get();
+        $idlomba = $waktu[0]->id_lomba;
         $lomba = Lomba::where('id_lomba',$idlomba)->get();
-        return view('admin.syarat.edit')->with('lomba',$lomba[0])->with('syarat',$syarat[0]);
+        return view('admin.waktu_tempat.edit')->with('lomba',$lomba[0])->with('waktu',$waktu[0]);
     }
 
     /**
@@ -89,10 +89,13 @@ class SyaratController extends Controller
     public function update(Request $request)
     {
         $id_lomba=$request->get('id_lomba');
-        $id_syarat=$request->get('id_syarat');
-        Syarat::where('id_syarat',$id_syarat)->update(
+        $id_waktu=$request->get('id_waktu');
+        WaktuTempat::where('id_waktu_tempat',$id_waktu)->update(
             [
-                'deskripsi'=>$request->get('deskripsi')
+                'tm'=>$request->get('tm'),
+                'tempat_tm'=>$request->get('tempat_tm'),
+                'waktu'=>$request->get('waktu'),
+                'tempat'=>$request->get('tempat'),
             ]
         );
         return redirect()->action('Content\LombaController@show',$id_lomba);
@@ -106,10 +109,6 @@ class SyaratController extends Controller
      */
     public function destroy($id)
     {
-        $syarat = Syarat::where('id_syarat',$id)->get();
-        $idlomba=$syarat[0]->id_lomba;
-        $dsyarat = Syarat::where('id_syarat',$id);
-        $dsyarat->delete();
-        return redirect()->action('Content\LombaController@show',$idlomba);
+        //
     }
 }

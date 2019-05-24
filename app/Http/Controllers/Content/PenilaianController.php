@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Content;
 
 use Illuminate\Http\Request;
 use App\Lomba;
-use App\Syarat;
-use App\Http\Controllers\Controller;
+use App\Penilaian;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
-class SyaratController extends Controller
+class PenilaianController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,10 +27,10 @@ class SyaratController extends Controller
      */
     public function create()
     {
-        $lomba=DB::select('SELECT * FROM lomba ORDER BY id_lomba DESC LIMIT 1');
-        $inisyarat=Syarat::where('id_lomba',$lomba[0]->id_lomba)->get();
-        return view('admin.syarat.create')->with('lomba',$lomba[0])->with('inisyarat',$inisyarat)
-        ->with('next','next');
+        $inilomba=DB::select('SELECT * FROM lomba ORDER BY id_lomba DESC LIMIT 1');
+        $inipenilaian=Penilaian::where('id_lomba',$inilomba[0]->id_lomba)->get();
+        return view('admin.penilaian.create')->with('lomba',$inilomba[0])
+        ->with('inipenilaian',$inipenilaian)->with('next','next');
     }
 
     /**
@@ -41,14 +41,14 @@ class SyaratController extends Controller
      */
     public function store(Request $request)
     {
-        $syarat=new Syarat;
-        $syarat->id_lomba = $request->get('id_lomba');
-        $syarat->deskripsi = $request->get('deskripsi');
-        $syarat->save();
+        $penilaian=new Penilaian;
+        $penilaian->id_lomba = $request->get('id_lomba');
+        $penilaian->deskripsi = $request->get('deskripsi');
+        $penilaian->save();
         if($request->get('next')=="next")
-        return redirect()->action('Content\SyaratController@create');
+        return redirect()->action('Content\PenilaianController@create');
         elseif($request->get('next')=="show")
-        return redirect()->action('Content\SyaratController@show',$request->get('id_lomba'));
+        return redirect()->action('Content\PenilaianController@show',$request->get('id_lomba'));
     }
 
     /**
@@ -60,8 +60,8 @@ class SyaratController extends Controller
     public function show($id)
     {
         $lomba=Lomba::where('id_lomba',$id)->get();
-        $syarat=Syarat::where('id_lomba',$id)->get();
-        return view('admin.syarat.create')->with('lomba',$lomba[0])->with('inisyarat',$syarat)
+        $penilaian=Penilaian::where('id_lomba',$id)->get();
+        return view('admin.penilaian.create')->with('lomba',$lomba[0])->with('inipenilaian',$penilaian)
         ->with('next','show');
     }
 
@@ -73,10 +73,10 @@ class SyaratController extends Controller
      */
     public function edit($id)
     {
-        $syarat = Syarat::where('id_syarat',$id)->get();
-        $idlomba = $syarat[0]->id_lomba;
+        $penilaian = Penilaian::where('id_penilaian',$id)->get();
+        $idlomba = $penilaian[0]->id_lomba;
         $lomba = Lomba::where('id_lomba',$idlomba)->get();
-        return view('admin.syarat.edit')->with('lomba',$lomba[0])->with('syarat',$syarat[0]);
+        return view('admin.penilaian.edit')->with('lomba',$lomba[0])->with('penilaian',$penilaian[0]);
     }
 
     /**
@@ -89,12 +89,14 @@ class SyaratController extends Controller
     public function update(Request $request)
     {
         $id_lomba=$request->get('id_lomba');
-        $id_syarat=$request->get('id_syarat');
-        Syarat::where('id_syarat',$id_syarat)->update(
+        $id_penilaian=$request->get('id_penilaian');
+        Penilaian::where('id_penilaian',$id_penilaian)->update(
             [
                 'deskripsi'=>$request->get('deskripsi')
             ]
         );
+        $lomba = Lomba::where('id_lomba',$id_lomba)->get();
+        $penilaian = Penilaian::where('id_lomba',$id_lomba)->get();
         return redirect()->action('Content\LombaController@show',$id_lomba);
     }
 
@@ -106,10 +108,10 @@ class SyaratController extends Controller
      */
     public function destroy($id)
     {
-        $syarat = Syarat::where('id_syarat',$id)->get();
-        $idlomba=$syarat[0]->id_lomba;
-        $dsyarat = Syarat::where('id_syarat',$id);
-        $dsyarat->delete();
+        $penilaian = Penilaian::where('id_penilaian',$id)->get();
+        $idlomba=$penilaian[0]->id_lomba;
+        $dpenilaian = Penilaian::where('id_penilaian',$id);
+        $dpenilaian->delete();
         return redirect()->action('Content\LombaController@show',$idlomba);
     }
 }

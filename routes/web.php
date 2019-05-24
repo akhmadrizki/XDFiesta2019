@@ -72,8 +72,16 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::get('/dashboard/list', 'Dashboard\DashboardController@list');
 	Route::resource('/dashboard/lomba','Content\LombaController');
 	Route::resource('/dashboard/syarat','Content\SyaratController');
+	Route::resource('/dashboard/hadiah','Content\HadiahController');
+	Route::resource('/dashboard/ketentuan_peserta','Content\KetentuanPesertaController');
+	Route::resource('/dashboard/penilaian','Content\PenilaianController');
+	Route::resource('/dashboard/waktu_tempat','Content\WaktuTempatController');
 	Route::post('/dashboard/lomba/update','Content\LombaController@update');
 	Route::post('/dashboard/syarat/update','Content\SyaratController@update');
+	Route::post('/dashboard/hadiah/update','Content\HadiahController@update');
+	Route::post('/dashboard/ketentuan_peserta/update','Content\KetentuanPesertaController@update');
+	Route::post('/dashboard/penilaian/update','Content\PenilaianController@update');
+	Route::post('/dashboard/waktu_tempat/update','Content\WaktuTempatController@update');
 	// Auth::routes();
 });
 

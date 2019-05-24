@@ -16,7 +16,7 @@ class CreateSyaratTable extends Migration
         Schema::create('syarat', function (Blueprint $table) {
             $table->bigIncrements('id_syarat');
             $table->integer('id_lomba');
-            $table->mediumText('deskripsi');
+            $table->mediumText('deskripsi')->nullable();
             $table->timestamps();
         });
     }
