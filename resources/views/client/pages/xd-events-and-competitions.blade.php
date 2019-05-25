@@ -63,7 +63,7 @@
 											<h2 class="card-title">Mobile Legends Competition</h2>
 											<p class="card-date">Tuesday, 23 November 2019</p>
 										</div>
-										<a href="/xd-events-and-competitions/mobile-legends-online" class="card-action">See Details</a>
+										<a href="/xd-events-and-competitions/mobile-legends" class="card-action">See Details</a>
 									</div>
 								</div>
 							</div>
