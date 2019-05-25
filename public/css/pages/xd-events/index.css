@@ -52,7 +52,7 @@
     padding: 0 10px 0 0;
 }
 
-.xd-event-information-download-btn{
+.xd-event-term-download-btn{
     border-radius:6px;
     background-color: #70A6DC;
     color: #ffffff;
@@ -63,7 +63,7 @@
     
 }
 
-.xd-event-information-text{
+.xd-event-term-text{
     margin-top: 40px;
     text-align: center;
 }

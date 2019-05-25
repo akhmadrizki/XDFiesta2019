@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
 <section class="xd-event">
 	<!-- Gambar lomba dimasukkan disini -->
 		<div class="xd-event-imageBanner">
@@ -17,49 +18,56 @@
 				<div class="col-lg-6 col-12">
 					<div class="xd-event-description border-box">
 						<p>COMPETITION</p>
-						<p>Acoustic Competition</p>
+						<p>Lomba Musik Akustik</p>
 						<p>
-							Lorem ipsum, dolor sit amet 
-							consectetur adipisicing elit. 
-							Ipsam dignissimos voluptas, 
-							explicabo sunt alias inventore doloremque 
-							quasi pariatur quas aspernatur!
+							Tunjukkan kekompakan team kalian dalam menampilkan sebuah lagu dan pukau
+							para penikmat musik!
 						</p>
 					</div>
 
 					<!-- Informasi tentang lomba ditulis disini -->
 					<div class="xd-event-information border-box">
-						<p>Information</p>
+						<p>Information :</p>
 						<table>
 							<tr>
-								<td>Tanggal acara</td>
+								<td>Waktu acara</td>
 								<td>:</td>
-								<td>23 November 2019</td>
+								<td><i>Coming Soon</i></td>
 							</tr>
 							<tr>
 								<td>Lokasi acara</td>
 								<td>:</td>
-								<td>Kertalangu, Denpasar</td>
+								<td><i>Coming Soon</i></td>
 							</tr>
 							<tr>
-								<td>Penyelenggara</td>
+								<td>Tecnical Meeting</td>
 								<td>:</td>
-								<td>STMIK Primakara</td>
+								<td><i>Coming Soon</i></td>
 							</tr>
 							<tr>
 								<td>Contact</td>
 								<td>:</td>
-								<td>Wahyu Surya (082144676545)</td>
+								<td>Devi (085 960 500 944)</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>Yurina (0831 1969 4259)</td>
 							</tr>
 							<tr>
 								<td>Hadiah</td>
 								<td>:</td>
-								<td>Uang tunai + Trofi</td>
+								<td>Juara I (Sertifikat + Rp1000k)</td>
 							</tr>
 							<tr>
-								<td>Waktu acara</td>
-								<td>:</td>
-								<td>17.00PM - 22.00PM </td>
+								<td></td>
+								<td></td>
+								<td>Juara II (Sertifikat + Rp750k)</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>Juara III (Sertifikat + Rp500k)</td>
 							</tr>
 						</table>
 					</div>
@@ -68,52 +76,50 @@
 				<div class="col-lg-6 col-12">
 					<!-- Syarat dan Ketentuan lomba ditulis disini -->
 					<div class="xd-event-term border-box">
-						<p>Syarat & Ketentuan</p>
+						<p>Persyaratan Pendaftaran :</p>
 						<ol style="padding-left: 20px !important;">
 							<li>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-								Consectetur, quam aliquid odit mollitia consequatur 
-								explicabo pariatur expedita doloremque sequi.
+								Lomba diselelnggarakan untuk umum.
 							</li>
 							<li>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-								Consectetur, quam aliquid odit mollitia consequatur 
-								explicabo pariatur expedita doloremque sequi.
+								Peserta diwajibkan melampirkan fotocopy kartu pelajar/KTP.
 							</li>
 							<li>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-								Consectetur, quam aliquid odit mollitia consequatur 
-								explicabo pariatur expedita doloremque sequi.
+								Satu team terdiri dari 3-5 orang.
 							</li>
+							<li>
+								Mengisi formulir pendaftaran dan membayar biaya pedaftaran.
+							</li>
+							<li>
+								Panitia berhak mendiskualifikasi peserta yang dianggap tidak 
+								memenuhi persyaratan yang ditentukan..
+							</li>
+							<p class="xd-event-term-text"><b>Download Ketentuan & Kriterian Penilaian:</b></p>
+							<div style="text-align: center;">
+								<button class="xd-event-term-download-btn">
+									<span>DOWNLOAD</span>
+								</button>
+							</div>
 						</ol>
 					</div>
 
 					<!-- Form pendaftaran lomba ditulis disini -->
 					<div class="xd-event-register border-box">
-						<p>Form Pendaftaran</p>
+						<p class="xd-event-register-mainTitle">Form Pendaftaran :</p>
 						<form action="">
 							<div class="row">
-								<div class="col-6">
-									<input type="text" name="" placeholder="Data Satu" class="input-text">
-								</div>
-								<div class="col-6">
-										<input type="text" name="" placeholder="Data Dua" class="input-text">
-								</div>
-							</div>
-							<div class="row">
 								<div class="col-12">
-									<input type="text" name="" placeholder="Data Tiga" class="input-text">
+									<p class="xd-event-register-subTitle">&nbspAlamat Email : </p>
+									<input type="text" name="" placeholder="example@email.com" class="input-text">
+									<p class="xd-event-register-subTitle">&nbspNama Band : </p>
+									<input type="text" name="" placeholder="ex: TheSong" class="input-text">
+									<p class="xd-event-register-subTitle">&nbspNama Ketua Band : </p>
+									<input type="text" name="" placeholder="ex: Kurniawan" class="input-text">
+									<p class="xd-event-register-subTitle">&nbspNo Whatsapp : </p>
+									<input type="text" name="" placeholder="082123456789" class="input-text">
+									<p class="xd-event-register-subTitle">&nbspJumlah Anggota Band : </p>
+									<input type="text" name="" placeholder="Max = 5 orang" class="input-text">
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-6">
-									<input type="text" name="" placeholder="Data Empat" class="input-text">
-								</div>
-								<div class="col-6">
-										<input type="text" name="" placeholder="Data Lima" class="input-text">
-								</div>
-							</div>
-							<div class="row">
 								<div class="offset-lg-7"></div>
 								<div class="col-lg-5 col-12 justify-content-center">
 									<button class="reset-button">
@@ -126,8 +132,11 @@
 							</div>
 						</form>
 					</div>
+
 				</div>
 			</div>
 		</div>	
 	</section>
+	
+
 @endsection

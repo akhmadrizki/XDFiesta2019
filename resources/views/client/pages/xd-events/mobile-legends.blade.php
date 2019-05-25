@@ -18,9 +18,9 @@
 				<div class="col-lg-6 col-12">
 					<div class="xd-event-description border-box">
 						<p>COMPETITION</p>
-						<p>PUBG Mobile Tournament Online</p>
+						<p>Mobile Legend Online</p>
 						<p>
-							Tunjukan strategi teammu dalam bermain game mobile, dan 
+							Tunjukan kelihaian serta strategi teammu dalam bermain Mobile Legend, dan 
 							menangkan hadiahnya!
 						</p>
 					</div>
@@ -32,7 +32,7 @@
 							<tr>
 								<td>Waktu acara</td>
 								<td>:</td>
-								<td>Selasa, 9 Juli s/d Minggu, 14 Juli 2019</td>
+								<td>Selasa, 2 Juli s/d Minggu, 7 Juli 2019</td>
 							</tr>
 							<tr>
 								<td>Lokasi acara</td>
@@ -42,7 +42,7 @@
 							<tr>
 								<td>Tecnical Meeting</td>
 								<td>:</td>
-								<td>Minggu, 30 Juni 2019</td>
+								<td>Sabtu, 29 Juni 2019 (melalui Discord)</td>
 							</tr>
 							<tr>
 								<td>Contact</td>
@@ -57,17 +57,17 @@
 							<tr>
 								<td>Hadiah</td>
 								<td>:</td>
-								<td>Juara I (Sertifikat + Rp7000k)</td>
+								<td>Juara I (Sertifikat + Rp5000k)</td>
 							</tr>
 							<tr>
 								<td></td>
 								<td></td>
-								<td>Juara II (Sertifikat + Rp5000k)</td>
+								<td>Juara II (Sertifikat + Rp3000k)</td>
 							</tr>
 							<tr>
 								<td></td>
 								<td></td>
-								<td>Juara III (Sertifikat + Rp3000k)</td>
+								<td>Juara III (Sertifikat + Rp2000k)</td>
 							</tr>
 						</table>
 					</div>
@@ -79,27 +79,23 @@
 						<p>Persyaratan Pendaftaran :</p>
 						<ol style="padding-left: 20px !important;">
 							<li>
-								Peserta merupakan pemain PUBG di 
+								Peserta merupakan pemain Mobile Legend di 
 								kalangan umum yang berkomitmen mengikuti lomba.
 							</li>
 							<li>
-								Pendaftar wajib mendaftarkan tidak lebih dan kurang dari 4 Orang 
-								untuk bertanding dan 1 orang sebagai cadangan  dalam 1 Squad/Team.
+								Peserta harus sudah melakukan prepare 5 menit sebelum lomba, meliputi koneksi, 
+								kelengkapan tim, dan lainnya agar lomba berjalan tepat waktu.
 							</li>
 							<li>
-								Setiap leader wajib memiliki akun discord dengan profil 
-								((namapanggilan)_(nama tim)).
+								Peserta wajib melakukan screen shoot pada saat mulai di arena 
+								untuk menghindari adanya cheat.
 							</li>
 							<li>
-								Leader wajib memberikan data diri tim
-								(Nickname PUBG) untuk menghindari akun palsu.
+								Peserta diwajibkan memiliki akun Discord.
 							</li>
-							<li>
-								Peserta yang sudah terdaftar akan diundang ke dalam grup WA.
-							</li>
-							<p class="xd-event-information-text"><b>Download Ketentuan & Kriterian Penilaian:</b></p>
+							<p class="xd-event-term-text"><b>Download Ketentuan & Kriterian Penilaian:</b></p>
 							<div style="text-align: center;">
-								<button class="xd-event-information-download-btn">
+								<button class="xd-event-term-download-btn">
 									<span>DOWNLOAD</span>
 								</button>
 							</div>
