@@ -18,8 +18,8 @@ class CreateWaktuTempatTable extends Migration
             $table->integer('id_lomba');
             $table->string('tm')->nullable();
             $table->string('tempat_tm')->nullable();
-            $table->string('tempat')->nullable();
             $table->string('waktu')->nullable();
+            $table->string('tempat')->nullable();
             $table->timestamps();
         });
     }

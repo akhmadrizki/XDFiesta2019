@@ -28,8 +28,8 @@ class KetentuanPesertaController extends Controller
     public function create()
     {
         $lomba=DB::select('SELECT * FROM lomba ORDER BY id_lomba DESC LIMIT 1');
-        $ketentuan=KetentuanPeserta::where('id_lomba',$inilomba[0]->id_lomba)->get();
-        return view('admin.ketentuan_peserta.create')->with('lomba',$inilomba[0])
+        $ketentuan=KetentuanPeserta::where('id_lomba',$lomba[0]->id_lomba)->get();
+        return view('admin.ketentuan_peserta.create')->with('lomba',$lomba[0])
         ->with('iniketentuan',$ketentuan)->with('next','next');
         
     }

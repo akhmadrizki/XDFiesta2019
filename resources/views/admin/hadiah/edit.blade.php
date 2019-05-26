@@ -12,7 +12,7 @@
     @csrf
     <input type="hidden" name="id_hadiah" value="{{$hadiah->id_hadiah}}">
     <input type="hidden" name="id_lomba" value="{{$lomba->id_lomba}}">
-    <h3>Hadiah {{$lomba->judul}} </h3><br/>
+    <h6>Hadiah {{$lomba->judul}} </h6><br/>
     <textarea name="deskripsi" class="summernote-simple" style="display: none;" >{{$lomba->deskripsi}}</textarea>
     <div class="text-right">
     <input type="submit" Value="Edit" class="btn btn-warning">

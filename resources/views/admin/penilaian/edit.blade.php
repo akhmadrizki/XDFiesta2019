@@ -12,7 +12,7 @@
     @csrf
     <input type="hidden" name="id_penilaian" value="{{$penilaian->id_penilaian}}">
     <input type="hidden" name="id_lomba" value="{{$lomba->id_lomba}}">
-    <h3>Kriteria Penilaian {{$lomba->judul}} </h3><br/>
+    <h6>Kriteria Penilaian {{$lomba->judul}}</h6><br/>
     <textarea name="deskripsi" class="summernote-simple" style="display: none;" >{{$penilaian->deskripsi}}</textarea>
     <div class="text-right">
     <input type="submit" value="Edit" class="btn btn-warning">

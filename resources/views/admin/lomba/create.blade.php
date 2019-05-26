@@ -20,6 +20,10 @@
                     <label>Header Picture</label><br>
                     <input type="file" name="pic">
                 </div>
+                <div class="form-group">
+                    <label>Thumbnail Picture</label><br>
+                    <input type="file" name="thumbnail">
+                </div>
                 <div class="card-footer text-right">
                     <input type="submit" value="Lanjut" class="btn btn-primary">
                 </div>

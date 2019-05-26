@@ -14,11 +14,9 @@
             <h6>Hadiah {{$lomba->judul}} </h6><br/>
             <textarea name="deskripsi" class="summernote-simple" style="display: none;" ></textarea>
             <div class="text-right">
-            @if($next=='show')
-            <input type="hidden" name="next" value="show">
-            @endif
             <input type="submit" value="Tambah" class="btn btn-success">
-            <a href="{{action('Content\LombaController@show',$lomba->id_lomba)}}" class="btn btn-primary">Selesai</a>
+            <a href="{{action('Content\LombaController@show',$lomba->id_lomba)}}" 
+            class="btn btn-primary">Selesai</a>
             </div>
         </form>
         </div>

@@ -18,6 +18,7 @@ class CreateLombaTable extends Migration
             $table->string('judul')->unique();
             $table->mediumText('deskripsi')->nullable();
             $table->string('pic')->nullable();
+            $table->string('thumbnail')->nullable();
             $table->timestamps();
         });
     }

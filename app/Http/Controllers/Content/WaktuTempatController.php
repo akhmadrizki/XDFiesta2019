@@ -48,7 +48,10 @@ class WaktuTempatController extends Controller
         $waktu->tempat = $request->get('tempat');
         $waktu->waktu = $request->get('waktu');
         $waktu->save();
+        if($request->get('next')=="next")
         return redirect()->action('Content\HadiahController@create');
+        elseif($request->get('next')=="show")
+        return redirect()->action('Content\LombaController@show',$request->get('id_lomba'));
     }
 
     /**

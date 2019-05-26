@@ -23,8 +23,13 @@ class LombaController extends Controller
      */
     public function index()
     {
-        $lomba =  Lomba::all();
-        return view('admin.lomba.index')->with('lomba',$lomba);
+        $data = DB::table('lomba')
+            ->select('lomba.id_lomba','lomba.judul','lomba.thumbnail','waktu_tempat.waktu')
+            ->leftJoin('waktu_tempat', 'lomba.id_lomba', '=', 'waktu_tempat.id_lomba')
+            ->get();
+        
+        return view('admin.lomba.index')
+        ->with('data',$data);
     }
 
     /**
@@ -46,14 +51,21 @@ class LombaController extends Controller
     public function store(Request $request)
     {  
         $pic=$request->file('pic');
+        $thumbnail=$request->file('thumbnail');
         $lomba = new Lomba;
         $lomba->judul = $request->get('judul');
         $lomba->deskripsi = $request->get('deskripsi');
         if($pic!=null){
-        $extension=$pic->getClientOriginalExtension();
-        $name = $request->judul;
-        Storage::disk('public')->put($name.'.'.$extension,  File::get($pic));
-        $lomba->pic = $name.'.'.$extension;
+            $extension=$pic->getClientOriginalExtension();
+            $name = $request->judul;
+            Storage::disk('public')->put($name.'.'.$extension,  File::get($pic));
+            $lomba->pic = $name.'.'.$extension;
+        }
+        if($thumbnail!=null){
+            $extension=$thumbnail->getClientOriginalExtension();
+            $name = $request->judul;
+            Storage::disk('public')->put($name.'_thumbnail.'.$extension,  File::get($thumbnail));
+            $lomba->thumbnail = $name.'_thumbnail.'.$extension;
         }
         $lomba->save();
         return redirect()->action('Content\SyaratController@create');
@@ -73,9 +85,13 @@ class LombaController extends Controller
         $penilaian = Penilaian::where('id_lomba',$id)->get();
         $waktu = WaktuTempat::where('id_lomba',$id)->get();
         $hadiah = Hadiah::where('id_lomba',$id)->get();
-        return view('admin.lomba.show')->with('lomba',$lomba[0])->with('syarat',$syarat)
-        ->with('ketentuan',$ketentuan)->with('penilaian',$penilaian)->with('waktu',$waktu[0])
-        ->with('hadiah',$hadiah);
+        return view('admin.lomba.show')->with('lomba',$lomba[0])
+        ->with('syarat',$syarat)
+        ->with('ketentuan',$ketentuan)
+        ->with('penilaian',$penilaian)
+        ->with('waktu',isset($waktu[0])?$waktu[0]:"null")
+        ->with('hadiah',$hadiah)
+        ;
     }
 
     /**
@@ -101,26 +117,33 @@ class LombaController extends Controller
     {
         $id=$request->get('id_lomba');
         $pic=$request->file('pic');
+        $thumbnail=$request->file('thumbnail');
         if($pic!=null){
-        $extension=$pic->getClientOriginalExtension();
-        $name = $request->judul;
-        Storage::disk('public')->put($name.'.'.$extension,  File::get($pic));
-        Lomba::where('id_lomba',$id)->update(
-            [
-                'judul'=>$request->get('judul'),
-                'deskripsi'=>$request->get('deskripsi'),
-                'pic'=>$name.'.'.$extension
-            ]
-        );
+            $extension=$pic->getClientOriginalExtension();
+            $name = $request->judul;
+            Storage::disk('public')->put($name.'.'.$extension,  File::get($pic));
+            Lomba::where('id_lomba',$id)->update(
+                [
+                    'pic'=>$name.'.'.$extension
+                ]
+            );
         }
-        else{
+        if($thumbnail!=null){
+            $extension=$thumbnail->getClientOriginalExtension();
+            $name = $request->judul;
+            Storage::disk('public')->put($name.'_thumbnail.'.$extension,  File::get($thumbnail));
+            Lomba::where('id_lomba',$id)->update(
+                [
+                    'thumbnail'=>$name.'_thumbnail.'.$extension
+                ]
+            );
+            }
         Lomba::where('id_lomba',$id)->update(
             [
                 'judul'=>$request->get('judul'),
                 'deskripsi'=>$request->get('deskripsi')
             ]
         );
-        }
         return redirect()->action('Content\LombaController@show',$id);
     }
 

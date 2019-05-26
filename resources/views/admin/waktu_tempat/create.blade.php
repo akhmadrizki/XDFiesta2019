@@ -29,7 +29,13 @@
                     <input type="text" class="form-control" name="tempat">
             </div>
             <div class="text-right">
+                 @if($next=='next')
+                <input type="hidden" name="next" value="next">
                 <input type="submit" value="Lanjut" class="btn btn-primary">
+                @elseif($next=='show')
+                <input type="hidden" name="next" value="show">
+                <input type="submit" value="Selesai" class="btn btn-primary">
+                @endif
             </div>
         </form>
         </div>

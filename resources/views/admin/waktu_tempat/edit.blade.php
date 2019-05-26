@@ -12,7 +12,7 @@
         @csrf
         <input type="hidden" name="id_lomba" value="{{$lomba->id_lomba}}">
         <input type="hidden" name="id_waktu" value="{{$waktu->id_waktu_tempat}}">
-        <h6>Waktu dan Tempat {{$lomba->judul}} </h6><br/>
+        <h6>Waktu dan Tempat {{$lomba->judul}}</h6><br/>
         <div class="form-group">
                 <label>Technical Meeting</label>
                 <input type="text" class="form-control" name="tm" value="{{$waktu->tm}}">
