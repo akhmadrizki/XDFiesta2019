@@ -82,6 +82,7 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::post('/dashboard/ketentuan_peserta/update','Content\KetentuanPesertaController@update');
 	Route::post('/dashboard/penilaian/update','Content\PenilaianController@update');
 	Route::post('/dashboard/waktu_tempat/update','Content\WaktuTempatController@update');
+	Route::get('/dashboard/daftar-peserta', 'Content\DaftarPesertaController@index')->name('daftar.peserta');
 	// Auth::routes();
 });
 
