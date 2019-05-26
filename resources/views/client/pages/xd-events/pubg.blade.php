@@ -97,9 +97,9 @@
 							<li>
 								Peserta yang sudah terdaftar akan diundang ke dalam grup WA.
 							</li>
-							<p class="xd-event-information-text"><b>Download Ketentuan & Kriterian Penilaian:</b></p>
+							<p class="xd-event-term-text"><b>Download Ketentuan & Kriterian Penilaian:</b></p>
 							<div style="text-align: center;">
-								<button class="xd-event-information-download-btn">
+								<button class="xd-event-term-download-btn">
 									<span>DOWNLOAD</span>
 								</button>
 							</div>
