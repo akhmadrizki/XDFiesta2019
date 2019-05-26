@@ -1,40 +1,166 @@
 @extends('layouts.dashboard')
 @section('content')
 
-@foreach ($lomba as $lword)
 <div class="section-header">
-            <h1>{{$lword->judul}}</h1>
+            <h1>{{$lomba->judul}}</h1>
 </div>
 
 <div class="section-body">
+    <div class="card">
+    <div class="card-body">
     <div>
-    <img src="{{url('uploads/'.$lword->pic)}}" width="400px"/><br/>
-    {{-- <a href="{{ route('lomba.edit', 2)}}">Edit</a> --}}
-    <a href="{{action('Content\LombaController@edit',$lword->id_lomba)}}">Edit</a>
-    <form action="{{ route('lomba.destroy', $lword->id_lomba)}}" method="post">
-        @csrf
-        @method('DELETE')
-        <button type="submit">Delete</button>
-    </form>
-    <p>{{$lword->deskripsi}}</p>
-    <p>{{$lword->tanggal}}</p>
-    <p>{{$lword->lokasi}}</p>
-    <p>{{$lword->penyelenggara}}</p>
-    <p>{{$lword->hadiah}}</p>
-    <p>{{$lword->waktu}}</p>
+        Header Picture<br/>
+        @if($lomba->pic!=null)
+        <img src="{{url('uploads/'.$lomba->pic)}}" width="400px"/>
+        @else
+        <i>Foto tidak tersedia</i>
+        @endif
     </div>
-    <h2>Syarat dan Ketentuan </h2>
-    <a href="{{action('Content\SyaratController@show',$lword->id_lomba)}}">Tambah</a>
-    @foreach ($syarat as $sword)
-        <div>
-        <p>{{$sword->deskripsi}}</p>
-        <a href="{{action('Content\SyaratController@edit',$sword->id_syarat)}}">Edit</a>
-        <form action="{{ route('syarat.destroy',$sword->id_syarat)}}" method="post">
+    <br/>
+    <div>
+        Thumbnail Picture<br/>
+        @if($lomba->thumbnail!=null)
+        <img src="{{url('uploads/'.$lomba->thumbnail)}}" width="200px"/>
+        @else
+        <i>Foto tidak tersedia</i>
+        @endif
+    </div>
+    <br/>
+    <p>
+    Deskripsi : {!!$lomba->deskripsi!!}
+    </p>
+    <form action="{{ route('lomba.destroy', $lomba->id_lomba)}}" method="post">
+    <a href="{{action('Content\LombaController@edit',$lomba->id_lomba)}}" class="btn btn-sm btn-warning">
+    Edit</a>
         @csrf
         @method('DELETE')
-        <button type="submit">Delete</button>
-        </div>
-    </form>
+        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+    </form><br/>
+    <div>
+        <h6>Persyaratan Pendaftaran</h6>
+        <a href="{{action('Content\SyaratController@show',$lomba->id_lomba)}}" 
+        class="btn btn-sm btn-success">Tambah</a>
+    </div>
+    <div>
+    <ul class="list-group list-group-flush">
+    @foreach ($syarat as $sword)
+    <li class="list-group-item">
+        <div>
+        {!!$sword->deskripsi!!}
+        <form action="{{ route('syarat.destroy',$sword->id_syarat)}}" method="post">
+        <a href="{{action('Content\SyaratController@edit',$sword->id_syarat)}}"  class="btn btn-sm btn-warning">
+            Edit
+        </a>
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+            </div>
+        </form>
+    </li>
     @endforeach
+    </ul>
+    <br/><br/>
+
+    <h6>Ketentuan Khusus Peserta</h6>
+        <a href="{{action('Content\KetentuanPesertaController@show',$lomba->id_lomba)}}" 
+        class="btn btn-sm btn-success">Tambah</a>
+    </div>
+    <div>
+    <ul class="list-group list-group-flush">
+    @foreach ($ketentuan as $kword)
+    <li class="list-group-item">
+        <div>
+        {!!$kword->deskripsi!!}
+        <form action="{{ route('ketentuan_peserta.destroy',$kword->id_ketentuan_peserta)}}" method="post">
+        <a href="{{action('Content\KetentuanPesertaController@edit',$kword->id_ketentuan_peserta)}}"
+        class="btn btn-sm btn-warning">
+            Edit
+        </a>
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+            </div>
+        </form>
+    </li>
     @endforeach
+    </ul>
+    <br/><br/>
+    
+    <h6>Kriteria Penilaian</h6>
+        <a href="{{action('Content\PenilaianController@show',$lomba->id_lomba)}}" 
+        class="btn btn-sm btn-success">Tambah</a>
+    </div>
+    <div>
+    <ul class="list-group list-group-flush">
+    @foreach ($penilaian as $pword)
+    <li class="list-group-item">
+        <div>
+        {!!$pword->deskripsi!!}
+        <form action="{{ route('penilaian.destroy',$pword->id_penilaian)}}" method="post">
+        <a href="{{action('Content\PenilaianController@edit',$pword->id_penilaian)}}"
+        class="btn btn-sm btn-warning">
+            Edit
+        </a>
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+            </div>
+        </form>
+    </li>
+    @endforeach
+    </ul>
+    <br/><br/>
+    
+    <h6 style="display:inline-block;margin-right:10px">Waktu dan Tempat Lomba</h6>
+    @if($waktu!="null")
+    <div>
+        <p>
+            Technical Meeting : {{$waktu->tm}}<br/>
+            Tempat Technical Meeting : {{$waktu->tempat_tm}}<br/>
+            Waktu : {{$waktu->waktu}}<br/>
+            Tempat : {{$waktu->tempat}}<br/>
+        </p>
+    </div>
+    @endif
+    @if($waktu=="null")
+        <a href="{{action('Content\WaktuTempatController@show',$lomba->id_lomba)}}"
+        class="btn btn-sm btn-success">
+            Tambah
+        </a>
+        @else
+        <a href="{{action('Content\WaktuTempatController@edit',$waktu->id_waktu_tempat)}}"
+        class="btn btn-sm btn-warning">
+            Edit
+        </a>
+    @endif
+    <br/><br/>
+    
+    <h6>Hadiah</h6>
+        <a href="{{action('Content\HadiahController@show',$lomba->id_lomba)}}" 
+        class="btn btn-sm btn-success"">Tambah</a>
+    <div>
+    <ul class="list-group list-group-flush">
+    @if(isset($hadiah))
+    @foreach ($hadiah as $hword)
+    <li class="list-group-item">
+        <div>
+        {!!$hword->deskripsi!!}
+        <form action="{{ route('hadiah.destroy',$hword->id_hadiah)}}" method="post">
+        <a href="{{action('Content\HadiahController@edit',$hword->id_hadiah)}}"
+        class="btn btn-sm btn-warning">
+            Edit
+        </a>
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+            </div>
+        </form>
+    </li>
+    @endforeach
+    @endif
+    </ul>
+
+    </div>
+    </div>
+    </div>
 @endsection

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSyaratTable extends Migration
+class CreateWaktuTempatTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateSyaratTable extends Migration
      */
     public function up()
     {
-        Schema::create('syarat', function (Blueprint $table) {
-            $table->bigIncrements('id_syarat');
+        Schema::create('waktu_tempat', function (Blueprint $table) {
+            $table->bigIncrements('id_waktu_tempat');
             $table->integer('id_lomba');
-            $table->mediumText('deskripsi');
+            $table->string('tm')->nullable();
+            $table->string('tempat_tm')->nullable();
+            $table->string('waktu')->nullable();
+            $table->string('tempat')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateSyaratTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('syarat');
+        Schema::dropIfExists('waktu_tempat');
     }
 }

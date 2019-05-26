@@ -4,29 +4,30 @@
 <div class="section-header">
             <h1>Input Lomba</h1>
 </div>
-
 <div class="section-body">
-    <h3>Buat Lomba</h3>
-    <form method="post" action="{{ action('Content\LombaController@store') }}" enctype="multipart/form-data">
-    @csrf
-    <h4>Judul Lomba</h4>
-    <input type="text" name="judul">
-    {{session()->get('sama')}}
-    <h4>Deskripsi</h4>
-    <textarea name="deskripsi" cols="50" rows="10"></textarea>
-    <h4>Tangal</h4>
-    <input type="date" name="tanggal">
-    <h4>Lokasi</h4>
-    <input type="text" name="lokasi">
-    <h4>Pengelenggara</h4>
-    <input type="text" name="penyelenggara">
-    <h4>Hadiah</h4>
-    <input type="number" name="hadiah">
-    <h4>Waktu</h4>
-    <input type="text" name="waktu">
-    <h4>Header Pic</h4>
-    <input type="file" name="pic"><br>
-    <input type="submit" name="Submit">
-    </form>
-</div>
+    <div class="card">
+        <form method="post" action="{{ action('Content\LombaController@store') }}" enctype="multipart/form-data">
+            @csrf
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Judul Lomba</label>
+                    <input type="text" class="form-control" name="judul">
+                </div>
+                <div class="form-group">
+                    <label>Deskripsi</label>
+                    <textarea class="summernote-simple" style="display: none;" name="deskripsi"></textarea>
+                <div class="form-group">
+                    <label>Header Picture</label><br>
+                    <input type="file" name="pic">
+                </div>
+                <div class="form-group">
+                    <label>Thumbnail Picture</label><br>
+                    <input type="file" name="thumbnail">
+                </div>
+                <div class="card-footer text-right">
+                    <input type="submit" value="Lanjut" class="btn btn-primary">
+                </div>
+            </div>     
+        </form>
+    </div>
 @endsection
