@@ -7,19 +7,31 @@
 
 <div class="section-body">
     <div>
-    {{session()->get('success')}}  
     </div>
-    @if(count($lomba)>0)
-        @foreach($lomba as $lword)
-            <div style="display:flex">
-                <div style="padding:10px">
-                    <a href="{{route('lomba.update', $lword->id_lomba)}}">
-                    <img src="{{url('uploads/'.$lword->pic)}}" width="200px"/><br>
-                    {{$lword->judul}}</a>
-                </div>
-            <div>
+    <div class="card">
+    <div class="card-body">
+	<div class="row">
+    @if(count($data)>0)
+        @foreach($data as $dword)
+		<div class="col-12 col-lg-6 column">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{url('uploads/'.$dword->thumbnail)}}" width="200px" alt="">
+            </div>
+            <div class="card-content">
+                <p class="card-label">Competition</p>
+                <h2 class="card-title">{{$dword->judul}}</h2>
+                <p class="card-date">{{isset($dword->waktu)?$dword->waktu:''}}</p>
+            </div>
+            <a href="{{action('Content\LombaController@show',$dword->id_lomba)}}"
+             class="card-action">See Details</a>
+        </div>
+        </div>
         @endforeach
+        </div>
     @else
     <p>Lomba tidak tersedia</p>
     @endif
+    </div>
+    </div>
 @endsection
