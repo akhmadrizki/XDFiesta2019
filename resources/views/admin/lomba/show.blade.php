@@ -41,8 +41,8 @@
         <i>File tidak tersedia</i>
         @endif
     </div>
-    <br/>
     <p>
+    Judul di navigator : {!!$lomba->judul_nav?$lomba->judul_nav:'<i>Kosong</i>'!!}<br/>
     Deskripsi : {!!$lomba->deskripsi!!}
     </p>
     <form action="{{ route('lomba.destroy', $lomba->id_lomba)}}" method="post">
@@ -151,9 +151,35 @@
     @endif
     <br/><br/>
     
+    <h6>Kontak</h6>
+        <a href="{{action('Content\KontakController@show',$lomba->id_lomba)}}" 
+        class="btn btn-sm btn-success">Tambah</a>
+    <div>
+    <ul class="list-group list-group-flush">
+    @if(isset($kontak))
+    @foreach ($kontak as $kword)
+    <li class="list-group-item">
+        <div>
+        {!!$kword->kontak!!}
+        <form action="{{ route('kontak.destroy',$kword->id_kontak)}}" method="post">
+        <a href="{{action('Content\KontakController@edit',$kword->id_kontak)}}"
+        class="btn btn-sm btn-warning">
+            Edit
+        </a>
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+            </div>
+        </form>
+    </li>
+    @endforeach
+    @endif
+    </ul>
+    <br/><br/>
+
     <h6>Hadiah</h6>
         <a href="{{action('Content\HadiahController@show',$lomba->id_lomba)}}" 
-        class="btn btn-sm btn-success"">Tambah</a>
+        class="btn btn-sm btn-success">Tambah</a>
     <div>
     <ul class="list-group list-group-flush">
     @if(isset($hadiah))

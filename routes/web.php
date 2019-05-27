@@ -75,6 +75,7 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::resource('/dashboard/hadiah','Content\HadiahController');
 	Route::resource('/dashboard/ketentuan_peserta','Content\KetentuanPesertaController');
 	Route::resource('/dashboard/penilaian','Content\PenilaianController');
+	Route::resource('/dashboard/kontak','Content\KontakController');
 	Route::resource('/dashboard/waktu_tempat','Content\WaktuTempatController');
 	Route::post('/dashboard/lomba/update','Content\LombaController@update');
 	Route::post('/dashboard/syarat/update','Content\SyaratController@update');
@@ -82,6 +83,7 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::post('/dashboard/ketentuan_peserta/update','Content\KetentuanPesertaController@update');
 	Route::post('/dashboard/penilaian/update','Content\PenilaianController@update');
 	Route::post('/dashboard/waktu_tempat/update','Content\WaktuTempatController@update');
+	Route::post('/dashboard/kontak/update','Content\KontakController@update');
 	// Route::get('download',function(){
 	// 	return Response::download($path_to_file,'name_of_file');
 	// });

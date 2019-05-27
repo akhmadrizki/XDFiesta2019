@@ -16,6 +16,10 @@
             <input type="text" class="form-control" name="judul" value="{{$lomba->judul}}">
         </div>
         <div class="form-group">
+            <label>Judul Navigator Lomba</label>
+            <input type="text" class="form-control" name="judul_nav" value="{{$lomba->judul_nav}}">
+        </div>
+        <div class="form-group">
             <label>Deskripsi</label>
             <textarea class="summernote-simple" style="display: none;" name="deskripsi">
                  {!!$lomba->deskripsi!!}

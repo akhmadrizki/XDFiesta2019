@@ -40,6 +40,7 @@
 						<h2>XD Competitions</h2>
 						<div class="xd-competitions-event">
 							<div class="row">
+								
 								<div class="col-12 col-lg-6 column">
 									<div class="card">
 										<div class="card-image">
@@ -53,90 +54,7 @@
 										<a href="/xd-events-and-competitions/pubg" class="card-action">See Details</a>
 									</div>
 								</div>
-								<div class="col-12 col-lg-6 column">
-									<div class="card">
-										<div class="card-image">
-											<img src="" alt="">
-										</div>
-										<div class="card-content">
-											<p class="card-label">Competition</p>
-											<h2 class="card-title">Mobile Legends Competition</h2>
-											<p class="card-date">Tuesday, 23 November 2019</p>
-										</div>
-										<a href="/xd-events-and-competitions/mobile-legends-online" class="card-action">See Details</a>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-12 col-lg-6 column">
-									<div class="card">
-										<div class="card-image">
-											<img src="" alt="">
-										</div>
-										<div class="card-content">
-											<p class="card-label">Competition</p>
-											<h2 class="card-title">Mobile Legends Offline Competition</h2>
-											<p class="card-date">Tuesday, 23 November 2019</p>
-										</div>
-										<a href="/xd-events-and-competitions/mobile-legends-offline" class="card-action">See Details</a>
-									</div>
-								</div>
-								<div class="col-12 col-lg-6 column">
-									<div class="card">
-										<div class="card-image">
-											<img src="" alt="">
-										</div>
-										<div class="card-content">
-											<p class="card-label">Competition</p>
-											<h2 class="card-title">Coffee Barista Competition</h2>
-											<p class="card-date">Tuesday, 23 November 2019</p>
-										</div>
-										<a href="/xd-events-and-competitions/coffee-barista" class="card-action">See Details</a>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-12 col-lg-6 column">
-									<div class="card">
-										<div class="card-image">
-											<img src="" alt="">
-										</div>
-										<div class="card-content">
-											<p class="card-label">Competition</p>
-											<h2 class="card-title">Futsal Competition</h2>
-											<p class="card-date">Tuesday, 23 November 2019</p>
-										</div>
-										<a href="/xd-events-and-competitions/futsal" class="card-action">See Details</a>
-									</div>
-								</div>
-								<div class="col-12 col-lg-6 column">
-									<div class="card">
-										<div class="card-image">
-											<img src="" alt="">
-										</div>
-										<div class="card-content">
-											<p class="card-label">Competition</p>
-											<h2 class="card-title">Acoustic Competition</h2>
-											<p class="card-date">Tuesday, 23 November 2019</p>
-										</div>
-										<a href="/xd-events-and-competitions/acoustic" class="card-action">See Details</a>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-12 col-lg-6 column">
-									<div class="card">
-										<div class="card-image">
-											<img src="" alt="">
-										</div>
-										<div class="card-content">
-											<p class="card-label">Competition</p>
-											<h2 class="card-title">Coloring Competition</h2>
-											<p class="card-date">Tuesday, 23 November 2019</p>
-										</div>
-										<a href="/xd-events-and-competitions/coloring" class="card-action">See Details</a>
-									</div>
-								</div>
+								
 							</div>
 						</div>
 					</div>

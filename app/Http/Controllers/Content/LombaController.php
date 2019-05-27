@@ -8,6 +8,7 @@ use App\Syarat;
 use App\KetentuanPeserta;
 use App\Penilaian;
 use App\WaktuTempat;
+use App\Kontak;
 use App\Hadiah;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -55,6 +56,7 @@ class LombaController extends Controller
         $pdf=$request->file('pdf');
         $lomba = new Lomba;
         $lomba->judul = $request->get('judul');
+        $lomba->judul = $request->get('judul_nav');
         $lomba->deskripsi = $request->get('deskripsi');
         if($pic!=null){
             $extension=$pic->getClientOriginalExtension();
@@ -91,12 +93,14 @@ class LombaController extends Controller
         $ketentuan = KetentuanPeserta::where('id_lomba',$id)->get();
         $penilaian = Penilaian::where('id_lomba',$id)->get();
         $waktu = WaktuTempat::where('id_lomba',$id)->get();
+        $kontak = Kontak::where('id_lomba',$id)->get();
         $hadiah = Hadiah::where('id_lomba',$id)->get();
         return view('admin.lomba.show')->with('lomba',$lomba[0])
         ->with('syarat',$syarat)
         ->with('ketentuan',$ketentuan)
         ->with('penilaian',$penilaian)
         ->with('waktu',isset($waktu[0])?$waktu[0]:"null")
+        ->with('kontak',$kontak)
         ->with('hadiah',$hadiah)
         ;
     }
@@ -159,6 +163,7 @@ class LombaController extends Controller
         Lomba::where('id_lomba',$id)->update(
             [
                 'judul'=>$request->get('judul'),
+                'judul_nav'=>$request->get('judul_nav'),
                 'deskripsi'=>$request->get('deskripsi')
             ]
         );
