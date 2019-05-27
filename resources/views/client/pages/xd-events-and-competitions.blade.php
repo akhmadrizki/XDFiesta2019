@@ -6,7 +6,7 @@
 
 @section('content')
 	<main class="xd-events-main">
-		<div class="xd-events-banner">
+		<div class="xd-events-banner" style="background-image:url({{ asset('images/compressed/white-xd-events-and-competitions.png') }});background-size:cover;background-repeat:no-repeat;">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col column">
@@ -17,7 +17,7 @@
 			</div>
 		</div>
 		<div class="xd-events-banner grey"></div>
-		<div class="xd-events-collection">
+		<div class="xd-events-collection" style="background-image:url({{ asset('images/compressed/banner-xd-events.png') }});background-size:cover;background-repeat:no-repeat;">
 			<div class="container">
 				<div class="row">
 					<div class="col column">
