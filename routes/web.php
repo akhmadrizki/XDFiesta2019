@@ -27,18 +27,23 @@ Route::get('/xd-profile', function () {
 	]);
 });
 
-Route::get('/xd-events-and-competitions', function () {
-	return view('client.pages.xd-events-and-competitions', [
-		'navActive' => 'events'
-	]);
-});
+Route::get('/xd-events-and-competitions', 'PagesController@index');
+// Route::get('/xd-events-and-competitions', function () {
+// 	return view('client.pages.xd-events-and-competitions', [
+// 		'navActive' => 'events'
+// 	]);
+// });
 
-Route::get('/xd-events-and-competitions/{events}', function ($events) {
-	return view('client.pages.xd-events.' . $events, [
-		'navActive' => 'events',
-		'subnavActive' => $events
-	]);
-});
+Route::get('/xd-events-and-competitions/{events}', 'PagesController@show');
+
+// Route::get('/xd-events-and-competitions/{events}', function ($events) {
+// 	return view('client.pages.xd-events.' . $events, [
+// 		'navActive' => 'events',
+// 		'subnavActive' => $events
+// 	]);
+// });
+
+Route::get('/xd-events-and-competitions/download/{file}', 'PagesController@download');
 
 Route::get('/response/review', function() {
 	return view('info.review');

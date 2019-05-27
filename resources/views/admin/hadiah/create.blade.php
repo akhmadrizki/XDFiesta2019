@@ -12,7 +12,7 @@
             @csrf
             <input type="hidden" name="id_lomba" value="{{$lomba->id_lomba}}">
             <h6>Hadiah {{$lomba->judul}} </h6><br/>
-            <textarea name="deskripsi" class="summernote-simple" style="display: none;" ></textarea>
+            <input type="text" name="deskripsi" class="form-control"><br/>
             <div class="text-right">
             <input type="submit" value="Tambah" class="btn btn-success">
             <a href="{{action('Content\LombaController@show',$lomba->id_lomba)}}" 

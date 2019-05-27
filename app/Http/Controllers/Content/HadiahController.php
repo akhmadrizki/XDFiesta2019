@@ -45,9 +45,7 @@ class HadiahController extends Controller
         $hadiah->id_lomba = $request->get('id_lomba');
         $hadiah->deskripsi = $request->get('deskripsi');
         $hadiah->save();
-        if($request->get('next')=="show")
         return redirect()->action('Content\HadiahController@show',$request->get('id_lomba'));
-        return redirect()->action('Content\HadiahController@create');
     }
 
     /**
