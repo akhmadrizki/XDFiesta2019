@@ -14,7 +14,7 @@
 		<!-- Deskripsi lomba ditulis disini -->
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 col-12">
+				{{-- <div class="col-lg-6 col-12">
 					<div class="xd-event-description border-box">
 						<p>COMPETITION</p>
 						<p>Lomba Mewarnai</p>
@@ -149,6 +149,9 @@
 						</form>
 					</div>
 
+				</div> --}}
+				<div class="col-12">
+					<h1>Coming Soon...</h1>
 				</div>
 			</div>
 		</div>	
