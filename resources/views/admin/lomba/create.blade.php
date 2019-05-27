@@ -24,6 +24,11 @@
                     <label>Thumbnail Picture</label><br>
                     <input type="file" name="thumbnail">
                 </div>
+                <div class="form-group">
+                    <label>File syarat .pdf</label><br>
+                    <input type="file" name="pdf"><br>
+                    <i>Masukan file .pdf disini</i>
+                </div>
                 <div class="card-footer text-right">
                     <input type="submit" value="Lanjut" class="btn btn-primary">
                 </div>

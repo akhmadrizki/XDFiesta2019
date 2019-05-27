@@ -19,6 +19,7 @@ class CreateLombaTable extends Migration
             $table->mediumText('deskripsi')->nullable();
             $table->string('pic')->nullable();
             $table->string('thumbnail')->nullable();
+            $table->string('pdf')->nullable();
             $table->timestamps();
         });
     }

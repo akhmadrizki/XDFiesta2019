@@ -26,6 +26,22 @@
         @endif
     </div>
     <br/>
+    <div>
+        File syarat .pdf<br/>
+        @if($lomba->pdf!=null)
+        {{-- <form action="{{ action('Content\LombaController@getPDF')}}" method="post"> --}}
+        {{-- <input type="hidden" name="name" value="{{$lomba->pdf}}">
+        <button type="submit" class="btn btn-sm btn-primary">Download</button>
+        </form> --}}
+        @php
+        $file=str_replace(' ', '-', $lomba->pdf);
+        @endphp
+        <a href="download/{{$file}}" class="btn btn-sm btn-primary" target="_blank">Download</a>
+        @else
+        <i>File tidak tersedia</i>
+        @endif
+    </div>
+    <br/>
     <p>
     Deskripsi : {!!$lomba->deskripsi!!}
     </p>
@@ -111,7 +127,7 @@
     </ul>
     <br/><br/>
     
-    <h6 style="display:inline-block;margin-right:10px">Waktu dan Tempat Lomba</h6>
+    <h6 style="display:inline-block;margin-right:10px">Waktu dan Tempat Lomba</h6><br/>
     @if($waktu!="null")
     <div>
         <p>

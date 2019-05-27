@@ -52,6 +52,7 @@ class LombaController extends Controller
     {  
         $pic=$request->file('pic');
         $thumbnail=$request->file('thumbnail');
+        $pdf=$request->file('pdf');
         $lomba = new Lomba;
         $lomba->judul = $request->get('judul');
         $lomba->deskripsi = $request->get('deskripsi');
@@ -66,6 +67,12 @@ class LombaController extends Controller
             $name = $request->judul;
             Storage::disk('public')->put($name.'_thumbnail.'.$extension,  File::get($thumbnail));
             $lomba->thumbnail = $name.'_thumbnail.'.$extension;
+        }
+        if($pdf!=null){
+            $extension=$pdf->getClientOriginalExtension();
+            $name = $request->judul;
+            Storage::disk('public')->put('Syarat dan Ketentuan '.$name.'.'.$extension,  File::get($pdf));
+            $lomba->thumbnail = 'Syarat dan Ketentuan '.$name.'.'.$extension;
         }
         $lomba->save();
         return redirect()->action('Content\SyaratController@create');
@@ -118,6 +125,7 @@ class LombaController extends Controller
         $id=$request->get('id_lomba');
         $pic=$request->file('pic');
         $thumbnail=$request->file('thumbnail');
+        $pdf=$request->file('pdf');
         if($pic!=null){
             $extension=$pic->getClientOriginalExtension();
             $name = $request->judul;
@@ -131,13 +139,23 @@ class LombaController extends Controller
         if($thumbnail!=null){
             $extension=$thumbnail->getClientOriginalExtension();
             $name = $request->judul;
-            Storage::disk('public')->put($name.'_thumbnail.'.$extension,  File::get($thumbnail));
+            Storage::disk('img')->put($name.'_thumbnail.'.$extension,  File::get($thumbnail));
             Lomba::where('id_lomba',$id)->update(
                 [
                     'thumbnail'=>$name.'_thumbnail.'.$extension
                 ]
             );
-            }
+        }
+        if($pdf!=null){
+            $extension=$pdf->getClientOriginalExtension();
+            $name = $request->judul;
+            Storage::disk('img')->put('Syarat dan Ketentuan '.$name.'.'.$extension,  File::get($pdf));
+            Lomba::where('id_lomba',$id)->update(
+                [
+                    'pdf'=>'Syarat dan Ketentuan '.$name.'.'.$extension
+                ]
+            );
+        }
         Lomba::where('id_lomba',$id)->update(
             [
                 'judul'=>$request->get('judul'),
@@ -158,5 +176,13 @@ class LombaController extends Controller
         $lomba = Lomba::where('id_lomba',$id);
         $lomba->delete();
         return redirect('/dashboard/lomba')->with('success', 'Lomba berhasil dihapus');
+    }
+
+    // Downloading file
+    public function download($file)
+    {
+        $file_name=str_replace('-', ' ', $file);
+        $file_path = public_path('uploads/'.$file_name);
+        return response()->download($file_path);
     }
 }
