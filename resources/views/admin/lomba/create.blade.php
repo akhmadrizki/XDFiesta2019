@@ -5,7 +5,13 @@
             <h1>Input Lomba</h1>
 </div>
 <div class="section-body">
-    <div class="card">
+    @if ($errors->any())
+        <div class="alert alert-warning">
+            @foreach ($errors->all() as $error)
+                {{ $error }}<br/>
+            @endforeach
+        </div>
+    @endif
         <form method="post" action="{{ action('Content\LombaController@store') }}" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
