@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\DB;
 class PagesController extends Controller
 {
     public function index(){
+        $inilomba = Lomba::all();
         $data = DB::table('lomba')
             ->select('lomba.id_lomba','lomba.judul','lomba.judul_nav','lomba.thumbnail','waktu_tempat.waktu')
             ->leftJoin('waktu_tempat', 'lomba.id_lomba', '=', 'waktu_tempat.id_lomba')
@@ -25,7 +26,9 @@ class PagesController extends Controller
 
         return view('client.pages.xd-events-and-competitions', [
         'navActive' => 'events'
-        ])->with('data',$data);
+        ])
+        ->with('data',$data)
+        ->with('inilomba',$inilomba);
     }
 
     public function show($judul_nav)
