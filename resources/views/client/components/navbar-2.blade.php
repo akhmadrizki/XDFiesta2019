@@ -19,13 +19,21 @@
 			<div class="col column">
 				<div class="subnav-item">
 					<a href="/xd-events-and-competitions/main-event" class="subnav-link {{ $subnavActive == 'main-event' ? 'active' : NULL }}">Main Event</a>
-					<a href="/xd-events-and-competitions/pubg" class="subnav-link {{ $subnavActive == 'pubg' ? 'active' : NULL }}">PUBG Mobile</a>
+					@foreach ($inilomba as $lomba)
+					@php
+						$path=str_replace(' ', '-', $lomba->judul_nav)
+					@endphp
+					<a href="{{action('PagesController@show',$path)}}" class="subnav-link {{ $subnavActive == $lomba->judul_nav ? 'active' : NULL }}">{{$lomba->judul_nav}}</a>
+					@endforeach
+					
+					
+					{{-- <a href="/xd-events-and-competitions/pubg" class="subnav-link {{ $subnavActive == 'pubg' ? 'active' : NULL }}">PUBG Mobile</a>
 					<a href="/xd-events-and-competitions/mobile-legends" class="subnav-link {{ $subnavActive == 'mobile-legends' ? 'active' : NULL }}">Mobile Legends</a>
 					<a href="/xd-events-and-competitions/mobile-legends-offline" class="subnav-link {{ $subnavActive == 'mobile-legends-offline' ? 'active' : NULL }}">Mobile Legends Offline</a>
 					<a href="/xd-events-and-competitions/coffee-barista" class="subnav-link {{ $subnavActive == 'coffee-barista' ? 'active' : NULL }}">Coffee Barista</a>
 					<a href="/xd-events-and-competitions/futsal" class="subnav-link {{ $subnavActive == 'futsal' ? 'active' : NULL }}">Futsal</a>
 					<a href="/xd-events-and-competitions/acoustic" class="subnav-link {{ $subnavActive == 'acoustic' ? 'active' : NULL }}">Acoustic</a>
-					<a href="/xd-events-and-competitions/coloring" class="subnav-link {{ $subnavActive == 'coloring' ? 'active' : NULL }}">Coloring</a>
+					<a href="/xd-events-and-competitions/coloring" class="subnav-link {{ $subnavActive == 'coloring' ? 'active' : NULL }}">Coloring</a> --}}
 				</div>
 			</div>
 		</div>
