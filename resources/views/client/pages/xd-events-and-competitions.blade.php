@@ -28,9 +28,9 @@
 								<div class="xd-main-event-overlay-info">
 									<p class="label">Main Event</p>
 									<h2>XD Fiesta Concert in STMIK Primakara</h2>
-									<p class="date">Tuesday, 23 November 2019</p>
+									<p class="date">Coming Soon</p>
 								</div>
-								<a class="action" href="/xd-events-and-competitions/main-event">See Details</a>
+								<!-- <a class="action" href="/xd-events-and-competitions/main-event">See Details</a> -->
 							</div>
 						</div>
 					</div>
@@ -52,12 +52,12 @@
 										<p class="card-label">Competition</p>
 										<h2 class="card-title">{{$dword->judul}}</h2>
 										<p class="card-date">{{isset($dword->waktu)?$dword->waktu:''}}</p>
+										@php
+											$path_name=str_replace(' ', '-', $dword->judul_nav);
+										@endphp
+										<a href="{{action('PagesController@show',$path_name)}}"
+										class="card-action">See Details</a>
 									</div>
-									@php
-										$path_name=str_replace(' ', '-', $dword->judul_nav);
-									@endphp
-									<a href="{{action('PagesController@show',$path_name)}}"
-									class="card-action">See Details</a>
 								</div>
 								</div>
 								@endforeach
@@ -65,7 +65,6 @@
 							@else
 							<p>Lomba tidak tersedia</p>
 							@endif
-
 							</div>
 						</div>
 					</div>

@@ -34,7 +34,7 @@ Route::get('/xd-events-and-competitions', 'PagesController@index');
 // 	]);
 // });
 
-Route::get('/xd-events-and-competitions/{events}', 'PagesController@show');
+Route::get('/xd-events-and-competitions/{events}', 'PagesController@show')->name('detail');
 
 // Route::get('/xd-events-and-competitions/{events}', function ($events) {
 // 	return view('client.pages.xd-events.' . $events, [
