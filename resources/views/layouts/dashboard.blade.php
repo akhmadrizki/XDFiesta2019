@@ -136,7 +136,7 @@
             <li><a class="nav-link" href="/dashboard/list"><i class="fas fa-list"></i> <span>List Post</span></a></li>
 
             <li class="menu-header">Applications</li>
-            <li><a class="nav-link" href="blank.html"><i class="fas fa-chalkboard-teacher"></i> <span>Application Contest</span></a></li>
+            <li><a class="nav-link" href="{{route('daftar.peserta')}}"><i class="fas fa-chalkboard-teacher"></i> <span>Application Contest</span></a></li>
           </ul>
 
           </aside>

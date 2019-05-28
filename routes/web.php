@@ -88,6 +88,9 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::post('/dashboard/ketentuan_peserta/update','Content\KetentuanPesertaController@update');
 	Route::post('/dashboard/penilaian/update','Content\PenilaianController@update');
 	Route::post('/dashboard/waktu_tempat/update','Content\WaktuTempatController@update');
+
+	Route::get('/dashboard/daftar-peserta', 'Content\DaftarPesertaController@index')->name('daftar.peserta');
+
 	Route::post('/dashboard/kontak/update','Content\KontakController@update');
 	// Route::get('download',function(){
 	// 	return Response::download($path_to_file,'name_of_file');
@@ -96,6 +99,7 @@ Route::group(['middleware' => 'auth'],function(){
 	// 	return Response::download($path_to_file,'name_of_file');
 	// });
 	Route::get('/dashboard/lomba/download/{file}', 'Content\LombaController@download');
+
 	// Auth::routes();
 });
 
