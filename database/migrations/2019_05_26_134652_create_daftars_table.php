@@ -21,6 +21,8 @@ class CreateDaftarsTable extends Migration
             $table->char('no_wa', 20);
             $table->unsignedInteger('id_lomba');
             $table->timestamps();
+
+            $table->foreign('id_lomba')->references('id_lomba')->on('lomba')->onDelete('cascade');
         });
     }
 

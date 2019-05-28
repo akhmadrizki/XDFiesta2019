@@ -36,6 +36,8 @@ Route::get('/xd-events-and-competitions', 'PagesController@index');
 
 Route::get('/xd-events-and-competitions/{events}', 'PagesController@show')->name('detail');
 
+Route::post('/xd-events-and-competitions/daftar', 'Content\DaftarPesertaController@daftar')->name('daftar.lomba');
+
 // Route::get('/xd-events-and-competitions/{events}', function ($events) {
 // 	return view('client.pages.xd-events.' . $events, [
 // 		'navActive' => 'events',
