@@ -14,6 +14,10 @@
                     <input type="text" class="form-control" name="judul">
                 </div>
                 <div class="form-group">
+                    <label>Judul Navigator Lomba</label>
+                    <input type="text" class="form-control" name="judul_nav">
+                </div>
+                <div class="form-group">
                     <label>Deskripsi</label>
                     <textarea class="summernote-simple" style="display: none;" name="deskripsi"></textarea>
                 <div class="form-group">
@@ -23,6 +27,11 @@
                 <div class="form-group">
                     <label>Thumbnail Picture</label><br>
                     <input type="file" name="thumbnail">
+                </div>
+                <div class="form-group">
+                    <label>File syarat .pdf</label><br>
+                    <input type="file" name="pdf"><br>
+                    <i>Masukan file .pdf disini</i>
                 </div>
                 <div class="card-footer text-right">
                     <input type="submit" value="Lanjut" class="btn btn-primary">

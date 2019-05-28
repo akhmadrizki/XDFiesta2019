@@ -27,18 +27,23 @@ Route::get('/xd-profile', function () {
 	]);
 });
 
-Route::get('/xd-events-and-competitions', function () {
-	return view('client.pages.xd-events-and-competitions', [
-		'navActive' => 'events'
-	]);
-});
+Route::get('/xd-events-and-competitions', 'PagesController@index');
+// Route::get('/xd-events-and-competitions', function () {
+// 	return view('client.pages.xd-events-and-competitions', [
+// 		'navActive' => 'events'
+// 	]);
+// });
 
-Route::get('/xd-events-and-competitions/{events}', function ($events) {
-	return view('client.pages.xd-events.' . $events, [
-		'navActive' => 'events',
-		'subnavActive' => $events
-	]);
-});
+Route::get('/xd-events-and-competitions/{events}', 'PagesController@show');
+
+// Route::get('/xd-events-and-competitions/{events}', function ($events) {
+// 	return view('client.pages.xd-events.' . $events, [
+// 		'navActive' => 'events',
+// 		'subnavActive' => $events
+// 	]);
+// });
+
+Route::get('/xd-events-and-competitions/download/{file}', 'PagesController@download');
 
 Route::get('/response/review', function() {
 	return view('info.review');
@@ -75,6 +80,7 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::resource('/dashboard/hadiah','Content\HadiahController');
 	Route::resource('/dashboard/ketentuan_peserta','Content\KetentuanPesertaController');
 	Route::resource('/dashboard/penilaian','Content\PenilaianController');
+	Route::resource('/dashboard/kontak','Content\KontakController');
 	Route::resource('/dashboard/waktu_tempat','Content\WaktuTempatController');
 	Route::post('/dashboard/lomba/update','Content\LombaController@update');
 	Route::post('/dashboard/syarat/update','Content\SyaratController@update');
@@ -82,6 +88,14 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::post('/dashboard/ketentuan_peserta/update','Content\KetentuanPesertaController@update');
 	Route::post('/dashboard/penilaian/update','Content\PenilaianController@update');
 	Route::post('/dashboard/waktu_tempat/update','Content\WaktuTempatController@update');
+	Route::post('/dashboard/kontak/update','Content\KontakController@update');
+	// Route::get('download',function(){
+	// 	return Response::download($path_to_file,'name_of_file');
+	// });
+	// Route::get('download',function(){
+	// 	return Response::download($path_to_file,'name_of_file');
+	// });
+	Route::get('/dashboard/lomba/download/{file}', 'Content\LombaController@download');
 	// Auth::routes();
 });
 

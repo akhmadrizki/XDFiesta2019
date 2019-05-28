@@ -40,18 +40,19 @@
 						<h2>XD Competitions</h2>
 						<div class="xd-competitions-event">
 							<div class="row">
+								@if(count($data)>0)
+								@foreach($data as $dword)
 								<div class="col-12 col-lg-6 column">
-									<div class="card">
-										<div class="card-image">
-											<img src="" alt="">
-										</div>
-										<div class="card-content">
-											<p class="card-label">Competition</p>
-											<h2 class="card-title">PUBG Mobile Competition</h2>
-											<p class="card-date">Tuesday, 23 November 2019</p>
-										</div>
-										<a href="/xd-events-and-competitions/pubg" class="card-action">See Details</a>
+								<div class="card" style="margin-bottom:20px">
+									<div class="card-image">
+										<img src="{{url('uploads/'.$dword->thumbnail)}}" width="300px" alt="">
 									</div>
+
+									<div class="card-content">
+										<p class="card-label">Competition</p>
+										<h2 class="card-title">{{$dword->judul}}</h2>
+										<p class="card-date">{{isset($dword->waktu)?$dword->waktu:''}}</p>
+
 								</div>
 								<div class="col-12 col-lg-6 column">
 									<div class="card">
@@ -107,36 +108,21 @@
 											<p class="card-date">Tuesday, 23 November 2019</p>
 										</div>
 										<a href="/xd-events-and-competitions/futsal" class="card-action">See Details</a>
+
 									</div>
+									@php
+										$path_name=str_replace(' ', '-', $dword->judul_nav);
+									@endphp
+									<a href="{{action('PagesController@show',$path_name)}}"
+									class="card-action">See Details</a>
 								</div>
-								<div class="col-12 col-lg-6 column">
-									<div class="card">
-										<div class="card-image">
-											<img src="" alt="">
-										</div>
-										<div class="card-content">
-											<p class="card-label">Competition</p>
-											<h2 class="card-title">Acoustic Competition</h2>
-											<p class="card-date">Tuesday, 23 November 2019</p>
-										</div>
-										<a href="/xd-events-and-competitions/acoustic" class="card-action">See Details</a>
-									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-12 col-lg-6 column">
-									<div class="card">
-										<div class="card-image">
-											<img src="" alt="">
-										</div>
-										<div class="card-content">
-											<p class="card-label">Competition</p>
-											<h2 class="card-title">Coloring Competition</h2>
-											<p class="card-date">Tuesday, 23 November 2019</p>
-										</div>
-										<a href="/xd-events-and-competitions/coloring" class="card-action">See Details</a>
-									</div>
+								@endforeach
 								</div>
+							@else
+							<p>Lomba tidak tersedia</p>
+							@endif
+
 							</div>
 						</div>
 					</div>
