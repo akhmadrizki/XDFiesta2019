@@ -1,4 +1,4 @@
-@extends('layouts.main-2')
+@extends('layouts.main')
 
 @section('title')
 	<title>Acoustic - XD Events & Competitions - XD Fiesta 2019</title>
