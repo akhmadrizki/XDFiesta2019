@@ -4,12 +4,20 @@
 			<div class="col-12 col-sm-6 column">
 				<ul class="nav-link-list">
 					<li><a href="/xd-events-and-competitions/main-event">Concert in STMIK Primakara</a></li>
-					<li><a href="/xd-events-and-competitions/pubg">PUBG Mobile Competition</a></li>
+					@foreach ($inilomba as $lomba)
+						@php
+							$path=str_replace(' ', '-', $lomba->judul_nav)
+						@endphp
+						<li><a href="{{action('PagesController@show',$path)}}">{{$lomba->judul_nav}} Competition</a></li>
+						{{-- <a href="{{action('PagesController@show',$path)}}" class="subnav-link {{ $subnavActive == $lomba->judul_nav ? 'active' : NULL }}">{{$lomba->judul_nav}}</a> --}}
+					@endforeach
+					
+					{{-- <li><a href="/xd-events-and-competitions/pubg">PUBG Mobile Competition</a></li>
 					<li><a href="/xd-events-and-competitions/mobile-legends">Mobile Legends Competition</a></li>
 					<li><a href="/xd-events-and-competitions/futsal">Futsal Competition</a></li>
 					<li><a href="/xd-events-and-competitions/acoustic">Acoustic Competition</a></li>
 					<li><a href="/xd-events-and-competitions/coffee-barista">Coffee Barista Competition</a></li>
-					<li><a href="/xd-events-and-competitions/coloring">Coloring Competition</a></li>
+					<li><a href="/xd-events-and-competitions/coloring">Coloring Competition</a></li> --}}
 				</ul>
 			</div>
 		</div>

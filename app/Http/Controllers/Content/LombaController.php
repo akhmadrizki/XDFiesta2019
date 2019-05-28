@@ -51,6 +51,10 @@ class LombaController extends Controller
      */
     public function store(Request $request)
     {  
+        $request->validate([
+            'judul' => 'required|unique:lomba',
+            'judul_nav' => 'required|unique:lomba'
+        ]);
         $pic=$request->file('pic');
         $thumbnail=$request->file('thumbnail');
         $pdf=$request->file('pdf');

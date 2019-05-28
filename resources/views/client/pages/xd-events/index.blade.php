@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-	<title>Mobile Legends - XD Events & Competitions - XD Fiesta 2019</title>
+	<title>{{$lomba->judul_nav}} - XD Events & Competitions - XD Fiesta 2019</title>
 @endsection
 
 @section('content')
