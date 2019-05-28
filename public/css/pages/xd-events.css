@@ -112,8 +112,26 @@
 	width: 100%;
 	height: 245px;
 	background: #555;
+	overflow: hidden;
+	position: relative;
 }
-.xd-events-main .xd-events-collection .container .row .column .xd-competitions-event .row .column .card .card-image img {}
+.xd-events-main .xd-events-collection .container .row .column .xd-competitions-event .row .column .card .card-image::after {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: 0.2s linear;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.xd-events-main .xd-events-collection .container .row .column .xd-competitions-event .row .column .card .card-image:hover::after {
+	background-color: transparent;
+}
+.xd-events-main .xd-events-collection .container .row .column .xd-competitions-event .row .column .card .card-image img {
+	width: 100%;
+	object-fit: cover;
+}
 .xd-events-main .xd-events-collection .container .row .column .xd-competitions-event .row .column .card .card-content {
 	padding: 25px;
 }
