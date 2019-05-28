@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-			<section class="xd-event">
+	<section class="xd-event">
 	<!-- Gambar lomba dimasukkan disini -->
 		<div class="xd-event-imageBanner">
 			<img src="" alt="">
@@ -111,13 +111,15 @@
 						<form action="">
 							<div class="row">
 								<div class="col-12">
-									<p class="xd-event-register-subTitle">&nbspAlamat Email : </p>
+									<p class="xd-event-register-subTitle">&nbsp;Lomba yang diikuti : </p>
+									<input type="text" name="" value="Mobile Legends Offline" disabled class="input-text">
+									<p class="xd-event-register-subTitle">&nbsp;Alamat Email : </p>
 									<input type="text" name="" placeholder="example@email.com" class="input-text">
-									<p class="xd-event-register-subTitle">&nbspNama Team : </p>
+									<p class="xd-event-register-subTitle">&nbsp;Nama Team : </p>
 									<input type="text" name="" placeholder="ex: RRQ" class="input-text">
-									<p class="xd-event-register-subTitle">&nbspNama Ketua : </p>
+									<p class="xd-event-register-subTitle">&nbsp;Nama Ketua : </p>
 									<input type="text" name="" placeholder="ex: Steven “Marsha” Kurniawan" class="input-text">
-									<p class="xd-event-register-subTitle">&nbspNo Whatsapp : </p>
+									<p class="xd-event-register-subTitle">&nbsp;No Whatsapp : </p>
 									<input type="text" name="" placeholder="08212345678" class="input-text">
 								</div>
 								<div class="offset-lg-7"></div>

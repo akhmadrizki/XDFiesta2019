@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-	<h1>Dipa coding here..</h1>
+	<h1>Coming Soon...</h1>
 @endsection
