@@ -7,9 +7,8 @@
 @section('content')
 		<section class="xd-event" id="xd-event">
 	<!-- Gambar lomba dimasukkan disini -->
-	<!-- {{url('uploads/'.$lomba->pic)}} -->
 		<div class="xd-event-imageBanner">
-			<img src="{{ asset('uploads/competitions/coming-soon.png') }}" alt="">
+			<img src="{{url('uploads/'.$lomba->pic)}}" alt="">
 		</div>
 		
 		@if($lomba->pdf == null)
