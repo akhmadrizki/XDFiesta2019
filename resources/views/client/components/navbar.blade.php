@@ -24,7 +24,7 @@
 						@php
 							$path=str_replace(' ', '-', $lomba->judul_nav)
 						@endphp
-						<a href="{{action('PagesController@show',$path)}}" class="subnav-link {{ $subnavActive == $lomba->judul_nav ? 'active' : NULL }}">{{$lomba->judul_nav}}</a>
+						<a {{ $lomba->pdf == null ? null : "href=" . action('PagesController@show',$path) }} class="subnav-link {{ $subnavActive == $lomba->judul_nav ? 'active' : NULL }}">{{$lomba->judul_nav}}</a>
 						@endforeach
 						
 						
