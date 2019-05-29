@@ -17,6 +17,8 @@ class Daftar extends Model
     public function lomba()
     {
     	return $this->belongsTo(Lomba::class);
+
+        // return $this->hasMany(Lomba::class);
     }
 }
 

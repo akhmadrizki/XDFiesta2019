@@ -15,5 +15,6 @@
 	@include('client.components.footer')
 
 	<script src="{{ asset('js/main.js') }}"></script>
+	@yield('additional-scripts')
 </body>
 </html>

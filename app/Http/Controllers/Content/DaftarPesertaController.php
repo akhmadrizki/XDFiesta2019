@@ -12,12 +12,17 @@ class DaftarPesertaController extends Controller
     public function index()
     {
     	$daftar = Daftar::all();
-    	return view('admin.daftarPeserta',['daftar' => $daftar]);
+        $lomba = Lomba::all();
+        return view('admin.daftarPeserta')
+        ->with('daftar', $daftar)
+        ->with('lomba', $lomba);
     }
     public function daftar(Request $request)
     {
-    	// return $request->all();
-    	// $daftar = Daftar::get()->groupBy('id_lomba');
-    	Daftar::create($request->all());
+        $inilomba = Lomba::all();
+
+        $daftar = new Daftar($request->all());
+        $daftar->save();
+        return redirect()->back()->with('allert', ['SELAMAT, Anda telah berhasil mendaftar 👌']);
     }
 }

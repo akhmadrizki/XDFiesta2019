@@ -7,6 +7,12 @@
 @section('content')
 
 		<section class="xd-event">
+			@if(session('allert'))
+				<div class="alert success">
+				  <span class="closebtn">&times;</span>  
+				  <strong>SELAMAT</strong> Anda telah berhasil mendaftar 👌
+				</div>
+			@endif
 	<!-- Gambar lomba dimasukkan disini -->
 		<div class="xd-event-imageBanner">
 			<img src="{{url('uploads/'.$lomba->pic)}}" alt="" width="500px">
@@ -154,5 +160,22 @@
 			</div>
 		</div>	
 	</section>
+
+@endsection
+
+@section('additional-scripts')
+
+	<script>
+		var close = document.getElementsByClassName("closebtn");
+		var i;
+
+		for (i = 0; i < close.length; i++) {
+		  close[i].onclick = function(){
+		    var div = this.parentElement;
+		    div.style.opacity = "0";
+		    setTimeout(function(){ div.style.display = "none"; }, 600);
+		  }
+		}
+	</script>
 
 @endsection

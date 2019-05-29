@@ -22,7 +22,7 @@ class CreateDaftarsTable extends Migration
             $table->unsignedInteger('id_lomba');
             $table->timestamps();
 
-            $table->foreign('id_lomba')->references('id_lomba')->on('lomba')->onDelete('cascade');
+            // $table->foreign('id_lomba')->references('id_lomba')->on('lomba')->onDelete('cascade');
         });
     }
 
