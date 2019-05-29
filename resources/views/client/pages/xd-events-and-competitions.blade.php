@@ -55,8 +55,12 @@
 										@php
 											$path_name=str_replace(' ', '-', $dword->judul_nav);
 										@endphp
-										<a href="{{action('PagesController@show',$path_name)}}"
-										class="card-action">See Details</a>
+										@if(
+											$dword->judul_nav == 'Mobile Legends Online' ||
+											$dword->judul_nav == 'PUBG Mobile'
+										)
+											<a href="{{action('PagesController@show',$path_name)}}" class="card-action">See Details</a>
+										@endif
 									</div>
 								</div>
 								</div>
