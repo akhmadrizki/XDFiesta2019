@@ -5,13 +5,18 @@
 @endsection
 
 @section('content')
-
-		<section class="xd-event">
+		<section class="xd-event" id="xd-event">
 	<!-- Gambar lomba dimasukkan disini -->
+	<!-- {{url('uploads/'.$lomba->pic)}} -->
 		<div class="xd-event-imageBanner">
-			<img src="{{url('uploads/'.$lomba->pic)}}" alt="" width="500px">
+			<img src="{{ asset('uploads/competitions/coming-soon.png') }}" alt="">
 		</div>
-	
+		
+		@if($lomba->pdf == null)
+			<div class="comming-soon" style="padding: 25px;text-align: center;">
+				<h1>Comming Soon...</h1>
+			</div>
+		@else
 		<!-- Deskripsi lomba ditulis disini -->
 		<div class="container">
 			<div class="row">
@@ -146,6 +151,7 @@
 
 				</div>
 			</div>
+			@endif
 		</div>	
 	</section>
 
