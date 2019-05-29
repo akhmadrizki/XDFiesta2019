@@ -1,6 +1,6 @@
 <footer>
 	<div class="container-fluid">
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-12 col-sm-6 column">
 				<ul class="nav-link-list">
 					<li><a href="/xd-events-and-competitions/main-event">Concert in STMIK Primakara</a></li>
@@ -20,7 +20,7 @@
 					<li><a href="/xd-events-and-competitions/coloring">Coloring Competition</a></li> --}}
 				</ul>
 			</div>
-		</div>
+		</div> -->
 		<div class="row">
 			<div class="col-12 col-sm-6 column" style="text-align:center;">
 				<span class="title">XD Fiesta 2019 - STMIK Primakara</span>
