@@ -28,7 +28,6 @@
 								<div class="xd-main-event-overlay-info">
 									<p class="label">Main Event</p>
 									<h2>XD Fiesta Concert in STMIK Primakara</h2>
-									<p class="date">Coming Soon</p>
 								</div>
 								<!-- <a class="action" href="/xd-events-and-competitions/main-event">See Details</a> -->
 							</div>
@@ -55,11 +54,10 @@
 										@php
 											$path_name=str_replace(' ', '-', $dword->judul_nav);
 										@endphp
-										@if(
-											$dword->judul_nav == 'Mobile Legends Online' ||
-											$dword->judul_nav == 'PUBG Mobile'
-										)
+										@if($dword->waktu != 'Coming Soon')
 											<a href="{{action('PagesController@show',$path_name)}}" class="card-action">See Details</a>
+										@else
+											<a class="card-action" style="color:#777;">Coming Soon</a>
 										@endif
 									</div>
 								</div>
