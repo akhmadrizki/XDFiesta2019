@@ -6,7 +6,12 @@
 <div class="col-12 col-md-6 col-lg-12">
     <div class="card">
       <div class="card-header">
-        <h4>{{$lmb->judul}}</h4>
+        <div class="col-6">
+          <h4>{{$lmb->judul}}</h4>
+        </div>
+        <div class="col-6">
+          <a href="#" class="btn btn-icon icon-left btn-success float-right"><i class="far fa-file-excel"></i> Eksport Excel</a>
+        </div>
       </div>
       <div class="card-body p-0">
         <div class="table-responsive">
@@ -14,10 +19,9 @@
             <thead>
               <tr>
                 <th>No</th>
-                <th>Name</th>
-                <th>Created At</th>
-                <th>Status</th>
-                <th>Action</th>
+                <th>Nama Team</th>
+                <th>Nama Ketua</th>
+                <th>No. Whatsapp</th>
               </tr>
             </thead>
 
@@ -30,10 +34,9 @@
               @if($lmb->id_lomba == $lm->id_lomba)
               <tr>
                 <td>{{$ulang}}</td>
-                <td>{{$lm->alamat_email}}</td>
-                <td><div class="badge badge-success">Lunas</div></td>
-                <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                <td>ll</td>
+                <td>{{$lm->nama_team}}</td>
+                <td>{{$lm->nama_ketua}}</td>
+                <td>{{$lm->no_wa}}</td>
               </tr>
               @php
                 $ulang++;
