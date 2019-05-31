@@ -61,7 +61,7 @@ class LombaController extends Controller
         $pdf=$request->file('pdf');
         $lomba = new Lomba;
         $lomba->judul = $request->get('judul');
-        $lomba->judul = $request->get('judul_nav');
+        $lomba->judul_nav = $request->get('judul_nav');
         $lomba->deskripsi = $request->get('deskripsi');
         if($pic!=null){
             $extension=$pic->getClientOriginalExtension();

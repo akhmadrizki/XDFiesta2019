@@ -67,11 +67,11 @@
 
             <li class="menu-header">Starter</li>
             
-            <li class="{{ $navActive == 'Write Post' ? 'active' : NULL }}"><a class="nav-link" href="/dashboard"><i class="fas fa-edit"></i> <span>Write Post</span></a></li>
-            <li class="{{ $navActive == 'List Post' ? 'active' : NULL }}"><a class="nav-link" href="/dashboard/list"><i class="fas fa-list"></i> <span>List Post</span></a></li>
+            <li><a class="nav-link" href="/dashboard"><i class="fas fa-edit"></i> <span>Write Post</span></a></li>
+            <li><a class="nav-link" href="/dashboard/list"><i class="fas fa-list"></i> <span>List Post</span></a></li>
 
             <li class="menu-header">Applications</li>
-            <li class="{{ $navActive == 'Application Contest' ? 'active' : NULL }}"><a class="nav-link" href="{{route('daftar.peserta')}}"><i class="fas fa-chalkboard-teacher"></i> <span>Application Contest</span></a></li>
+            <li><a class="nav-link" href="{{route('daftar.peserta')}}"><i class="fas fa-chalkboard-teacher"></i> <span>Application Contest</span></a></li>
           </ul>
 
           </aside>

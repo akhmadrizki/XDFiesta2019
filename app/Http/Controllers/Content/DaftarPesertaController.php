@@ -15,9 +15,7 @@ class DaftarPesertaController extends Controller
     {
     	$daftar = Daftar::all();
         $lomba = Lomba::all();
-        return view('admin.daftarPeserta', [
-            'navActive' => 'Application Contest'
-        ])
+        return view('admin.daftarPeserta')
         ->with('daftar', $daftar)
         ->with('lomba', $lomba);
     }
