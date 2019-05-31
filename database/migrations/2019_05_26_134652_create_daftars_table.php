@@ -19,8 +19,11 @@ class CreateDaftarsTable extends Migration
             $table->string('nama_team');
             $table->string('nama_ketua');
             $table->char('no_wa', 20);
+            $table->string('judul_lomba');
             $table->unsignedInteger('id_lomba');
             $table->timestamps();
+
+            // $table->foreign('id_lomba')->references('id_lomba')->on('lomba')->onDelete('cascade');
         });
     }
 

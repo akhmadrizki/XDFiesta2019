@@ -2,152 +2,58 @@
 @section('content')
 
 <div class="row">
+  @foreach($lomba as $lmb)
 <div class="col-12 col-md-6 col-lg-12">
     <div class="card">
       <div class="card-header">
-        <h4>Nama Lomba</h4>
+        <div class="col-6">
+          <h4>{{$lmb->judul}}</h4>
+        </div>
+        <div class="col-6">
+          <a href="{{route('export.excel')}}" class="btn btn-icon icon-left btn-success float-right"><i class="far fa-file-excel"></i> Eksport Excel</a>
+        </div>
       </div>
       <div class="card-body p-0">
         <div class="table-responsive">
           <table class="table table-striped table-md">
-            <tbody><tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Created At</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Irwansyah Saputra</td>
-              <td>2017-01-09</td>
-              <td><div class="badge badge-success">Lunas</div></td>
-              <td><a href="#" class="btn btn-secondary">Detail</a></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Hasan Basri</td>
-              <td>2017-01-09</td>
-              <td><div class="badge badge-success">Lunas</div></td>
-              <td><a href="#" class="btn btn-secondary">Detail</a></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Kusnadi</td>
-              <td>2017-01-11</td>
-              <td><div class="badge badge-danger">Belum Lunas</div></td>
-              <td><a href="#" class="btn btn-secondary">Detail</a></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Rizal Fakhri</td>
-              <td>2017-01-11</td>
-              <td><div class="badge badge-success">Lunas</div></td>
-              <td><a href="#" class="btn btn-secondary">Detail</a></td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Isnap Kiswandi</td>
-              <td>2017-01-17</td>
-              <td><div class="badge badge-success">Lunas</div></td>
-              <td><a href="#" class="btn btn-secondary">Detail</a></td>
-            </tr>
-          </tbody></table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Team</th>
+                <th>Nama Ketua</th>
+                <th>No. Whatsapp</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              @php
+                $ulang = 1;
+              @endphp
+              @foreach($daftar as $lm)
+              
+              @if($lmb->id_lomba == $lm->id_lomba)
+              <tr>
+                <td>{{$ulang}}</td>
+                <td>{{$lm->nama_team}}</td>
+                <td>{{$lm->nama_ketua}}</td>
+                <td>{{$lm->no_wa}}</td>
+              </tr>
+              @php
+                $ulang++;
+              @endphp
+              @endif
+              @endforeach
+          </tbody>
+          </table>
         </div>
       </div>
+
       <div class="card-footer text-right">
-        <nav class="d-inline-block">
-          <ul class="pagination mb-0">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-            <li class="page-item">
-              <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-            </li>
-          </ul>
-        </nav>
       </div>
+
     </div>
 </div>
-
-
-<div class="col-12 col-md-6 col-lg-12">
-    <div class="card">
-      <div class="card-header">
-        <h4>Nama Lomba</h4>
-      </div>
-      <div class="card-body p-0">
-        <div class="table-responsive">
-          <table class="table table-striped table-md">
-            <tbody><tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Created At</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Irwansyah Saputra</td>
-              <td>2017-01-09</td>
-              <td><div class="badge badge-success">Lunas</div></td>
-              <td><a href="#" class="btn btn-secondary">Detail</a></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Hasan Basri</td>
-              <td>2017-01-09</td>
-              <td><div class="badge badge-success">Lunas</div></td>
-              <td><a href="#" class="btn btn-secondary">Detail</a></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Kusnadi</td>
-              <td>2017-01-11</td>
-              <td><div class="badge badge-danger">Belum Lunas</div></td>
-              <td><a href="#" class="btn btn-secondary">Detail</a></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Rizal Fakhri</td>
-              <td>2017-01-11</td>
-              <td><div class="badge badge-success">Lunas</div></td>
-              <td><a href="#" class="btn btn-secondary">Detail</a></td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Isnap Kiswandi</td>
-              <td>2017-01-17</td>
-              <td><div class="badge badge-success">Lunas</div></td>
-              <td><a href="#" class="btn btn-secondary">Detail</a></td>
-            </tr>
-          </tbody></table>
-        </div>
-      </div>
-      <div class="card-footer text-right">
-        <nav class="d-inline-block">
-          <ul class="pagination mb-0">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-            <li class="page-item">
-              <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-</div>
+  @endforeach
 </div>
 
 @endsection

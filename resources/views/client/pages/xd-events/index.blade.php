@@ -5,17 +5,25 @@
 @endsection
 
 @section('content')
+
+		<section class="xd-event">
+			@if(session('allert'))
+				<div class="alert success">
+				  <span class="closebtn">&times;</span>  
+				  <strong>SELAMAT</strong> Anda telah berhasil mendaftar 👌
+				</div>
+			@endif
 		<section class="xd-event" id="xd-event">
 	<!-- Gambar lomba dimasukkan disini -->
 		<div class="xd-event-imageBanner">
 			<img src="{{url('uploads/'.$lomba->pic)}}" alt="">
 		</div>
 		
-		@if($lomba->pdf == null)
+		{{-- @if($lomba->pdf == null)
 			<div class="comming-soon" style="padding: 25px;text-align: center;">
 				<h1>Comming Soon...</h1>
 			</div>
-		@else
+		@else --}}
 		<!-- Deskripsi lomba ditulis disini -->
 		<div class="container">
 			<div class="row">
@@ -123,17 +131,24 @@
 					<!-- Form pendaftaran lomba ditulis disini -->
 					<div class="xd-event-register border-box">
 						<p class="xd-event-register-mainTitle">Form Pendaftaran :</p>
-						<form action="">
+						<form action="{{route('daftar.lomba')}}" method="POST" enctype="multipart/form-data">
+							{{ csrf_field() }}
 							<div class="row">
 								<div class="col-12">
+									<input type="hidden" name="id_lomba" class="input-text" value="{{$lomba->id_lomba}}">
+									<input type="hidden" name="judul_lomba" class="input-text" value="{{$lomba->judul}}">
+									
 									<p class="xd-event-register-subTitle">&nbspAlamat Email : </p>
-									<input type="text" name="" placeholder="example@email.com" class="input-text">
+									<input type="email" name="alamat_email" placeholder="example@email.com" class="input-text">
+
 									<p class="xd-event-register-subTitle">&nbspNama Team : </p>
-									<input type="text" name="" placeholder="ex: RRQ" class="input-text">
+									<input type="text" name="nama_team" placeholder="ex: RRQ" class="input-text">
+
 									<p class="xd-event-register-subTitle">&nbspNama Ketua : </p>
-									<input type="text" name="" placeholder="ex: Steven “Marsha” Kurniawan" class="input-text">
+									<input type="text" name="nama_ketua" placeholder="ex: Steven “Marsha” Kurniawan" class="input-text">
+
 									<p class="xd-event-register-subTitle">&nbspNo Whatsapp : </p>
-									<input type="text" name="" placeholder="08212345678" class="input-text">
+									<input type="tel" name="no_wa" placeholder="08212345678" class="input-text">
 								</div>
 								<div class="offset-lg-7"></div>
 								<div class="col-lg-5 col-12 justify-content-center">
@@ -150,8 +165,25 @@
 
 				</div>
 			</div>
-			@endif
+			{{-- @endif --}}
 		</div>	
 	</section>
+
+@endsection
+
+@section('additional-scripts')
+
+	<script>
+		var close = document.getElementsByClassName("closebtn");
+		var i;
+
+		for (i = 0; i < close.length; i++) {
+		  close[i].onclick = function(){
+		    var div = this.parentElement;
+		    div.style.opacity = "0";
+		    setTimeout(function(){ div.style.display = "none"; }, 600);
+		  }
+		}
+	</script>
 
 @endsection
