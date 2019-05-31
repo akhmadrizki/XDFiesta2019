@@ -92,6 +92,7 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::post('/dashboard/waktu_tempat/update','Content\WaktuTempatController@update');
 
 	Route::get('/dashboard/daftar-peserta', 'Content\DaftarPesertaController@index')->name('daftar.peserta');
+	Route::get('/daftar-peserta/export', 'Content\DaftarPesertaController@export')->name('export.excel');
 
 	Route::post('/dashboard/kontak/update','Content\KontakController@update');
 	// Route::get('download',function(){

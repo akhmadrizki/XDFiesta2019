@@ -10,7 +10,7 @@
           <h4>{{$lmb->judul}}</h4>
         </div>
         <div class="col-6">
-          <a href="#" class="btn btn-icon icon-left btn-success float-right"><i class="far fa-file-excel"></i> Eksport Excel</a>
+          <a href="{{route('export.excel')}}" class="btn btn-icon icon-left btn-success float-right"><i class="far fa-file-excel"></i> Eksport Excel</a>
         </div>
       </div>
       <div class="card-body p-0">

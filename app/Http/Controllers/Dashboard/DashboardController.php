@@ -9,11 +9,15 @@ class DashboardController extends Controller
 {
     public function index()
     {
-    	return view('admin.index');
+    	return view('admin.index', [
+    		'navActive' => 'Write Post'
+    	]);
     }
 
     public function list()
     {
-    	return view('admin.list');
+    	return view('admin.list', [
+    		'navActive' => 'List Post'
+    	]);
     }
 }

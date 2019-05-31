@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Daftar;
 use App\Lomba;
+use App\Exports\DaftarsExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DaftarPesertaController extends Controller
 {
@@ -13,7 +15,9 @@ class DaftarPesertaController extends Controller
     {
     	$daftar = Daftar::all();
         $lomba = Lomba::all();
-        return view('admin.daftarPeserta')
+        return view('admin.daftarPeserta', [
+            'navActive' => 'Application Contest'
+        ])
         ->with('daftar', $daftar)
         ->with('lomba', $lomba);
     }
@@ -24,5 +28,11 @@ class DaftarPesertaController extends Controller
         $daftar = new Daftar($request->all());
         $daftar->save();
         return redirect()->back()->with('allert', ['SELAMAT, Anda telah berhasil mendaftar 👌']);
+    }
+    public function export() 
+    {
+        $daftar = Daftar::all();
+        $lomba = Lomba::all();
+        return Excel::download(new DaftarsExport, 'peserta.xlsx');
     }
 }

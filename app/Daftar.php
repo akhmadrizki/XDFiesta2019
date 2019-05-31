@@ -11,6 +11,7 @@ class Daftar extends Model
     	'nama_team',
     	'nama_ketua',
     	'no_wa',
+        'judul_lomba',
     	'id_lomba'
     ];
 
