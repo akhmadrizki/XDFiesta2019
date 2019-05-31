@@ -27,10 +27,10 @@
 			</div>
 			<div class="col-12 col-sm-6 column">
 				<div class="social-medias" style="text-align:center;">
-					<a href="#" class="social-media-item">
+					<a href="https://web.facebook.com/primakara/?_rdc=1&_rdr" target="_blank" class="social-media-item">
 						<img src="{{ asset('images/compressed/facebook.png') }}" alt="Facebook" width="25">
 					</a>
-					<a href="#" class="social-media-item">
+					<a href="https://www.instagram.com/stmik_primakara/?igshid=14c3rqrooqft9" target="_blank" class="social-media-item">
 						<img src="{{ asset('images/compressed/instagram.png') }}" alt="Instagram" width="25">
 					</a>
 				</div>
