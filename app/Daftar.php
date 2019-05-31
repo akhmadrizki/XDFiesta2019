@@ -14,6 +14,7 @@ class Daftar extends Model
     	'id_lomba'
     ];
 
+	public $id = 'id_daftar';
     public function lomba()
     {
     	return $this->belongsTo(Lomba::class);

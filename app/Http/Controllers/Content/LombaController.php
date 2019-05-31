@@ -60,7 +60,7 @@ class LombaController extends Controller
         $pdf=$request->file('pdf');
         $lomba = new Lomba;
         $lomba->judul = $request->get('judul');
-        $lomba->judul = $request->get('judul_nav');
+        $lomba->judul_nav = $request->get('judul_nav');
         $lomba->deskripsi = $request->get('deskripsi');
         if($pic!=null){
             $extension=$pic->getClientOriginalExtension();
@@ -137,7 +137,7 @@ class LombaController extends Controller
         if($pic!=null){
             $extension=$pic->getClientOriginalExtension();
             $name = $request->judul;
-            Storage::disk('public')->put($name.'.'.$extension,  File::get($pic));
+            Storage::disk('img')->put($name.'.'.$extension,  File::get($pic));
             Lomba::where('id_lomba',$id)->update(
                 [
                     'pic'=>$name.'.'.$extension

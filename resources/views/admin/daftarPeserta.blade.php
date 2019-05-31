@@ -17,6 +17,15 @@
               <th>Status</th>
               <th>Action</th>
             </tr>
+            @foreach ($inidata as $data)
+            <tr>
+              <td>1</td>
+              <td>Irwansyah Saputra</td>
+              <td>2017-01-09</td>
+              <td><div class="badge badge-success">Lunas</div></td>
+              <td><a href="#" class="btn btn-secondary">Detail</a></td>
+            </tr>    
+            @endforeach
             <tr>
               <td>1</td>
               <td>Irwansyah Saputra</td>
