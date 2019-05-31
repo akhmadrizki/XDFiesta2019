@@ -19,11 +19,11 @@
 			<img src="{{url('uploads/'.$lomba->pic)}}" alt="">
 		</div>
 		
-		{{-- @if($lomba->pdf == null)
+		@if($lomba->pdf == null)
 			<div class="comming-soon" style="padding: 25px;text-align: center;">
 				<h1>Comming Soon...</h1>
 			</div>
-		@else --}}
+		@else
 		<!-- Deskripsi lomba ditulis disini -->
 		<div class="container">
 			<div class="row">
@@ -165,7 +165,7 @@
 
 				</div>
 			</div>
-			{{-- @endif --}}
+			@endif
 		</div>	
 	</section>
 
