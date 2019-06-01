@@ -16,8 +16,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="xd-events-banner grey"></div>
-		<div class="xd-events-collection" style="background-image:url({{ asset('images/compressed/banner-xd-events.png') }});background-size:cover;background-repeat:no-repeat;">
+		<div class="xd-events-banner banner-fit" style="background-image:url({{ asset('images/compressed/concert/concert.jpg') }});"></div>
+		<div class="xd-events-collection">
 			<div class="container">
 				<div class="row">
 					<div class="col column">
@@ -73,6 +73,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="xd-events-banner grey"></div>
+		<div class="xd-events-banner banner-fit" style="background-image:url({{ asset('images/compressed/concert/concert2.jpg') }});"></div>
 	</main>
 @endsection

@@ -2,7 +2,7 @@
 	<section>
 		<div class="row">
 			<div class="col-6 column">
-				<h1 style="margin:0;">XD Fiesta 2019</h1>
+				<a href="/" class="juduls"><h1 style="margin:0;">XD Fiesta 2019</h1></a>
 			</div>
 			<div class="col-6 column" style="text-align:right;">
 				<span id="dropdown-trigger"><i class="material-icons">menu</i></span>

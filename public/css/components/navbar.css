@@ -1,3 +1,10 @@
+.juduls{
+	color: #4c4c4c;
+}
+.column a:hover{
+	text-decoration: none;
+	color: #70a6dc;
+}
 nav {
 	position: fixed;
 	top: 0;

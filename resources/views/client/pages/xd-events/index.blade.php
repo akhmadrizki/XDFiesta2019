@@ -191,9 +191,6 @@
 						<form>
 							<div class="row">
 								<div class="col-12">
-{{-- 									<input type="hidden" name="id_lomba" class="input-text" value="{{$lomba->id_lomba}}">
-									<input type="hidden" name="judul_lomba" class="input-text" value="{{$lomba->judul}}"> --}}
-									
 									<p class="xd-event-register-subTitle">&nbspAlamat Email : </p>
 									<input type="email" id="myText1" placeholder="example@email.com" class="input-text">
 
@@ -206,7 +203,6 @@
 									<p class="xd-event-register-subTitle">&nbspNo Whatsapp : </p>
 									<input type="tel" id="myText4" placeholder="08212345678" class="input-text">
 								</div>
-								<div class="offset-lg-7"></div>
 							</div>
 						</form>
 						<div class="col-lg-12 col-12" style="text-align: right;">
