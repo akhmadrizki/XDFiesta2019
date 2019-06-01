@@ -66,20 +66,20 @@ class LombaController extends Controller
         if($pic!=null){
             $extension=$pic->getClientOriginalExtension();
             $name = $request->judul;
-            Storage::disk('public')->put($name.'.'.$extension,  File::get($pic));
+            Storage::disk('img')->put($name.'.'.$extension,  File::get($pic));
             $lomba->pic = $name.'.'.$extension;
         }
         if($thumbnail!=null){
             $extension=$thumbnail->getClientOriginalExtension();
             $name = $request->judul;
-            Storage::disk('public')->put($name.'_thumbnail.'.$extension,  File::get($thumbnail));
+            Storage::disk('img')->put($name.'_thumbnail.'.$extension,  File::get($thumbnail));
             $lomba->thumbnail = $name.'_thumbnail.'.$extension;
         }
         if($pdf!=null){
             $extension=$pdf->getClientOriginalExtension();
             $name = $request->judul;
-            Storage::disk('public')->put('Syarat dan Ketentuan '.$name.'.'.$extension,  File::get($pdf));
-            $lomba->thumbnail = 'Syarat dan Ketentuan '.$name.'.'.$extension;
+            Storage::disk('img')->put('Syarat dan Ketentuan '.$name.'.'.$extension,  File::get($pdf));
+            $lomba->pdf = 'Syarat dan Ketentuan '.$name.'.'.$extension;
         }
         $lomba->save();
         return redirect()->action('Content\SyaratController@create');
