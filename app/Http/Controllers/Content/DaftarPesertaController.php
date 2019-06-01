@@ -26,6 +26,7 @@ class DaftarPesertaController extends Controller
         $daftar = new Daftar($request->all());
         $daftar->save();
         return redirect()->back()->with('allert', ['SELAMAT, Anda telah berhasil mendaftar 👌']);
+        // return redirect()->to(url()->previous() . '#myModal');
     }
     public function export() 
     {
