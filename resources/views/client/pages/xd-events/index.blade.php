@@ -135,27 +135,27 @@
 							{{ csrf_field() }}
 							<div class="row">
 								<div class="col-12">
-									<input type="hidden" name="id_lomba" class="input-text" value="{{$lomba->id_lomba}}">
-									<input type="hidden" name="judul_lomba" class="input-text" value="{{$lomba->judul}}">
+									<input type="hidden" name="id_lomba" required class="input-text" value="{{$lomba->id_lomba}}">
+									<input type="hidden" name="judul_lomba" required class="input-text" value="{{$lomba->judul}}">
 									
 									<p class="xd-event-register-subTitle">&nbspAlamat Email : </p>
-									<input type="email" name="alamat_email" placeholder="example@email.com" class="input-text">
+									<input type="email" name="alamat_email" placeholder="example@email.com" required class="input-text">
 
 									<p class="xd-event-register-subTitle">&nbspNama Team : </p>
-									<input type="text" name="nama_team" placeholder="ex: RRQ" class="input-text">
+									<input type="text" name="nama_team" placeholder="ex: RRQ" required class="input-text">
 
 									<p class="xd-event-register-subTitle">&nbspNama Ketua : </p>
-									<input type="text" name="nama_ketua" placeholder="ex: Steven “Marsha” Kurniawan" class="input-text">
+									<input type="text" name="nama_ketua" placeholder="ex: Steven “Marsha” Kurniawan" required class="input-text">
 
 									<p class="xd-event-register-subTitle">&nbspNo Whatsapp : </p>
-									<input type="tel" name="no_wa" placeholder="08212345678" class="input-text">
+									<input type="tel" name="no_wa" placeholder="08212345678" required class="input-text">
 								</div>
 								<div class="offset-lg-7"></div>
 								<div class="col-lg-5 col-12 justify-content-center">
-									<button class="reset-button">
+									<button class="reset-button" type="reset">
 										<span>RESET</span>
 									</button>
-									<button class="submit-button">
+									<button class="submit-button" type="submit">
 										<span>SUBMIT</span>
 									</button>
 								</div>
