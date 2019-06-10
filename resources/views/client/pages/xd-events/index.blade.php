@@ -124,7 +124,7 @@
 							<tr>
 								<td>{{$count<1?"Contact":''}}</td>
 								<td>{{$count<1?":":''}}</td>                                
-                                <td>{{$kword->kontak}}</td>
+                <td>{!! $kword->kontak !!}</td>
 							</tr>
                             @php
                                 $count++;
@@ -149,7 +149,7 @@
 
 				<div class="col-lg-6 col-12">
 					<!-- Syarat dan Ketentuan lomba ditulis disini -->
-					<div class="xd-event-term border-box">
+					<div class="xd-event-term border-box" style="display: none;">
 						<p>Persyaratan Pendaftaran :</p>
 						{{-- <ol style="padding-left: 20px !important;">
 							<li>
@@ -199,6 +199,10 @@
 
 									<p class="xd-event-register-subTitle">&nbspNama Ketua : </p>
 									<input type="text" id="myText3" placeholder="ex: Steven “Marsha” Kurniawan" class="input-text">
+									
+									<p class="xd-event-register-subTitle">&nbspJumlah Anggota Team : </p>
+									<input type="radio" name="test" value="5" checked style="margin-left: 10px;" > 5<br>
+									<input type="radio" name="test" value="6" style="margin: 0  0 15px 10px;" > 6<br>
 
 									<p class="xd-event-register-subTitle">&nbspNo Whatsapp : </p>
 									<input type="tel" id="myText4" placeholder="08212345678" class="input-text">
