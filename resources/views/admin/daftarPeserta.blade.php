@@ -10,7 +10,7 @@
           <h4>{{$lmb->judul}}</h4>
         </div>
         <div class="col-6">
-          <a href="{{route('export.excel')}}" class="btn btn-icon icon-left btn-success float-right"><i class="far fa-file-excel"></i> Eksport Excel</a>
+          {{-- <a href="{{route('export.excel')}}" class="btn btn-icon icon-left btn-success float-right"><i class="far fa-file-excel"></i> Eksport Excel</a> --}}
         </div>
       </div>
       <div class="card-body p-0">
@@ -22,6 +22,9 @@
                 <th>Nama Team</th>
                 <th>Nama Ketua</th>
                 <th>No. Whatsapp</th>
+                <th>E-mail</th>
+                <th>Jumlah Anggota</th>
+                <th>Nama Anggota</th>
               </tr>
             </thead>
 
@@ -37,6 +40,21 @@
                 <td>{{$lm->nama_team}}</td>
                 <td>{{$lm->nama_ketua}}</td>
                 <td>{{$lm->no_wa}}</td>
+                <td>{{$lm->alamat_email}}</td>
+                <td>{{$lm->jumlah_anggota}}</td>
+                <td>
+                  <ul>
+                    @php
+                      $jml_anggota = (int) $lm->jumlah_anggota;
+                    @endphp
+
+                    @for($i = 1; $i<=$jml_anggota; $i++)
+                      <li>{{ ${'lm'}->{'nama_anggota'.$i} }}</li>
+                    @endfor
+
+                  </ul>
+                  {{-- {{$lm->nama_anggota1}} --}}
+                </td>
               </tr>
               @php
                 $ulang++;
