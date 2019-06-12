@@ -15,4 +15,9 @@ class RsvnController extends Controller
     	\App\Daftar::create($request->all());
     	// return $request->all();
     }
+
+    public function index()
+    {
+    	return redirect('/xd-events-and-competitions');
+    }
 }

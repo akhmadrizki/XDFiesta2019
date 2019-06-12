@@ -17,9 +17,11 @@
 // Route::post('syarat/update','SyaratController@update');
 
 // Front end routes
-Route::get('/', function () {
-    return redirect('/xd-events-and-competitions');
-});
+// Route::get('/', function () {
+//     return redirect('/xd-events-and-competitions');
+// });
+
+Route::get('/', 'Client\RsvnController@index')->name('main.page');
 
 Route::get('/xd-profile', function () {
 	return view('info.under-construction', [
