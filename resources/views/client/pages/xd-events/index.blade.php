@@ -149,7 +149,7 @@
 
 				<div class="col-lg-6 col-12">
 					<!-- Syarat dan Ketentuan lomba ditulis disini -->
-					<div class="xd-event-term border-box" style="display: none;">
+					<div class="xd-event-term border-box">
 						<p>Persyaratan Pendaftaran :</p>
 						{{-- <ol style="padding-left: 20px !important;">
 							<li>
