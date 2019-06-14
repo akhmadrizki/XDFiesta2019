@@ -201,8 +201,8 @@
 									<input type="text" id="myText3" placeholder="ex: Steven “Marsha” Kurniawan" class="input-text">
 									
 									<p class="xd-event-register-subTitle">&nbspJumlah Anggota Team : </p>
-									<input type="radio" name="test" value="5" checked style="margin-left: 10px;" > 5<br>
-									<input type="radio" name="test" value="6" style="margin: 0  0 15px 10px;" > 6<br>
+									<input type="radio" name="test" id="myCheck" value="5" onclick="myFunction()" required style="margin-left: 10px;"> 5<br>
+									<input type="radio" name="test" id="myCheck2" value="6" onclick="myFunction2()" style="margin: 0  0 15px 10px;"> 6<br>
 
 									<p class="xd-event-register-subTitle">&nbspNo Whatsapp : </p>
 									<input type="tel" id="myText4" placeholder="08212345678" class="input-text">
@@ -247,6 +247,36 @@
 							    				<label>Nama Ketua :</label>
 							    				<input type="text" id="slug3" name="nama_ketua" placeholder="ex: Steven “Marsha” Kurniawan" class="form-modal" required>
 							    			</div>
+
+							    			<div class="col-12">
+							    				<div class="container">
+							    					<label>Nama Team :</label>
+							    					<p id="anggota_null" style="color: red; padding: 10px 15px; border: 1px solid crimson; background-color: rgba(200,0,0,0.1); border-radius: 4px;">*Anda Belum Memilih Jumlah Anggota</p>
+							    					<div class="row">
+							    						<input type="hidden" id="hidden5" style="display: none" name="jumlah_anggota" value="5">
+							    						<input type="hidden" id="hidden6" style="display: none" name="jumlah_anggota" value="6">
+									    				<div class="col-4">
+									    					<input type="text" id="text" name="nama_anggota1" placeholder="Nama Anggota 1" class="form-modal" required style="display: none">
+									    				</div>
+									    				<div class="col-4">
+									    					<input type="text" id="text2" name="nama_anggota2" placeholder="Nama Anggota 2" class="form-modal" required style="display: none">
+									    				</div>
+									    				<div class="col-4">
+									    					<input type="text" id="text3" name="nama_anggota3" placeholder="Nama Anggota 3" class="form-modal" required style="display: none">
+									    				</div>
+									    				<div class="col-4">
+									    					<input type="text" id="text4" name="nama_anggota4" placeholder="Nama Anggota 4" class="form-modal" required style="display: none">
+									    				</div>
+									    				<div class="col-4">
+									    					<input type="text" id="text5" name="nama_anggota5" placeholder="Nama Anggota 5" class="form-modal" required style="display: none">
+									    				</div>
+									    				<div class="col-4">
+									    					<input type="text" id="text6" name="nama_anggota6" placeholder="Nama Anggota 6" class="form-modal" style="display: none">
+									    				</div>
+								    				</div>
+							    				</div>
+							    			</div>
+
 							    			<div class="col-12">
 							    				<label>No Whatsapp :</label>
 							    				<input type="tel" id="slug4" name="no_wa" placeholder="08212345678" class="form-modal" required>
@@ -315,6 +345,140 @@
 			slug4.value = slugify(myText4.value);
 		});
 	</script>
+
+	<script>
+		function myFunction() {
+		  var checkBox = document.getElementById("myCheck");
+		  var text = document.getElementById("text");
+		  var text2 = document.getElementById("text2");
+		  var text3 = document.getElementById("text3");
+		  var text4 = document.getElementById("text4");
+		  var text5 = document.getElementById("text5");
+		  var text6 = document.getElementById("text6");
+		  var jumlah_anggota = document.getElementById("hidden5");
+		  var jumlah_anggota2 = document.getElementById("hidden6");
+
+		  var anggota_null = document.getElementById("anggota_null");
+		  if (checkBox.checked == true){
+		    text.style.display = "block";
+		    text2.style.display = "block";
+		    text3.style.display = "block";
+		    text4.style.display = "block";
+		    text5.style.display = "block";
+		    text6.style.display = "none";
+		    anggota_null.style.display = "none";
+		    jumlah_anggota.style.display ="block";
+		    jumlah_anggota2.style.display = "none";
+		    jumlah_anggota.disabled = false;
+		    jumlah_anggota2.disabled = true;
+		  } else {
+		     text.style.display = "none";
+		     text2.style.display = "none";
+		     text3.style.display = "none";
+		     text4.style.display = "none";
+		     text5.style.display = "none";
+		     // lima.style.display = "block";
+		     text6.style.display = "block";
+		     anggota_null.style.display = "block";
+		     jumlah_anggota.style.display ="none";
+		     jumlah_anggota2.style.display = "block";
+		     jumlah_anggota.disabled = true;
+		     jumlah_anggota2.disabled = false;
+		     // enam.style.display = "none";
+		     // textt.style.display = "block";
+		     // textt2.style.display = "block";
+		     // textt3.style.display = "block";
+		     // textt4.style.display = "block";
+		     // textt5.style.display = "block";
+		     // textt6.style.display = "block";
+		  }
+		}
+	</script>
+
+	<script>
+		function myFunction2() {
+		  var checkBox = document.getElementById("myCheck2");
+		  var text = document.getElementById("text");
+		  var text2 = document.getElementById("text2");
+		  var text3 = document.getElementById("text3");
+		  var text4 = document.getElementById("text4");
+		  var text5 = document.getElementById("text5");
+		  var text6 = document.getElementById("text6");
+		  var jumlah_anggota = document.getElementById("hidden5");
+		  var jumlah_anggota2 = document.getElementById("hidden6");
+		  
+		  var anggota_null = document.getElementById("anggota_null");
+		  if (checkBox.checked == true){
+		    text.style.display = "block";
+		    text2.style.display = "block";
+		    text3.style.display = "block";
+		    text4.style.display = "block";
+		    text5.style.display = "block";
+		    text6.style.display = "block";
+		    jumlah_anggota.style.display ="none";
+		    jumlah_anggota2.style.display = "block";
+		    anggota_null.style.display = "none";
+		    jumlah_anggota.disabled = true;
+		    jumlah_anggota2.disabled = false;
+		    // lima.style.display = "block";
+
+		    // enam.style.display = "block";
+		    // textt.style.display = "block";
+		    // textt2.style.display = "block";
+		    // textt3.style.display = "block";
+		    // textt4.style.display = "block";
+		    // textt5.style.display = "block";
+		    // textt6.style.display = "block";
+		  } else {
+		     text.style.display = "none";
+		     text2.style.display = "none";
+		     text3.style.display = "none";
+		     text4.style.display = "none";
+		     text5.style.display = "none";
+		     // lima.style.display = "block";
+		     text6.style.display = "none";
+		     jumlah_anggota.style.display ="block";
+		     jumlah_anggota2.style.display = "none";
+		     anggota_null.style.display = "block";
+		     jumlah_anggota.disabled = false;
+		     jumlah_anggota2.disabled = true;
+		     // enam.style.display = "none";
+		     // textt.style.display = "none";
+		     // textt2.style.display = "none";
+		     // textt3.style.display = "none";
+		     // textt4.style.display = "none";
+		     // textt5.style.display = "none";
+		     // textt6.style.display = "none";
+		  }
+		}
+	</script>
+
+	{{-- <script>
+		function myFunction() {
+		  var checkBox = document.getElementById("myCheck2");
+		  var textt = document.getElementById("text");
+		  var textt2 = document.getElementById("text2");
+		  var textt3 = document.getElementById("text3");
+		  var textt4 = document.getElementById("text4");
+		  var textt5 = document.getElementById("text5");
+		  var textt6 = document.getElementById("text6");
+		  if (checkBox.checked == true){
+		    text.style.display = "block";
+		    text2.style.display = "block";
+		    text3.style.display = "block";
+		    text4.style.display = "block";
+		    text5.style.display = "block";
+		    text6.style.display = "block";
+		  } else {
+		     text.style.display = "none";
+		     text2.style.display = "none";
+		     text3.style.display = "none";
+		     text4.style.display = "none";
+		     text5.style.display = "none";
+		     text6.style.display = "none";
+		  }
+		}
+	</script> --}}
 
 	<script>
 		// Get the modal
