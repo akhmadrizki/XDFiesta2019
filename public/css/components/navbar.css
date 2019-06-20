@@ -1,3 +1,10 @@
+.juduls{
+	color: #4c4c4c;
+}
+.column a:hover{
+	text-decoration: none;
+	color: #70a6dc;
+}
 nav {
 	position: fixed;
 	top: 0;
@@ -43,16 +50,20 @@ nav section .row .column .subnav-item::-webkit-scrollbar-thumb {
 }
 nav section .row .column .nav-item .nav-link,
 nav section .row .column .subnav-item .subnav-link {
-	color: #aaa;
+	color: #333;
 	font: 1em 'Sarabun';
 	margin-right: 20px;
 	text-decoration: none;
+}
+nav section .row .column .subnav-item .subnav-link:not([href]) {
+	cursor: not-allowed;
+	color: #aaa;
 }
 nav section .row .column .nav-item .nav-link:last-child {
 	margin-right: 0;
 }
 nav section .row .column .nav-item .nav-link:hover,
-nav section .row .column .subnav-item .subnav-link:hover,
+nav section .row .column .subnav-item .subnav-link[href]:hover,
 nav section .row .column .nav-item .nav-link.active,
 nav section .row .column .subnav-item .subnav-link.active {
 	color: #70a6dc;

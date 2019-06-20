@@ -17,9 +17,11 @@
 // Route::post('syarat/update','SyaratController@update');
 
 // Front end routes
-Route::get('/', function () {
-    return redirect('/xd-events-and-competitions');
-});
+// Route::get('/', function () {
+//     return redirect('/xd-events-and-competitions');
+// });
+
+Route::get('/', 'Client\RsvnController@index')->name('main.page');
 
 Route::get('/xd-profile', function () {
 	return view('info.under-construction', [
@@ -35,6 +37,8 @@ Route::get('/xd-events-and-competitions', 'PagesController@index');
 // });
 
 Route::get('/xd-events-and-competitions/{events}', 'PagesController@show')->name('detail');
+
+Route::post('/xd-events-and-competitions/daftar', 'Content\DaftarPesertaController@daftar')->name('daftar.lomba');
 
 // Route::get('/xd-events-and-competitions/{events}', function ($events) {
 // 	return view('client.pages.xd-events.' . $events, [
@@ -90,6 +94,7 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::post('/dashboard/waktu_tempat/update','Content\WaktuTempatController@update');
 
 	Route::get('/dashboard/daftar-peserta', 'Content\DaftarPesertaController@index')->name('daftar.peserta');
+	Route::get('/daftar-peserta/export', 'Content\DaftarPesertaController@export')->name('export.excel');
 
 	Route::post('/dashboard/kontak/update','Content\KontakController@update');
 	// Route::get('download',function(){

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Content;
 
 use Illuminate\Http\Request;
 use App\Lomba;
+use App\Daftar;
 use App\Syarat;
 use App\KetentuanPeserta;
 use App\Penilaian;
