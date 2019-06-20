@@ -1,0 +1,27 @@
+input=(Button) findViewById(R.id.u_input);
+		hitung=(Button) findViewById(R.id.u_nama);
+		hasil1=(TextView) findViewById(R.id.hasil_u1);
+		nama=(EditText) findViewById(R.id.u_nama);
+
+		input.setOnClickListener(
+        		new OnClickListener() {
+					
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						Random r = new Random(101);
+						int random = r.nextInt(101);
+						if(random<=20){
+							hasil1.setText(random);
+						}
+						else if(random<=50){
+							hasil1.setText(random);
+						}
+						else if(random<=80){
+							hasil1.setText(random);
+						}
+						else if(random<=100){
+							hasil1.setText(random);
+						}
+					}
+				}
+        );
