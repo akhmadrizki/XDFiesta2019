@@ -94,6 +94,8 @@ class LombaController extends Controller
     public function show($id)
     {
         $lomba = Lomba::where('id_lomba',$id)->get();
+        if(!isset($lomba[0]))
+        abort(404);
         $syarat = Syarat::where('id_lomba',$id)->get();
         $ketentuan = KetentuanPeserta::where('id_lomba',$id)->get();
         $penilaian = Penilaian::where('id_lomba',$id)->get();

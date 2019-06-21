@@ -36,26 +36,33 @@ class PagesController extends Controller
         $name=str_replace('-', ' ', $judul_nav);
         $inilomba = Lomba::all();
         $lomba = Lomba::where('judul_nav',$name)->get();
-        $id=$lomba[0]->id_lomba;
-        $syarat = Syarat::where('id_lomba',$id)->get();
-        $ketentuan = KetentuanPeserta::where('id_lomba',$id)->get();
-        $penilaian = Penilaian::where('id_lomba',$id)->get();
-        $waktu = WaktuTempat::where('id_lomba',$id)->get();
-        $kontak = Kontak::where('id_lomba',$id)->get();
-        $hadiah = Hadiah::where('id_lomba',$id)->get();
-        return view('client.pages.xd-events.index', [
-            		'navActive' => 'events',
-            		'subnavActive' => $name
-                ])
-                ->with('lomba',$lomba[0])
-                ->with('inilomba',$inilomba)
-                ->with('syarat',$syarat)
-                ->with('ketentuan',$ketentuan)
-                ->with('penilaian',$penilaian)
-                ->with('waktu',isset($waktu[0])?$waktu[0]:"null")
-                ->with('kontak',$kontak)
-                ->with('hadiah',$hadiah)
-                ;
+        if(isset($lomba[0])){
+            $id=$lomba[0]->id_lomba;
+            $syarat = Syarat::where('id_lomba',$id)->get();
+            $ketentuan = KetentuanPeserta::where('id_lomba',$id)->get();
+            $penilaian = Penilaian::where('id_lomba',$id)->get();
+            $waktu = WaktuTempat::where('id_lomba',$id)->get();
+            $kontak = Kontak::where('id_lomba',$id)->get();
+            $hadiah = Hadiah::where('id_lomba',$id)->get();
+            return view('client.pages.xd-events.index', [
+                        'navActive' => 'events',
+                        'subnavActive' => $name
+                    ])
+                    ->with('lomba',$lomba[0])
+                    ->with('inilomba',$inilomba)
+                    ->with('syarat',$syarat)
+                    ->with('ketentuan',$ketentuan)
+                    ->with('penilaian',$penilaian)
+                    ->with('waktu',isset($waktu[0])?$waktu[0]:"null")
+                    ->with('kontak',$kontak)
+                    ->with('hadiah',$hadiah)
+                    ;
+        }
+        return view('client.pages.xd-events.404', [
+            'navActive' => 'events',
+            'subnavActive' => "notfound"
+        ])
+        ->with('inilomba',$inilomba);
     }
     
     // Downloading file

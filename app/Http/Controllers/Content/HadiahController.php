@@ -57,6 +57,8 @@ class HadiahController extends Controller
     public function show($id)
     {
         $lomba=Lomba::where('id_lomba',$id)->get();
+        if(!isset($lomba[0]))
+        abort(404);
         $hadiah=Hadiah::where('id_lomba',$id)->get();
         return view('admin.hadiah.create')->with('lomba',$lomba[0])->with('inihadiah',$hadiah)
         ->with('next','show');

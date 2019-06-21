@@ -61,6 +61,8 @@ class KetentuanPesertaController extends Controller
     public function show($id)
     {
         $lomba=Lomba::where('id_lomba',$id)->get();
+        if(!isset($lomba[0]))
+        abort(404);
         $ketentuan=KetentuanPeserta::where('id_lomba',$id)->get();
         return view('admin.ketentuan_peserta.create')->with('lomba',$lomba[0])
         ->with('iniketentuan',$ketentuan)

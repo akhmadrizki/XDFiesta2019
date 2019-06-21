@@ -9,7 +9,7 @@
 <div class="card">
 <div class="card-body">
 	<p>
-		<a href="{{route('lomba.create')}}" class="list-group-item list-group-item-action">
+		<a href="{{action('Content\LombaController@create')}}" class="list-group-item list-group-item-action">
 		Lomba</a>
 	</p>
 	<p>
