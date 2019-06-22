@@ -63,6 +63,8 @@ class WaktuTempatController extends Controller
     public function show($id)
     {
         $lomba=Lomba::where('id_lomba',$id)->get();
+        if(!isset($lomba[0]))
+        abort(404);
         $waktu=WaktuTempat::where('id_lomba',$id)->get();
         return view('admin.waktu_tempat.create')->with('lomba',$lomba[0])->with('iniwaktu',$waktu)
         ->with('next','show');

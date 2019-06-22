@@ -60,6 +60,8 @@ class PenilaianController extends Controller
     public function show($id)
     {
         $lomba=Lomba::where('id_lomba',$id)->get();
+        if(!isset($lomba[0]))
+        abort(404);
         $penilaian=Penilaian::where('id_lomba',$id)->get();
         return view('admin.penilaian.create')->with('lomba',$lomba[0])->with('inipenilaian',$penilaian)
         ->with('next','show');

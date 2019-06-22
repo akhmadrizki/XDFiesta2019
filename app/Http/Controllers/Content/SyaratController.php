@@ -60,6 +60,8 @@ class SyaratController extends Controller
     public function show($id)
     {
         $lomba=Lomba::where('id_lomba',$id)->get();
+        if(!isset($lomba[0]))
+        abort(404);
         $syarat=Syarat::where('id_lomba',$id)->get();
         return view('admin.syarat.create')->with('lomba',$lomba[0])->with('inisyarat',$syarat)
         ->with('next','show');

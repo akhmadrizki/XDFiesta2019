@@ -60,6 +60,8 @@ class KontakController extends Controller
     public function show($id)
     {
         $lomba=Lomba::where('id_lomba',$id)->get();
+        if(!isset($lomba[0]))
+        abort(404);
         $kontak=Kontak::where('id_lomba',$id)->get();
         return view('admin.kontak.create')->with('lomba',$lomba[0])->with('inikontak',$kontak)
         ->with('next','show');
