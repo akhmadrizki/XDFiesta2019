@@ -43,7 +43,8 @@
     </div>
     <p>
     Judul di navigator : {!!$lomba->judul_nav?$lomba->judul_nav:'<i>Kosong</i>'!!}<br/>
-    Deskripsi : {!!$lomba->deskripsi!!}
+    Deskripsi : {!!$lomba->deskripsi!!}<br/>
+    Link Google Form : <a href="{{$lomba->gform}}" target="_blank">{{$lomba->gform}}</a>
     </p>
     <form action="{{ route('lomba.destroy', $lomba->id_lomba)}}" method="post">
     <a href="{{action('Content\LombaController@edit',$lomba->id_lomba)}}" class="btn btn-sm btn-warning">

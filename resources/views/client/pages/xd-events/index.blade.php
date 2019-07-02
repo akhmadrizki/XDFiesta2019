@@ -188,35 +188,45 @@
 					<!-- Form pendaftaran lomba ditulis disini -->
 					<div class="xd-event-register border-box">
 						<p class="xd-event-register-mainTitle">Form Pendaftaran :</p>
-						<form>
-							<div class="row">
-								<div class="col-12">
-									<p class="xd-event-register-subTitle">&nbspAlamat Email : </p>
-									<input type="email" id="myText1" placeholder="example@email.com" class="input-text">
+						@if($lomba->gform==null)
+							<form>
+								<div class="row">
+									<div class="col-12">
+										<p class="xd-event-register-subTitle">&nbspAlamat Email : </p>
+										<input type="email" id="myText1" placeholder="example@email.com" class="input-text">
 
-									<p class="xd-event-register-subTitle">&nbspNama Team : </p>
-									<input type="text" id="myText2" placeholder="ex: RRQ" class="input-text">
+										<p class="xd-event-register-subTitle">&nbspNama Team : </p>
+										<input type="text" id="myText2" placeholder="ex: RRQ" class="input-text">
 
-									<p class="xd-event-register-subTitle">&nbspNama Ketua : </p>
-									<input type="text" id="myText3" placeholder="ex: Steven “Marsha” Kurniawan" class="input-text">
-									
-									<p class="xd-event-register-subTitle">&nbspJumlah Anggota Team : </p>
-									<input type="radio" name="test" id="myCheck" value="5" onclick="myFunction()" required style="margin-left: 10px;"> 5<br>
-									<input type="radio" name="test" id="myCheck2" value="6" onclick="myFunction2()" style="margin: 0  0 15px 10px;"> 6<br>
+										<p class="xd-event-register-subTitle">&nbspNama Ketua : </p>
+										<input type="text" id="myText3" placeholder="ex: Steven “Marsha” Kurniawan" class="input-text">
+										
+										<p class="xd-event-register-subTitle">&nbspJumlah Anggota Team : </p>
+										<input type="radio" name="test" id="myCheck" value="5" onclick="myFunction()" required style="margin-left: 10px;"> 5<br>
+										<input type="radio" name="test" id="myCheck2" value="6" onclick="myFunction2()" style="margin: 0  0 15px 10px;"> 6<br>
 
-									<p class="xd-event-register-subTitle">&nbspNo Whatsapp : </p>
-									<input type="tel" id="myText4" placeholder="08212345678" class="input-text">
+										<p class="xd-event-register-subTitle">&nbspNo Whatsapp : </p>
+										<input type="tel" id="myText4" placeholder="08212345678" class="input-text">
+									</div>
 								</div>
+							</form>
+							<div class="col-lg-12 col-12" style="text-align: right;">
+								<button class="reset-button">
+									<span>RESET</span>
+								</button>
+								<button id="myBtn" class="submit-button">
+									<span>SUBMIT</span>
+								</button>
 							</div>
-						</form>
-						<div class="col-lg-12 col-12" style="text-align: right;">
-							<button class="reset-button">
-								<span>RESET</span>
-							</button>
-							<button id="myBtn" class="submit-button">
-								<span>SUBMIT</span>
-							</button>
-						</div>
+						@else
+							<div style="text-align:center">
+								<a href="{{$lomba->gform}}" target="_blank">
+								<button class="xd-event-term-download-btn">
+									<span>Go to Google Form</span>
+								</button>
+								</a>
+							</div>	
+						@endif
 					</div>
 
 					<div id="myModal" class="modal">
