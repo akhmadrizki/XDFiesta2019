@@ -81,6 +81,7 @@ class LombaController extends Controller
             Storage::disk('img')->put('Syarat dan Ketentuan '.$name.'.'.$extension,  File::get($pdf));
             $lomba->pdf = 'Syarat dan Ketentuan '.$name.'.'.$extension;
         }
+        $lomba->gform = $request->get('gform');
         $lomba->save();
         return redirect()->action('Content\SyaratController@create');
     }
@@ -171,7 +172,8 @@ class LombaController extends Controller
             [
                 'judul'=>$request->get('judul'),
                 'judul_nav'=>$request->get('judul_nav'),
-                'deskripsi'=>$request->get('deskripsi')
+                'deskripsi'=>$request->get('deskripsi'),
+                'gform'=>$request->get('gform')
             ]
         );
         return redirect()->action('Content\LombaController@show',$id);

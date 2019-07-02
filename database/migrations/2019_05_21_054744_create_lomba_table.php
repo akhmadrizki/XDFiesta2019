@@ -21,6 +21,7 @@ class CreateLombaTable extends Migration
             $table->string('pic')->nullable();
             $table->string('thumbnail')->nullable();
             $table->string('pdf')->nullable();
+            $table->string('gform')->unique();
             $table->timestamps();
         });
     }

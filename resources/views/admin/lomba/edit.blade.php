@@ -37,6 +37,11 @@
             <input type="file" name="pdf"><br/>
             <i>Masukan file .pdf disini</i>
         </div>
+        <div class="form-group">
+            <label>Link Google Form</label><br>
+            <input type="text" class="form-control" name="gform" value="{{$lomba->gform}}">
+            <i>Jangan diisi kalo ga pake google form</i>
+        </div>
         <div class="card-footer text-right">
             <input type="submit" value="Edit" class="btn btn-warning">
         </div>
