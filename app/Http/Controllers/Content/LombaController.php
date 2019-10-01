@@ -83,7 +83,7 @@ class LombaController extends Controller
             $lomba->thumbnail = $name.'_thumbnail.'.$extension;
         }
 
-        if ( $pdf != null ){
+        if ($pdf != null){
             $extension = $pdf->getClientOriginalExtension();
             $name      = $request->judul;
 
@@ -215,7 +215,7 @@ class LombaController extends Controller
     {
         $file_name = str_replace('-', ' ', $file);
         $file_path = public_path('uploads/'.$file_name);
-        
+
         return response()->download($file_path);
     }
 }
