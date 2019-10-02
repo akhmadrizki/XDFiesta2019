@@ -13,7 +13,7 @@
 		Lomba</a>
 	</p>
 	<p>
-		<a href="/blank.html" class="list-group-item list-group-item-action">
+		<a href="/dashboard/event" class="list-group-item list-group-item-action">
 		Event</a>
 	</p>
 	<p>
