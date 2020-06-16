@@ -78,14 +78,16 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::group(['middleware' => 'auth'],function(){
 // Admin Routes
 	Route::get('/dashboard', 'Dashboard\DashboardController@index')->name('admin');
-	Route::get('/dashboard/list', 'Dashboard\DashboardController@list');
+    Route::get('/dashboard/list', 'Dashboard\DashboardController@list');
+
 	Route::resource('/dashboard/lomba','Content\LombaController');
 	Route::resource('/dashboard/syarat','Content\SyaratController');
 	Route::resource('/dashboard/hadiah','Content\HadiahController');
 	Route::resource('/dashboard/ketentuan_peserta','Content\KetentuanPesertaController');
 	Route::resource('/dashboard/penilaian','Content\PenilaianController');
 	Route::resource('/dashboard/kontak','Content\KontakController');
-	Route::resource('/dashboard/waktu_tempat','Content\WaktuTempatController');
+    Route::resource('/dashboard/waktu_tempat','Content\WaktuTempatController');
+
 	Route::post('/dashboard/lomba/update','Content\LombaController@update');
 	Route::post('/dashboard/syarat/update','Content\SyaratController@update');
 	Route::post('/dashboard/hadiah/update','Content\HadiahController@update');

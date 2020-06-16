@@ -20,6 +20,6 @@ class UsersTableSeeder extends Seeder
         	'password' => Hash::make('fiestaxd2k19'),
         ];
 
-        User::create($fields);
+        // User::create($fields);
     }
 }
